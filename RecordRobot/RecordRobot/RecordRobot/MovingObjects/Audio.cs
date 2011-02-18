@@ -5,8 +5,7 @@ using System.Text;
 
 namespace RecordRobot.MovingObjects
 {
-    class Maze
+    class Audio
     {
-
     }
 }
