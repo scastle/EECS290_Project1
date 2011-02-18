@@ -1,0 +1,4 @@
+Content\Images\record-red.xnb
+Content\Images\robot-left.xnb
+Content\Images\robot-normal.xnb
+Content\Images\robot-right.xnb

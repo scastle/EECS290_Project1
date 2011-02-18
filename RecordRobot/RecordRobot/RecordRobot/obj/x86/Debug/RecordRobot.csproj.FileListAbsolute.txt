@@ -4,3 +4,7 @@ C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\De
 C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\RecordRobot.pdb
 C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\obj\x86\Debug\RecordRobot.exe
 C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\obj\x86\Debug\RecordRobot.pdb
+C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-red.xnb
+C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-left.xnb
+C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-normal.xnb
+C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-right.xnb
