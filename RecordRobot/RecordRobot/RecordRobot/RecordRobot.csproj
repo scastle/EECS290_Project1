@@ -108,7 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Maze.cs" />
-    <Compile Include="MovingObjects\Audio.cs" />
+    <Compile Include="Audio.cs" />
     <Compile Include="MovingObjects\Mover.cs" />
     <Compile Include="MovingObjects\Robot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
