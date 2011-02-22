@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using RecordRobot.MovingObjects;
 
-namespace RecordRobot.MovingObjects
+namespace RecordRobot
 {
     class Maze
     {
-        public bool[][] grid;
+        public static bool[][] grid;
 
         /// <summary>
         /// Checks if the specified point is an intersection
@@ -38,6 +39,10 @@ namespace RecordRobot.MovingObjects
         {
             // add logic here
             return true;
+        }
+
+        public static void Draw()
+        {
         }
     }
 }
