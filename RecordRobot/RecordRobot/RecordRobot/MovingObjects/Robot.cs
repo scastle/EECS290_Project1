@@ -5,18 +5,9 @@ using System.Text;
 
 namespace RecordRobot.MovingObjects
 {
-    public enum Direction 
-    {
-        Up, Down, Left, Right, None
-    }
 
     class Robot : Mover
     {
-        /// <summary>
-        /// The current direction the robot is moving
-        /// </summary>
-        public Direction CurrentDirection;
-
         /// <summary>
         /// The direction the robot will go at the next intersection
         /// </summary>
@@ -31,14 +22,17 @@ namespace RecordRobot.MovingObjects
             NextDirection = Controls.GetDirection();
 
             // Check intersection
-            if (Maze.IsIntersection(this.Location))
+            if (Maze.IsIntersection(this.Position))
             {
-                CurrentDirection = NextDirection;
-                if (!Maze.CanGo(CurrentDirection))
+                Direction = NextDirection;
+                if (!Maze.CanGo(Position, Direction))
                 {
-                    CurrentDirection = Direction.None;
+                    Direction = Direction.None;
                 }
             }
+
+            // Check for collisions with other moving objects?
+
             /*
             if (NextDirection.Equals(CurrentDirection))
             {
@@ -55,19 +49,8 @@ namespace RecordRobot.MovingObjects
                 //check collisions with walls/objects
             }
             */
-            UpdateLocation();
 
-        }
-
-        private void UpdateLocation()
-        {
-            switch (this.CurrentDirection)
-            {
-                case Direction.Up: this.Location.Y--; break;
-                case Direction.Down: this.Location.Y++; break;
-                case Direction.Left: this.Location.X--; break;
-                case Direction.Right: this.Location.X++; break;
-            }
+            this.UpdatePosition();
         }
     }
 }

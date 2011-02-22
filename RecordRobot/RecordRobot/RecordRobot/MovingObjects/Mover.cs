@@ -6,24 +6,40 @@ using Microsoft.Xna.Framework;
 
 namespace RecordRobot.MovingObjects
 {
+    public enum Direction
+    {
+        Up, Down, Left, Right, None
+    }
+
     class Mover
     {
-        public Point Location;
+        /// <summary>
+        /// The speed of the moving object.
+        /// </summary>
+        public int Speed = 1;
 
-        public void MoveLeft()
-        {
-        }
+        /// <summary>
+        /// The current location of the object.
+        /// </summary>
+        public Point Position;
 
-        public void MoveRight()
-        {
-        }
+        /// <summary>
+        /// The current direction the robot is moving.
+        /// </summary>
+        public Direction Direction;
 
-        public void MoveUp()
+        /// <summary>
+        /// Updates the objects location based on the current direction.
+        /// </summary>
+        public void UpdatePosition()
         {
-        }
-
-        public void MoveDown()
-        {
+            switch (this.Direction)
+            {
+                case Direction.Up: this.Position.Y -= Speed; break;
+                case Direction.Down: this.Position.Y += Speed; break;
+                case Direction.Left: this.Position.X -= Speed; break;
+                case Direction.Right: this.Position.X += Speed; break;
+            }
         }
     }
 }
