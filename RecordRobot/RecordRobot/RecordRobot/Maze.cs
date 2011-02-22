@@ -24,7 +24,7 @@ namespace RecordRobot.MovingObjects
         /// </summary>
         /// <param name="d">The direction to move</param>
         /// <returns>true if the robot can move in the direction</returns>
-        public static bool CanGo(Direction d)
+        public static bool CanGo(Point p, Direction d)
         {
             // add logic here
             return true;
