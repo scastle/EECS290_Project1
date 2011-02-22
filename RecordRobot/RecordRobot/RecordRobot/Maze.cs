@@ -8,7 +8,7 @@ namespace RecordRobot.MovingObjects
 {
     class Maze
     {
-        public static bool[][] grid;
+        public static bool[][] grid; //true for paths, false for walls
 
         /// <summary>
         /// Checks if the specified point is an intersection
@@ -17,8 +17,8 @@ namespace RecordRobot.MovingObjects
         /// <returns>true if the point is an intersection</returns>
         public static bool IsIntersection(Point p)
         {
-            int r = p.Y % 30;
-            int c = p.X % 30;
+            int r = p.Y / 30;
+            int c = p.X / 30;
 
             if ((grid[r - 1][c] || grid[r + 1][c]) && (grid[r][c - 1] || grid[r][c + 1]))
             {
@@ -38,8 +38,36 @@ namespace RecordRobot.MovingObjects
         /// <returns>true if the robot can move in the direction</returns>
         public static bool CanGo(Point p, Direction d)
         {
-            // add logic here
-            return true;
+            int r = p.Y / 30;
+            int c = p.X / 30;
+            int xsquare = p.X % 30;
+            int ysquare = p.Y % 30;
+
+            switch (d)
+            {
+                case Direction.Up:
+                    if (grid[r - 1][c] || ysquare > 15)
+                        return true;
+                    break;
+                case Direction.Down:
+                    if (grid[r + 1][c] || ysquare < 15)
+                        return true;
+                    break;
+                case Direction.Left:
+                    if (grid[r][c - 1] || xsquare > 15)
+                        return true;
+                    break;
+                case Direction.Right:
+                    if (grid[r][c + 1] || xsquare < 15)
+                        return true;
+                    break;
+            }
+            return false;
+        }
+
+        public static void Draw()
+        {
+
         }
     }
 }
