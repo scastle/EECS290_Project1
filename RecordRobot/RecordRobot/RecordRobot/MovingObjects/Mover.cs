@@ -8,7 +8,7 @@ namespace RecordRobot.MovingObjects
 {
     class Mover
     {
-        Point Location;
+        public Point Location;
 
         public void MoveLeft()
         {

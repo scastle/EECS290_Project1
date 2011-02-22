@@ -107,6 +107,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls.cs" />
     <Compile Include="Maze.cs" />
     <Compile Include="Audio.cs" />
     <Compile Include="MovingObjects\Mover.cs" />

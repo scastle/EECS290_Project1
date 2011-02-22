@@ -7,7 +7,7 @@ namespace RecordRobot.MovingObjects
 {
     public enum Direction 
     {
-        Up, Down, Left, Right
+        Up, Down, Left, Right, None
     }
 
     class Robot : Mover
@@ -22,18 +22,28 @@ namespace RecordRobot.MovingObjects
         /// </summary>
         public Direction NextDirection;
 
-        public int score;
+        public int Score;
 
-        public int lives;
+        public int Lives;
 
         public void Update()
         {
-            //update control... find what direction?
+            NextDirection = Controls.GetDirection();
 
+            // Check intersection
+            if (Maze.IsIntersection(this.Location))
+            {
+                CurrentDirection = NextDirection;
+                if (!Maze.CanGo(CurrentDirection))
+                {
+                    CurrentDirection = Direction.None;
+                }
+            }
+            /*
             if (NextDirection.Equals(CurrentDirection))
             {
-                //move
                 //check collisions with walls/objects
+                //move
             }
             else
             {
@@ -44,7 +54,20 @@ namespace RecordRobot.MovingObjects
                 //else just continue moving in current direction
                 //check collisions with walls/objects
             }
+            */
+            UpdateLocation();
 
+        }
+
+        private void UpdateLocation()
+        {
+            switch (this.CurrentDirection)
+            {
+                case Direction.Up: this.Location.Y--; break;
+                case Direction.Down: this.Location.Y++; break;
+                case Direction.Left: this.Location.X--; break;
+                case Direction.Right: this.Location.X++; break;
+            }
         }
     }
 }
