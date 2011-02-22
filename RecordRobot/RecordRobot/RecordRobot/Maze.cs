@@ -8,7 +8,7 @@ namespace RecordRobot.MovingObjects
 {
     class Maze
     {
-        public bool[][] grid;
+        public static bool[][] grid;
 
         /// <summary>
         /// Checks if the specified point is an intersection
@@ -20,13 +20,15 @@ namespace RecordRobot.MovingObjects
             int r = p.Y % 30;
             int c = p.X % 30;
 
-            if( grid[r-1][c] || grid[r+1][c])
+            if ((grid[r - 1][c] || grid[r + 1][c]) && (grid[r][c - 1] || grid[r][c + 1]))
             {
-
+                return true;
+            }
+            else
+            {
+                return false;
             }
 
-            // add logic here
-            return true;
         }
 
         /// <summary>
