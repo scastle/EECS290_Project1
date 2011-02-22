@@ -20,21 +20,21 @@
       <Time>2011-02-21T19:08:06-05:00</Time>
     </Item>
     <Item>
-      <Source>Images\robot-normal.png</Source>
-      <Name>Images\robot-normal</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-normal.xnb</Output>
-      <Time>2011-02-21T19:08:06-05:00</Time>
-    </Item>
-    <Item>
       <Source>Images\robot-right.png</Source>
       <Name>Images\robot-right</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-right.xnb</Output>
+      <Time>2011-02-21T19:08:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\robot-normal.png</Source>
+      <Name>Images\robot-normal</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-normal.xnb</Output>
       <Time>2011-02-21T19:08:06-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>

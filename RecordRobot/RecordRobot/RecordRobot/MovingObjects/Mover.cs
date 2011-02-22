@@ -9,15 +9,18 @@ namespace RecordRobot.MovingObjects
 {
     public enum Direction
     {
-        Up, Down, Left, Right, None
+        None, Up, Down, Left, Right
     }
 
-    class Mover
+    abstract class Mover
     {
         /// <summary>
         /// The speed of the moving object.
         /// </summary>
         public int Speed = 1;
+
+        SpriteBatch Batch;
+        Texture2D Texture;
 
         /// <summary>
         /// The current location of the object.
@@ -28,6 +31,8 @@ namespace RecordRobot.MovingObjects
         /// The current direction the robot is moving.
         /// </summary>
         public Direction Direction;
+
+        public abstract void Update();
 
         /// <summary>
         /// Updates the objects location based on the current direction.
@@ -43,8 +48,6 @@ namespace RecordRobot.MovingObjects
             }
         }
 
-        public void Draw()
-        {
-        }
+        public abstract void Draw();
     }
 }

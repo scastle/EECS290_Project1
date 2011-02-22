@@ -17,8 +17,9 @@ namespace RecordRobot
     public class Game1 : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
-
+        public static SpriteBatch spriteBatch;
+        public static Texture2D Robot;
+        
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -46,6 +47,7 @@ namespace RecordRobot
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            Robot = this.Content.Load<Texture2D>("Images\\robot-normal");
 
             // TODO: use this.Content to load your game content here
         }
@@ -70,6 +72,8 @@ namespace RecordRobot
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
+            MovingObjects.MovingObjectManager.Update();
+
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -81,8 +85,8 @@ namespace RecordRobot
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-
+            //GraphicsDevice.Clear(Color.CornflowerBlue);
+            GameScreen.Draw();
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
