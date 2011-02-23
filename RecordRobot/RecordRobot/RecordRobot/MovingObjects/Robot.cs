@@ -20,45 +20,47 @@ namespace RecordRobot.MovingObjects
 
         public override void Update()
         {
-            NextDirection = Controls.GetDirection();
-
-            // Check intersection
-            if (Maze.IsIntersection(this.Position))
+            Direction d = Controls.GetDirection();
+            if (d != MovingObjects.Direction.None)
+                NextDirection = Controls.GetDirection();
+            if ((int)NextDirection + (int)Direction == 0)
+            {
+                Direction = NextDirection;
+                if (Direction == MovingObjects.Direction.Left)
+                {
+                    this.Texture = Game1.RobotLeft;
+                }
+                else if (Direction == MovingObjects.Direction.Right)
+                {
+                    this.Texture = Game1.RobotRight;
+                }
+            }
+            else if (Maze.IsIntersection(this.Position))
             {
                 Direction = NextDirection;
                 if (!Maze.CanGo(Position, Direction))
                 {
                     Direction = Direction.None;
                 }
+                if (Direction == MovingObjects.Direction.Up ||
+                    Direction == MovingObjects.Direction.Down || 
+                    Direction == MovingObjects.Direction.None)
+                {
+                    this.Texture = Game1.Robot;
+                }
+                else if (Direction == MovingObjects.Direction.Left)
+                {
+                    this.Texture = Game1.RobotLeft;
+                }
+                else if (Direction == MovingObjects.Direction.Right)
+                {
+                    this.Texture = Game1.RobotRight;
+                }
             }
 
             // Check for collisions with other moving objects?
 
-            /*
-            if (NextDirection.Equals(CurrentDirection))
-            {
-                //check collisions with walls/objects
-                //move
-            }
-            else
-            {
-                //hmm not sure how to do this- check for ability to change direction.
-                // ^ this might go in mover class??????? as would moving around corner?
-
-                //move up to the next intersection (possibly around corner) and change direction. 
-                //else just continue moving in current direction
-                //check collisions with walls/objects
-            }
-            */
-
             base.UpdatePosition();
-        }
-
-        public override void Draw()
-        {
-            Game1.spriteBatch.Begin();
-            Game1.spriteBatch.Draw(Game1.Robot, new Vector2(Position.X, Position.Y), Color.White);
-            Game1.spriteBatch.End();
         }
     }
 }

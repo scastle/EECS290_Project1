@@ -19,6 +19,8 @@ namespace RecordRobot
         GraphicsDeviceManager graphics;
         public static SpriteBatch spriteBatch;
         public static Texture2D Robot;
+        public static Texture2D RobotLeft;
+        public static Texture2D RobotRight;
         
         public Game1()
         {
@@ -48,6 +50,8 @@ namespace RecordRobot
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Robot = this.Content.Load<Texture2D>("Images\\robot-normal");
+            RobotLeft = this.Content.Load<Texture2D>("Images\\robot-left");
+            RobotRight = this.Content.Load<Texture2D>("Images\\robot-right");
 
             // TODO: use this.Content to load your game content here
         }
