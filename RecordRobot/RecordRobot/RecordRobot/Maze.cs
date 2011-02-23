@@ -78,10 +78,10 @@ namespace RecordRobot
             int c = p.X / 30;
 
 
-            if (r < 1 || c < 1)
-            {
-                return false; //TEMPORARY FIX
-            }
+            //if (r < 1 || c < 1)
+            //{
+            //    return false; //TEMPORARY FIX
+            //}
 
             if ((grid[r - 1, c] || grid[r + 1, c]) && (grid[r, c - 1] || grid[r, c + 1]))
             {
