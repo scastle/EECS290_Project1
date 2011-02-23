@@ -13,5 +13,10 @@ namespace RecordRobot
             Maze.Draw();
             MovingObjectManager.Draw();
         }
+
+        public static void Update()
+        {
+            MovingObjectManager.Update();
+        }
     }
 }

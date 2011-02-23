@@ -76,7 +76,7 @@ namespace RecordRobot
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            MovingObjects.MovingObjectManager.Update();
+            GameScreen.Update();
 
             // TODO: Add your update logic here
 
