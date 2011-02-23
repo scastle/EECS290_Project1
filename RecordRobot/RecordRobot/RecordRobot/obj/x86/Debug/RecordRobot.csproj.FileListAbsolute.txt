@@ -24,6 +24,7 @@ C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\bin\x8
 C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\maze-path.xnb
 C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\maze-wall.xnb
 C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\TextFiles\testmaze.txt
+<<<<<<< HEAD
 C:\Users\Michael\Desktop\git projects\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-red.xnb
 C:\Users\Michael\Desktop\git projects\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-left.xnb
 C:\Users\Michael\Desktop\git projects\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-normal.xnb
@@ -37,3 +38,5 @@ C:\Users\Michael\Desktop\git projects\EECS290_Project1\RecordRobot\RecordRobot\R
 C:\Users\Michael\Desktop\git projects\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Michael\Desktop\git projects\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\obj\x86\Debug\RecordRobot.exe
 C:\Users\Michael\Desktop\git projects\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\obj\x86\Debug\RecordRobot.pdb
+=======
+>>>>>>> 24fd3ff9af954fdc98176727297b4b9950f8ed4c
