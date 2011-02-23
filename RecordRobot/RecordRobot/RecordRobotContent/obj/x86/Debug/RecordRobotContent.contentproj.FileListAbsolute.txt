@@ -1,0 +1,3 @@
+C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobotContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobotContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Mike\Documents\Visual Studio 2010\Projects\EECS290_Project1\RecordRobot\RecordRobot\RecordRobotContent\obj\x86\Debug\ResolveAssemblyReference.cache
