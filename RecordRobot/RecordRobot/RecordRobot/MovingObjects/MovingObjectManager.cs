@@ -18,6 +18,11 @@ namespace RecordRobot.MovingObjects
             {
                 Objects = new List<Mover>();
                 Objects.Add(new Robot(45, 45));
+                Objects.Add(new Record(345, 45, RecordColor.red));
+                Objects.Add(new Record(375, 45, RecordColor.green));
+                Objects.Add(new Record(405, 45, RecordColor.blue));
+                Objects.Add(new Record(345, 75, RecordColor.violet));
+                Objects.Add(new Record(405, 75, RecordColor.yellow));
             }
             foreach (Mover m in Objects)
             {
@@ -31,6 +36,11 @@ namespace RecordRobot.MovingObjects
             {
                 Objects = new List<Mover>();
                 Objects.Add(new Robot(45,45));
+                Objects.Add(new Record(345,45,RecordColor.red));
+                Objects.Add(new Record(375, 45, RecordColor.green));
+                Objects.Add(new Record(405, 45, RecordColor.blue));
+                Objects.Add(new Record(345, 75, RecordColor.violet));
+                Objects.Add(new Record(405, 75, RecordColor.yellow));
             }
             foreach (Mover m in Objects)
             {

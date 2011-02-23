@@ -14,8 +14,10 @@ namespace RecordRobot.MovingObjects
         /// </summary>
         public Direction NextDirection;
 
-        public int Score;
-        public int Lives;
+        public Direction CurrentDirection;
+
+        //public int Score;
+        //public int Lives;
 
         /// <summary>
         /// Creates a new member of the Robot class
@@ -35,46 +37,47 @@ namespace RecordRobot.MovingObjects
             Direction d = Controls.GetDirection();
             if (d != MovingObjects.Direction.None)
                 NextDirection = Controls.GetDirection();
-            if ((int)NextDirection + (int)Direction == 0)
+            if ((int)NextDirection + (int)this.Direction == 0)
             {
-                Direction = NextDirection;
+                this.Direction = NextDirection;
 
                 // Change which direction robot is facing
-                if (Direction == MovingObjects.Direction.Left)
+                if (this.Direction == MovingObjects.Direction.Left)
                 {
                     this.Texture = Game1.RobotLeft;
                 }
-                else if (Direction == MovingObjects.Direction.Right)
+                else if (this.Direction == MovingObjects.Direction.Right)
                 {
                     this.Texture = Game1.RobotRight;
                 }
             }
             else if (Maze.IsIntersection(this.Position))
             {
-                Direction = NextDirection;
-                if (!Maze.CanGo(Position, Direction))
+                this.Direction = NextDirection;
+                if (!Maze.CanGo(this.Position, this.Direction))
                 {
-                    Direction = Direction.None;
+                    this.Direction = Direction.None;
                 }
 
                 // Change which direction robot is facing
-                if (Direction == MovingObjects.Direction.Up ||
-                    Direction == MovingObjects.Direction.Down || 
-                    Direction == MovingObjects.Direction.None)
+                if (this.Direction == MovingObjects.Direction.Up ||
+                    this.Direction == MovingObjects.Direction.Down ||
+                    this.Direction == MovingObjects.Direction.None)
                 {
                     this.Texture = Game1.Robot;
                 }
-                else if (Direction == MovingObjects.Direction.Left)
+                else if (this.Direction == MovingObjects.Direction.Left)
                 {
                     this.Texture = Game1.RobotLeft;
                 }
-                else if (Direction == MovingObjects.Direction.Right)
+                else if (this.Direction == MovingObjects.Direction.Right)
                 {
                     this.Texture = Game1.RobotRight;
                 }
             }
 
-            // Check for collisions with other moving objects?
+            this.CurrentDirection = this.Direction;
+            // Check for collisions with other moving objects? MOVED TO RECORD BECAUSE IT WILL BE EASIER
 
             base.UpdatePosition();
         }
