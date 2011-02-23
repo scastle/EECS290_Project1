@@ -132,14 +132,14 @@ namespace RecordRobot
         public static void Draw()
         {
             Game1.spriteBatch.Begin();
-            for (int r = 0; r < grid.GetUpperBound(0); r++)
+            for (int r = 0; r <= grid.GetUpperBound(0); r++)
             {
-                for (int c = 0; c < grid.GetUpperBound(1); c++)
+                for (int c = 0; c <= grid.GetUpperBound(1); c++)
                 {
                     if (grid[r, c])
-                        Game1.spriteBatch.Draw(Game1.mazepath, new Vector2(r * 30, c * 30), Color.Black);
+                        Game1.spriteBatch.Draw(Game1.mazepath, new Vector2(c * 30, r * 30), Color.Black);
                     else
-                        Game1.spriteBatch.Draw(Game1.mazewall, new Vector2(r * 30, c * 30), Color.Blue);
+                        Game1.spriteBatch.Draw(Game1.mazewall, new Vector2(c * 30, r * 30), Color.Blue);
                 }
             }
             Game1.spriteBatch.End();
