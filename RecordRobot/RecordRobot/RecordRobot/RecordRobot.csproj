@@ -114,6 +114,7 @@
     <Compile Include="Audio.cs" />
     <Compile Include="MovingObjects\MovingObjectManager.cs" />
     <Compile Include="MovingObjects\Mover.cs" />
+    <Compile Include="MovingObjects\Record.cs" />
     <Compile Include="MovingObjects\Robot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
