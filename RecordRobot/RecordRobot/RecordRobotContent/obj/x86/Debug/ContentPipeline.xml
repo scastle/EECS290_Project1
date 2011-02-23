@@ -7,8 +7,13 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Mike\Documents\Visual Studio 2010\Projects\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-red.xnb</Output>
       <Time>2011-02-22T23:05:10-05:00</Time>
+=======
+      <Output>C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-red.xnb</Output>
+      <Time>2011-02-23T02:02:00.2624983-05:00</Time>
+>>>>>>> 09131940bd42d5ab61db448a27b8b8261cb54a40
     </Item>
     <Item>
       <Source>Images\robot-left.png</Source>
@@ -16,8 +21,13 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Mike\Documents\Visual Studio 2010\Projects\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-left.xnb</Output>
       <Time>2011-02-22T23:05:10-05:00</Time>
+=======
+      <Output>C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-left.xnb</Output>
+      <Time>2011-02-23T02:02:00.3574983-05:00</Time>
+>>>>>>> 09131940bd42d5ab61db448a27b8b8261cb54a40
     </Item>
     <Item>
       <Source>Images\robot-normal.png</Source>
@@ -25,8 +35,13 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Mike\Documents\Visual Studio 2010\Projects\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-normal.xnb</Output>
       <Time>2011-02-22T23:05:10-05:00</Time>
+=======
+      <Output>C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-normal.xnb</Output>
+      <Time>2011-02-23T02:02:00.3594983-05:00</Time>
+>>>>>>> 09131940bd42d5ab61db448a27b8b8261cb54a40
     </Item>
     <Item>
       <Source>Images\robot-right.png</Source>
@@ -34,8 +49,13 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Mike\Documents\Visual Studio 2010\Projects\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-right.xnb</Output>
       <Time>2011-02-22T23:05:10-05:00</Time>
+=======
+      <Output>C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-right.xnb</Output>
+      <Time>2011-02-23T02:02:00.3614983-05:00</Time>
+>>>>>>> 09131940bd42d5ab61db448a27b8b8261cb54a40
     </Item>
     <Item>
       <Source>Images\maze-path.png</Source>
@@ -43,8 +63,13 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Mike\Documents\Visual Studio 2010\Projects\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\maze-path.xnb</Output>
       <Time>2011-02-22T23:05:10-05:00</Time>
+=======
+      <Output>C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\maze-path.xnb</Output>
+      <Time>2011-02-23T02:02:00.2584983-05:00</Time>
+>>>>>>> 09131940bd42d5ab61db448a27b8b8261cb54a40
     </Item>
     <Item>
       <Source>Images\maze-wall.png</Source>
@@ -52,6 +77,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Mike\Documents\Visual Studio 2010\Projects\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\maze-wall.xnb</Output>
       <Time>2011-02-22T23:05:10-05:00</Time>
     </Item>
@@ -108,6 +134,10 @@
       <Options>None</Options>
       <Output>C:\Users\Mike\Documents\Visual Studio 2010\Projects\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-dead.xnb</Output>
       <Time>2011-02-23T14:44:07.0962069-05:00</Time>
+=======
+      <Output>C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\maze-wall.xnb</Output>
+      <Time>2011-02-23T02:02:00.2594983-05:00</Time>
+>>>>>>> 09131940bd42d5ab61db448a27b8b8261cb54a40
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -115,39 +145,50 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
+<<<<<<< HEAD
       <RootDirectory>C:\Users\Mike\Documents\Visual Studio 2010\Projects\EECS290_Project1\RecordRobot\RecordRobot\RecordRobotContent\</RootDirectory>
       <LoggerRootDirectory>C:\Users\Mike\Documents\Visual Studio 2010\Projects\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\</LoggerRootDirectory>
       <IntermediateDirectory>C:\Users\Mike\Documents\Visual Studio 2010\Projects\EECS290_Project1\RecordRobot\RecordRobot\RecordRobotContent\obj\x86\Debug\</IntermediateDirectory>
       <OutputDirectory>C:\Users\Mike\Documents\Visual Studio 2010\Projects\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\</OutputDirectory>
+=======
+      <RootDirectory>C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobotContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobotContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\</OutputDirectory>
+>>>>>>> 09131940bd42d5ab61db448a27b8b8261cb54a40
     </Settings>
     <Assemblies>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
         <Value>2010-08-23T13:41:18-04:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
         <Value>2010-08-23T13:41:18-04:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
         <Value>2010-08-23T13:41:18-04:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
         <Value>2010-08-23T13:41:18-04:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
         <Value>2010-08-23T13:41:18-04:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
         <Value>2010-08-23T13:41:18-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+<<<<<<< HEAD
         <Value>2011-01-17T23:22:22.7852194-05:00</Value>
+=======
+        <Value>2011-02-01T17:59:25.4545068-05:00</Value>
+>>>>>>> 09131940bd42d5ab61db448a27b8b8261cb54a40
       </Assembly>
     </Assemblies>
   </Asset>

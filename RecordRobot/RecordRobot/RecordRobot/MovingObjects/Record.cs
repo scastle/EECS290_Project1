@@ -15,6 +15,7 @@ namespace RecordRobot.MovingObjects
          * 
          */
 
+<<<<<<< HEAD
         
 
         public Direction CurrentDirection;
@@ -143,6 +144,24 @@ namespace RecordRobot.MovingObjects
 
             base.UpdatePosition();
                         
+=======
+        public enum RecordColor
+        {
+            red = 0, orange = 1, yellow = 2, green = 3, blue = 4, indigo = 5, violet = 6, grey = -1
+        }
+
+        public Direction NextDirection;
+        public RecordColor color;
+
+        public Record(int x, int y, RecordColor c)
+        {
+            this.Position.X = x;
+            this.Position.Y = y;
+            this.color = c;
+        }
+        public override void Update()
+        {
+>>>>>>> 09131940bd42d5ab61db448a27b8b8261cb54a40
         }
     }
 }
