@@ -15,13 +15,20 @@ namespace RecordRobot.MovingObjects
         public Direction NextDirection;
 
         public int Score;
-
         public int Lives;
+
+        /// <summary>
+        /// Creates a new member of the Robot class
+        /// </summary>
+        /// <param name="x">The x position of the robot</param>
+        /// <param name="y">The y position of the robot</param>
         public Robot(int x, int y)
         {
-            this.Position.X = x;
-            this.Position.Y = y;
+            base.Position.X = x;
+            base.Position.Y = y;
+            this.Texture = Game1.Robot;
         }
+
         public override void Update()
         {
             Direction d = Controls.GetDirection();
