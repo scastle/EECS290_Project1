@@ -26,6 +26,8 @@ namespace RecordRobot.MovingObjects
             if ((int)NextDirection + (int)Direction == 0)
             {
                 Direction = NextDirection;
+
+                // Change which direction robot is facing
                 if (Direction == MovingObjects.Direction.Left)
                 {
                     this.Texture = Game1.RobotLeft;
@@ -42,6 +44,8 @@ namespace RecordRobot.MovingObjects
                 {
                     Direction = Direction.None;
                 }
+
+                // Change which direction robot is facing
                 if (Direction == MovingObjects.Direction.Up ||
                     Direction == MovingObjects.Direction.Down || 
                     Direction == MovingObjects.Direction.None)
