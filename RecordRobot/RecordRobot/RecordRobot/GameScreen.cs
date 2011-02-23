@@ -10,13 +10,10 @@ namespace RecordRobot
     {
         public static void Draw()
         {
+            Maze.LoadMaze("testmaze.txt");
             Maze.Draw();
             MovingObjectManager.Draw();
-        }
-
-        public static void Update()
-        {
-            MovingObjectManager.Update();
+            
         }
     }
 }

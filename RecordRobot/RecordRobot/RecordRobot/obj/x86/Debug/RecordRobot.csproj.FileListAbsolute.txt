@@ -18,3 +18,6 @@ C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\obj\x8
 C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\obj\x86\Debug\RecordRobot.exe
 C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\obj\x86\Debug\RecordRobot.pdb
 C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-normal.xnb
+C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\TextFiles\testmaze.txt
+C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\maze-path.xnb
+C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\maze-wall.xnb

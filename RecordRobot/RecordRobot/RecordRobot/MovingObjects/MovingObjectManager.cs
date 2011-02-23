@@ -14,7 +14,7 @@ namespace RecordRobot.MovingObjects
             if (Objects == null)
             {
                 Objects = new List<Mover>();
-                Objects.Add(new Robot());
+                Objects.Add(new Robot(40,40));
             }
             foreach (Mover m in Objects)
             {
@@ -27,7 +27,7 @@ namespace RecordRobot.MovingObjects
             if (Objects == null)
             {
                 Objects = new List<Mover>();
-                Objects.Add(new Robot());
+                Objects.Add(new Robot(40,40));
             }
             foreach (Mover m in Objects)
             {

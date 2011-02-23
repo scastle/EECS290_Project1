@@ -17,7 +17,11 @@ namespace RecordRobot.MovingObjects
         public int Score;
 
         public int Lives;
-
+        public Robot(int x, int y)
+        {
+            this.Position.X = x;
+            this.Position.Y = y;
+        }
         public override void Update()
         {
             Direction d = Controls.GetDirection();

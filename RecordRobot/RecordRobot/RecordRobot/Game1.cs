@@ -21,6 +21,8 @@ namespace RecordRobot
         public static Texture2D Robot;
         public static Texture2D RobotLeft;
         public static Texture2D RobotRight;
+        public static Texture2D mazepath;
+        public static Texture2D mazewall;
         
         public Game1()
         {
@@ -52,6 +54,8 @@ namespace RecordRobot
             Robot = this.Content.Load<Texture2D>("Images\\robot-normal");
             RobotLeft = this.Content.Load<Texture2D>("Images\\robot-left");
             RobotRight = this.Content.Load<Texture2D>("Images\\robot-right");
+            mazepath = this.Content.Load<Texture2D>("Images\\maze-path");
+            mazewall = this.Content.Load<Texture2D>("Images\\maze-wall");
 
             // TODO: use this.Content to load your game content here
         }
@@ -76,7 +80,7 @@ namespace RecordRobot
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            GameScreen.Update();
+            MovingObjects.MovingObjectManager.Update();
 
             // TODO: Add your update logic here
 
