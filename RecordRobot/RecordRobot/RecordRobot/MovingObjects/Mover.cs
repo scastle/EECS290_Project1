@@ -47,10 +47,10 @@ namespace RecordRobot.MovingObjects
             }
         }
 
-        public void Draw()
+        public virtual void Draw()
         {
             Game1.spriteBatch.Begin();
-            Game1.spriteBatch.Draw(Game1.Robot, new Vector2(Position.X, Position.Y), Color.White);
+            Game1.spriteBatch.Draw(Texture, new Vector2(Position.X - Texture.Width / 2, Position.Y - Texture.Height / 2), Color.White);
             Game1.spriteBatch.End();
         }
     }
