@@ -26,6 +26,7 @@ namespace RecordRobot.MovingObjects
         {
             base.Position.X = x;
             base.Position.Y = y;
+            this.Speed = 2;
             this.Texture = Game1.Robot;
         }
 

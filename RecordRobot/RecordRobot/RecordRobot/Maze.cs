@@ -82,8 +82,8 @@ namespace RecordRobot
             //{
             //    return false; //TEMPORARY FIX
             //}
-
-            if ((grid[r - 1, c] || grid[r + 1, c]) && (grid[r, c - 1] || grid[r, c + 1]))
+            if ((grid[r - 1, c] || grid[r + 1, c]) && (grid[r, c - 1] || grid[r, c + 1]) 
+                && ((p.X - 15) % 30 == 0 && (p.Y - 15) % 30 == 0))
             {
                 return true;
             }

@@ -7,6 +7,9 @@ namespace RecordRobot.MovingObjects
 {
     class MovingObjectManager
     {
+        /// <summary>
+        /// All moving objects to be updated and drawn are placed in this list.
+        /// </summary>
         public static List<Mover> Objects;
 
         public static void Draw()
@@ -14,7 +17,7 @@ namespace RecordRobot.MovingObjects
             if (Objects == null)
             {
                 Objects = new List<Mover>();
-                Objects.Add(new Robot(40,40));
+                Objects.Add(new Robot(45, 45));
             }
             foreach (Mover m in Objects)
             {
@@ -27,7 +30,7 @@ namespace RecordRobot.MovingObjects
             if (Objects == null)
             {
                 Objects = new List<Mover>();
-                Objects.Add(new Robot(40,40));
+                Objects.Add(new Robot(45,45));
             }
             foreach (Mover m in Objects)
             {

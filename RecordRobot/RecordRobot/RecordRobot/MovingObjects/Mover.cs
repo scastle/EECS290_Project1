@@ -17,7 +17,7 @@ namespace RecordRobot.MovingObjects
         /// <summary>
         /// The speed of the moving object.
         /// </summary>
-        public int Speed = 2;
+        public int Speed = 1;
 
         public Texture2D Texture;
 
