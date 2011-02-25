@@ -12,6 +12,18 @@ namespace RecordRobot
     {
         public static bool[,] grid; //true for paths, false for walls
 
+        public enum CollisionType
+        {
+            wall = -4, path = -3, robot = -2, greyrecord = -1, redrecord = 0, yellowrecord = 1, greenrecord = 2, bluerecord = 3, violetrecord = 4
+        }
+
+        public static int Lives;
+
+        public static CollisionType TargetColor;//used to determine which record is the target, target order is order of rainbow (rygbv)
+
+        public static CollisionType[,] CollisionGrid;
+
+        public static bool RobotFlashing;
 
         public static void LoadMaze(string file)
         {
@@ -24,6 +36,14 @@ namespace RecordRobot
                 {false, false, false, false, false, false, false, false, false, false, false, false, false, false, false}
             };
 
+            CollisionGrid = new CollisionType[,]
+            {
+                {CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall},
+                {CollisionType.wall, CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.wall, CollisionType.wall, CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.wall, CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.wall},
+                {CollisionType.wall, CollisionType.path , CollisionType.wall, CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.wall, CollisionType.wall, CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.wall, CollisionType.path , CollisionType.wall},
+                {CollisionType.wall, CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.wall, CollisionType.wall, CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.wall, CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.wall},
+                {CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall}
+            };
 
 
             //string filename = "RecordRobotContent/TextFiles/testmaze.txt";
@@ -127,6 +147,68 @@ namespace RecordRobot
                     break;
             }
             return false;
+        }
+
+
+        /// <summary>
+        /// Updates the robot's position in the collision grid
+        /// </summary>
+        /// <param name="p">the position of the robot</param>
+        public static void UpdatePosition(Point p, CollisionType col)
+        {
+            int r = p.Y / 30;
+            int c = p.X / 30;
+            CollisionGrid[r, c] = col;
+        }
+
+
+        /// <summary>
+        /// Checks whether there is a collision with the robot. this is used to tell if the robot collides with a non grey record
+        /// </summary>
+        /// <param name="p">The position of the record</param>
+        /// <returns>true if the robot is colliding with the record</returns>
+        public static bool CheckCollisionRobot(Point p)
+        {
+            int r = p.Y / 30;
+            int c = p.X / 30;
+            if ((int)CollisionGrid[r, c] == (int)CollisionType.robot)
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+
+        /// <summary>
+        /// Checks whether there is a collision with the robot. This is used to tell if the robot collides with a GREY record
+        /// </summary>
+        /// <param name="p">The position of the robot</param>
+        /// <returns>true if the robot is colliding with a grey record</returns>
+        public static void CheckCollisionGreyRecord(Point p)
+        {
+            int r = p.Y / 30;
+            int c = p.X / 30;
+
+            if ((int)CollisionGrid[r, c] == (int)CollisionType.robot)
+            {
+                //Lives--;
+            }
+        }
+
+        public static void NextTarget(RecordColor c)
+        {
+            TargetColor = TargetColor + 1;
+        }
+
+        public static void RobotDamaged(int c)
+        {
+            if ((c > 20 && c < 40) || (c > 60 && c < 80))
+                RobotFlashing = true;
+            else
+                RobotFlashing = false;
+
+            if (c >= 99)
+                RobotFlashing = false;
         }
 
         public static void Draw()

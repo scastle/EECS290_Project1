@@ -14,9 +14,17 @@ namespace RecordRobot.MovingObjects
          * for different AIs use an enum and logic here, or another class that will compute next direction on its own
          * 
          */
+        public bool CanLoseLives;
 
-<<<<<<< HEAD
-        
+        public bool Collision;
+
+        public bool Gathered;
+
+        public int CollisionCount;
+
+        public int DeathCount;
+
+        public bool CountDown;
 
         public Direction CurrentDirection;
 
@@ -24,19 +32,21 @@ namespace RecordRobot.MovingObjects
 
         public RecordColor color;
 
-        
-
         private bool CanGo;
 
         public Record(int x, int y, RecordColor c)
         {
-
+            CanLoseLives = true;
+            Collision = false;
+            CollisionCount = 0;
+            CountDown = false;
+            DeathCount = 0;
             Maze.LoadMaze("TextFiles\\testmaze.txt");
             Maze.Draw();
             this.Position.X = x;
             this.Position.Y = y;
             this.color = c;
-            this.Speed = 2;
+            this.Speed = 1;
             this.CurrentDirection = Direction.None;
             //CanGo = false;
             switch (c)
@@ -141,27 +151,112 @@ namespace RecordRobot.MovingObjects
                 CanGo = false;
             }
 
+            //COLLISION DETECTION
+
+            if ((int)this.color != (int)RecordColor.grey && Maze.CheckCollisionRobot(this.Position))
+            {
+                
+                
+                if ((int)Maze.TargetColor == (int)this.color)
+                {
+                    this.Texture = Game1.GreyRecord;
+                    CountDown = true;
+                    Maze.NextTarget(this.color);
+                    Collision = true;
+                    CanLoseLives = false;
+                    Gathered = true;
+                }
+                else if ((int)Maze.TargetColor != (int)this.color && CanLoseLives && Maze.CheckCollisionRobot(this.Position))
+                {
+                    Maze.Lives--;
+                    Collision = true;
+                    CanLoseLives = false;
+                }
+
+            }
+            else
+            {
+                if ((DeathCount > 100 && CanLoseLives && !Collision) && Maze.CheckCollisionRobot(this.Position))
+                {
+                    Maze.CheckCollisionGreyRecord(this.Position);
+                    Collision = true;
+                    CanLoseLives = false;
+                    Maze.Lives--;
+                }               
+                
+            }
+
+            if(Collision)
+            {
+                CollisionCount++;
+            }
+
+            if (CollisionCount > 100)
+            {
+                CollisionCount = 0;
+                Collision = false;
+                CanLoseLives = true;
+                Gathered = false;
+            }
+
+            //if (CollisionCount <= 100 && Collision && (int)this.color != (int)Maze.TargetColor - 1)
+            //{
+            //    Maze.RobotDamaged(CollisionCount);
+            //}
+
+            if (Maze.Lives <= 0)
+                MovingObjectManager.GameOver = true;
+
+            if (CountDown)
+                DeathCount++;
+
+            if (DeathCount < 100 && CountDown)
+            {
+                if ((DeathCount > 20 && DeathCount < 40) || (DeathCount > 60 && DeathCount < 80))
+                    switch (this.color)
+                    {
+                        case RecordColor.red:
+                            this.Texture = Game1.RedRecord;
+                            break;
+                        case RecordColor.yellow:
+                            this.Texture = Game1.YellowRecord;
+                            break;
+                        case RecordColor.green:
+                            this.Texture = Game1.GreenRecord;
+                            break;
+                        case RecordColor.blue:
+                            this.Texture = Game1.BlueRecord;
+                            break;
+                        case RecordColor.violet:
+                            this.Texture = Game1.VioletRecord;
+                            break;
+                    }
+                else
+                    this.Texture = Game1.GreyRecord;
+                
+            }
+
+            if(DeathCount == 100)
+            {
+                this.Texture = Game1.GreyRecord;
+                this.color = RecordColor.grey;
+                CanLoseLives = true;
+                Gathered = false;
+            }
+
+            //if (Collision && !Gathered)
+            //{
+            //    Maze.RobotDamaged(CollisionCount);
+            //}
+            //else
+            //    Maze.RobotFlashing = false;
+
+            if ((int)Maze.TargetColor == 3)
+                MovingObjectManager.GameWin = true;
+
 
             base.UpdatePosition();
                         
-=======
-        public enum RecordColor
-        {
-            red = 0, orange = 1, yellow = 2, green = 3, blue = 4, indigo = 5, violet = 6, grey = -1
-        }
-
-        public Direction NextDirection;
-        public RecordColor color;
-
-        public Record(int x, int y, RecordColor c)
-        {
-            this.Position.X = x;
-            this.Position.Y = y;
-            this.color = c;
-        }
-        public override void Update()
-        {
->>>>>>> 09131940bd42d5ab61db448a27b8b8261cb54a40
         }
     }
 }

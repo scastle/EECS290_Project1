@@ -12,22 +12,32 @@ namespace RecordRobot.MovingObjects
         /// </summary>
         public static List<Mover> Objects;
 
+        public static bool GameOver;
+
+        public static bool GameWin;
+
+        public static Robot RobotPlayer { get; private set; }
+
         public static void Draw()
         {
             if (Objects == null)
             {
                 Objects = new List<Mover>();
-                Objects.Add(new Robot(45, 45));
+                RobotPlayer = new Robot(45, 45);
+                Objects.Add(RobotPlayer);
                 Objects.Add(new Record(345, 45, RecordColor.red));
-                Objects.Add(new Record(375, 45, RecordColor.green));
-                Objects.Add(new Record(405, 45, RecordColor.blue));
-                Objects.Add(new Record(345, 75, RecordColor.violet));
                 Objects.Add(new Record(405, 75, RecordColor.yellow));
+                Objects.Add(new Record(375, 45, RecordColor.green));
+                //Objects.Add(new Record(405, 45, RecordColor.blue));
+                //Objects.Add(new Record(345, 75, RecordColor.violet));
             }
-            foreach (Mover m in Objects)
-            {
-                m.Draw();
-            }
+            if(!GameOver && !GameWin)
+                foreach (Mover m in Objects)
+                {
+                    m.Draw();
+                }
+            else
+                RobotPlayer.Draw();
         }
 
         public static void Update()
@@ -35,17 +45,23 @@ namespace RecordRobot.MovingObjects
             if (Objects == null)
             {
                 Objects = new List<Mover>();
-                Objects.Add(new Robot(45,45));
+                RobotPlayer = new Robot(45, 45);
+                Objects.Add(RobotPlayer);
                 Objects.Add(new Record(345,45,RecordColor.red));
-                Objects.Add(new Record(375, 45, RecordColor.green));
-                Objects.Add(new Record(405, 45, RecordColor.blue));
-                Objects.Add(new Record(345, 75, RecordColor.violet));
                 Objects.Add(new Record(405, 75, RecordColor.yellow));
+                Objects.Add(new Record(375, 45, RecordColor.green));
+                //Objects.Add(new Record(405, 45, RecordColor.blue));
+                //Objects.Add(new Record(345, 75, RecordColor.violet));
+                
             }
-            foreach (Mover m in Objects)
-            {
-                m.Update();
-            }
+            if (!GameOver && !GameWin)
+                foreach (Mover m in Objects)
+                {
+                    m.Update();
+                }
+            else
+                RobotPlayer.Update();
         }
+
     }
 }

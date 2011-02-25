@@ -21,6 +21,7 @@ namespace RecordRobot
         public static Texture2D Robot;
         public static Texture2D RobotLeft;
         public static Texture2D RobotRight;
+        public static Texture2D RobotDead;
         public static Texture2D mazepath;
         public static Texture2D mazewall;
         public static Texture2D RedRecord;
@@ -29,6 +30,7 @@ namespace RecordRobot
         public static Texture2D GreenRecord;
         public static Texture2D VioletRecord;
         public static Texture2D YellowRecord;
+        public static Texture2D RobotWin;
         
         public Game1()
         {
@@ -60,6 +62,7 @@ namespace RecordRobot
             Robot = this.Content.Load<Texture2D>("Images\\robot-normal");
             RobotLeft = this.Content.Load<Texture2D>("Images\\robot-left");
             RobotRight = this.Content.Load<Texture2D>("Images\\robot-right");
+            RobotDead = this.Content.Load<Texture2D>("Images\\robot-dead");
             mazepath = this.Content.Load<Texture2D>("Images\\maze-path");
             mazewall = this.Content.Load<Texture2D>("Images\\maze-wall");
             RedRecord = this.Content.Load<Texture2D>("Images\\record-red");
@@ -68,6 +71,7 @@ namespace RecordRobot
             GreenRecord = this.Content.Load<Texture2D>("Images\\record-green");
             VioletRecord = this.Content.Load<Texture2D>("Images\\record-violet");
             YellowRecord = this.Content.Load<Texture2D>("Images\\record-yellow");
+            RobotWin = this.Content.Load<Texture2D>("Images\\robot-win");
 
             // TODO: use this.Content to load your game content here
         }

@@ -14,6 +14,9 @@ namespace RecordRobot.MovingObjects
         /// </summary>
         public Direction NextDirection;
 
+        /// <summary>
+        /// The current direction of the robot
+        /// </summary>
         public Direction CurrentDirection;
 
         //public int Score;
@@ -30,10 +33,14 @@ namespace RecordRobot.MovingObjects
             base.Position.Y = y;
             this.Speed = 2;
             this.Texture = Game1.Robot;
+            Maze.TargetColor = Maze.CollisionType.redrecord;
+
+            Maze.Lives = 3;
         }
 
         public override void Update()
         {
+            Maze.UpdatePosition(this.Position, Maze.CollisionType.path);
             Direction d = Controls.GetDirection();
             if (d != MovingObjects.Direction.None)
                 NextDirection = Controls.GetDirection();
@@ -51,6 +58,7 @@ namespace RecordRobot.MovingObjects
                     this.Texture = Game1.RobotRight;
                 }
             }
+
             else if (Maze.IsIntersection(this.Position))
             {
                 this.Direction = NextDirection;
@@ -76,10 +84,26 @@ namespace RecordRobot.MovingObjects
                 }
             }
 
+
             this.CurrentDirection = this.Direction;
             // Check for collisions with other moving objects? MOVED TO RECORD BECAUSE IT WILL BE EASIER
 
+            //update robot position in collision grid
+            Maze.UpdatePosition(this.Position, Maze.CollisionType.robot);
+            if (MovingObjectManager.GameOver)
+                this.Texture = Game1.RobotDead;
+            if (MovingObjectManager.GameWin)
+                this.Texture = Game1.RobotWin;
+
+            this.BufferTexture = this.Texture;
+
+            if (Maze.RobotFlashing)
+                this.Texture = Game1.RobotDead;
+            else
+                this.Texture = this.BufferTexture;
+
             base.UpdatePosition();
         }
+
     }
 }

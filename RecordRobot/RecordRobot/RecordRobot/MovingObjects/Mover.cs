@@ -14,7 +14,7 @@ namespace RecordRobot.MovingObjects
 
     public enum RecordColor
     {
-        red = 0, orange = 1, yellow = 2, green = 3, blue = 4, indigo = 5, violet = 6, grey = -1
+        red = 0, yellow = 1, green = 2, blue = 3, violet = 4, grey = -1
     }
 
     abstract class Mover
@@ -23,6 +23,13 @@ namespace RecordRobot.MovingObjects
         /// The speed of the moving object.
         /// </summary>
         public int Speed;
+
+        ///// <summary>
+        ///// The speed of the moving object.
+        ///// </summary>
+        //public static Point RobotPosition;
+
+        public Texture2D BufferTexture;
 
         public Texture2D Texture;
 
