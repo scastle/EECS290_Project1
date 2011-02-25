@@ -121,7 +121,7 @@
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
-      <TargetProfile>HiDef</TargetProfile>
+      <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
       <RootDirectory>C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobotContent\</RootDirectory>

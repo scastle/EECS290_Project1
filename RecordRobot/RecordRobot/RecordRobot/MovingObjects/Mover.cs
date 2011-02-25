@@ -38,6 +38,8 @@ namespace RecordRobot.MovingObjects
         /// </summary>
         public Point Position;
 
+        private Vector2 drawPosition = new Vector2();
+
         /// <summary>
         /// The current direction the robot is moving.
         /// </summary>
@@ -61,8 +63,10 @@ namespace RecordRobot.MovingObjects
 
         public virtual void Draw()
         {
+            drawPosition.X = Position.X - Texture.Width / 2;
+            drawPosition.Y = Position.Y - Texture.Height / 2;
             Game1.spriteBatch.Begin();
-            Game1.spriteBatch.Draw(Texture, new Vector2(Position.X - Texture.Width / 2, Position.Y - Texture.Height / 2), Color.White);
+            Game1.spriteBatch.Draw(Texture, drawPosition, Color.White);
             Game1.spriteBatch.End();
         }
     }
