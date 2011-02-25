@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework;
 
 namespace RecordRobot.MovingObjects
 {
@@ -22,12 +23,12 @@ namespace RecordRobot.MovingObjects
         {
             if (Objects == null)
             {
-                Objects = new List<Mover>();
-                RobotPlayer = new Robot(45, 45);
-                Objects.Add(RobotPlayer);
-                Objects.Add(new Record(345, 45, RecordColor.red));
-                Objects.Add(new Record(405, 75, RecordColor.yellow));
-                Objects.Add(new Record(375, 45, RecordColor.green));
+                //Objects = new List<Mover>();
+                //RobotPlayer = new Robot(45, 45);
+                //Objects.Add(RobotPlayer);
+                //Objects.Add(new Record(345, 45, RecordColor.red));
+                //Objects.Add(new Record(405, 45, RecordColor.yellow));
+                //Objects.Add(new Record(375, 45, RecordColor.green));
                 //Objects.Add(new Record(405, 45, RecordColor.blue));
                 //Objects.Add(new Record(345, 75, RecordColor.violet));
             }
@@ -46,10 +47,16 @@ namespace RecordRobot.MovingObjects
             {
                 Objects = new List<Mover>();
                 RobotPlayer = new Robot(45, 45);
+
+
                 Objects.Add(RobotPlayer);
-                Objects.Add(new Record(345,45,RecordColor.red));
-                Objects.Add(new Record(405, 75, RecordColor.yellow));
-                Objects.Add(new Record(375, 45, RecordColor.green));
+                Point p;
+                p = Maze.getPointToPlace();
+                Objects.Add(new Record(p.X, p.Y, RecordColor.red));
+                p = Maze.getPointToPlace();
+                Objects.Add(new Record(p.X, p.Y, RecordColor.yellow));
+                p = Maze.getPointToPlace();
+                Objects.Add(new Record(p.X, p.Y, RecordColor.green));
                 //Objects.Add(new Record(405, 45, RecordColor.blue));
                 //Objects.Add(new Record(345, 75, RecordColor.violet));
                 

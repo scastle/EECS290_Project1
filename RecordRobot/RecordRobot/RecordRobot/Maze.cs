@@ -194,19 +194,19 @@ namespace RecordRobot
             switch (d)
             {
                 case Direction.Up:
-                    if (grid[level, r - 1, c] || ysquare > 15)
+                    if (grid[level, r - 1, c] )//|| ysquare > 15)
                         return true;
                     break;
                 case Direction.Down:
-                    if (grid[level, r + 1, c] || ysquare < 15)
+                    if (grid[level, r + 1, c] )//|| ysquare < 15)
                         return true;
                     break;
                 case Direction.Left:
-                    if (grid[level, r, c - 1] || xsquare > 15)
+                    if (grid[level, r, c - 1] )//|| xsquare > 15)
                         return true;
                     break;
                 case Direction.Right:
-                    if (grid[level, r, c + 1] || xsquare < 15)
+                    if (grid[level, r, c + 1] )//|| xsquare < 15)
                         return true;
                     break;
             }
@@ -257,6 +257,32 @@ namespace RecordRobot
             {
                 //Lives--;
             }
+        }
+
+        /// <summary>
+        /// Finds a location in the maze where it is safe to place one of the objects, i.e. not a wall and
+        /// no records right next to the robot
+        /// </summary>
+        /// 
+        /// <returns>Point where an object should be added</returns>
+        public static Point getPointToPlace()
+        {
+            
+            do
+            {
+                int r = Game1.rand.Next(grid.GetUpperBound(1) - 1);
+                int c = Game1.rand.Next(grid.GetUpperBound(2) - 1);
+
+                if (grid[level, r, c])
+                {
+                    return (new Point(c * 30 + 15, r * 30 + 15));
+                }
+                else
+                {
+                }
+
+            } while (true) ;
+
         }
 
         public static void NextTarget(RecordColor c)

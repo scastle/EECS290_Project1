@@ -107,12 +107,13 @@ namespace RecordRobot.MovingObjects
                     //else
                     //CanGo = true;
                 }
+            //this.Direction = Direction.None;
 
         }
 
         public override void Update()
         {
-            Random rand = new Random();     // I am not putting in an ai that knows where the robot is yet, so this is used in helping choose the direction
+            //Random rand = new Random();     // I am not putting in an ai that knows where the robot is yet, so this is used in helping choose the direction
             int r;
             if (Maze.grid == null)
                 Console.WriteLine("THE GRID IS NOT INSTANTIATED");
@@ -123,7 +124,7 @@ namespace RecordRobot.MovingObjects
                 do   //This do while loop will choose a random direction to go at an intersection (until we want to implement an ai that will chase or flee from the robot which is not a priority for the demo)
                 {
                     
-                    r = rand.Next(4);
+                    r = Game1.rand.Next(4);
                     switch (r)
                     {
                         case 0:

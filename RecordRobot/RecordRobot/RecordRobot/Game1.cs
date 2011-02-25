@@ -33,6 +33,7 @@ namespace RecordRobot
         public static Texture2D YellowRecord;
         public static Texture2D RobotWin;
         public static TextReader tr;
+        public static Random rand;
         //public static  Maze m;
         
         public Game1()
@@ -41,6 +42,7 @@ namespace RecordRobot
             graphics.PreferredBackBufferWidth = 600;
             graphics.PreferredBackBufferHeight = 480;
             Content.RootDirectory = "Content";
+            rand = new Random();
         }
 
         /// <summary>
@@ -78,15 +80,12 @@ namespace RecordRobot
             YellowRecord = this.Content.Load<Texture2D>("Images\\record-yellow");
             RobotWin = this.Content.Load<Texture2D>("Images\\robot-win");
 
-            //load the maze files:
-            //Maze.LoadMaze(Content.RootDirectory + "\\TextFiles\\testmaze.txt");
-            //tr = new StreamReader(Content.RootDirectory + "\\TextFiles\\testmaze.txt");
-
+            //load the maze file and instantiate the grid
             TextReader read = new StreamReader(Content.RootDirectory + "\\TextFiles\\testmaze.txt");
             string input = null;
             int r = 0;
             int l = 0;
-            int [,,] map = new int [16,16,16];
+            int [,,] map = new int [5,17,21];
             while ((input = read.ReadLine()) != null)
             {
                 if (input.Substring(0, 1).Equals("=")) //start a new level
@@ -114,7 +113,7 @@ namespace RecordRobot
             }
             Maze.LoadMaze(map);
 
-
+            
             // TODO: use this.Content to load your game content here
         }
 
