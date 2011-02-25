@@ -57,8 +57,10 @@ namespace RecordRobot.MovingObjects
                 Objects.Add(new Record(p.X, p.Y, RecordColor.yellow));
                 p = Maze.getPointToPlace();
                 Objects.Add(new Record(p.X, p.Y, RecordColor.green));
-                //Objects.Add(new Record(405, 45, RecordColor.blue));
-                //Objects.Add(new Record(345, 75, RecordColor.violet));
+                p = Maze.getPointToPlace();
+                Objects.Add(new Record(p.X, p.Y, RecordColor.blue));
+                p = Maze.getPointToPlace();
+                Objects.Add(new Record(p.X, p.Y, RecordColor.violet));
                 
             }
             if (!GameOver && !GameWin)

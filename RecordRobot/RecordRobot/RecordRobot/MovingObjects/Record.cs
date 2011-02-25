@@ -252,7 +252,8 @@ namespace RecordRobot.MovingObjects
             //else
             //    Maze.RobotFlashing = false;
 
-            if ((int)Maze.TargetColor == 3)
+            //if we add objects other than records and the robot, we'll also need to subtract those
+            if ((int)Maze.TargetColor == MovingObjectManager.Objects.Count() - 1)
                 MovingObjectManager.GameWin = true;
 
 
