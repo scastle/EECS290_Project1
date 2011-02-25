@@ -88,8 +88,7 @@ namespace RecordRobot.MovingObjects
             this.CurrentDirection = this.Direction;
             // Check for collisions with other moving objects? MOVED TO RECORD BECAUSE IT WILL BE EASIER
 
-            //update robot position in collision grid
-            Maze.UpdatePosition(this.Position, Maze.CollisionType.robot);
+            
             if (MovingObjectManager.GameOver)
                 this.Texture = Game1.RobotDead;
             if (MovingObjectManager.GameWin)
@@ -103,6 +102,8 @@ namespace RecordRobot.MovingObjects
                 this.Texture = this.BufferTexture;
 
             base.UpdatePosition();
+            //update robot position in collision grid
+            Maze.UpdatePosition(this.Position, Maze.CollisionType.robot);
         }
 
     }

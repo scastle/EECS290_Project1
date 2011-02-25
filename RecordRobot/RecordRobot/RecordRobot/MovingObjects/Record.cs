@@ -41,8 +41,8 @@ namespace RecordRobot.MovingObjects
             CollisionCount = 0;
             CountDown = false;
             DeathCount = 0;
-            Maze.LoadMaze("TextFiles\\testmaze.txt");
-            Maze.Draw();
+            //Maze.LoadMaze("TextFiles\\testmaze.txt");
+            //Maze.Draw();
             this.Position.X = x;
             this.Position.Y = y;
             this.color = c;
@@ -95,8 +95,8 @@ namespace RecordRobot.MovingObjects
             if (Maze.grid == null)
                 Console.WriteLine("THE GRID IS NOT INSTANTIATED");
 
-            
-                while (!Maze.CanGo(this.Position, this.Direction))   //This will choose a random direction if the initial random direction pointed the record towards a wall
+
+            while (!Maze.CanGo(this.Position, this.Direction))   //This will choose a random direction if the initial random direction pointed the record towards a wall
                 {
                     if ((int)this.Direction == 2)
                     {
@@ -155,8 +155,8 @@ namespace RecordRobot.MovingObjects
 
             if ((int)this.color != (int)RecordColor.grey && Maze.CheckCollisionRobot(this.Position))
             {
-                
-                
+
+
                 if ((int)Maze.TargetColor == (int)this.color)
                 {
                     this.Texture = Game1.GreyRecord;

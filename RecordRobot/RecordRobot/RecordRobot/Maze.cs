@@ -8,9 +8,9 @@ using RecordRobot.MovingObjects;
 
 namespace RecordRobot
 {
-    class Maze
+    public class Maze
     {
-        public static bool[,] grid; //true for paths, false for walls
+        public static bool[,,] grid; //true for paths, false for walls
 
         public enum CollisionType
         {
@@ -19,32 +19,96 @@ namespace RecordRobot
 
         public static int Lives;
 
+        public static int level;
+
         public static CollisionType TargetColor;//used to determine which record is the target, target order is order of rainbow (rygbv)
 
-        public static CollisionType[,] CollisionGrid;
+        public static CollisionType[,,] CollisionGrid;
 
         public static bool RobotFlashing;
 
-        public static void LoadMaze(string file)
+        public static void LoadMaze(int[,,] map)
         {
-            grid = new bool[,]
+            level = 0;
+            int levels = map.GetUpperBound(0);
+            int rows = map.GetUpperBound(1);
+            int columns = map.GetUpperBound(2);
+            grid = new bool[levels,rows,columns];
+            CollisionGrid = new CollisionType[levels,rows, columns];
+            for (int l = 0; l < levels; l++)
             {
+                for (int r = 0; r < rows; r++)
+                {
+                    for (int c = 0; c < columns; c++)
+                    {
+                        if (map[l, r, c] == 0)
+                        {
+                            grid[l, r, c] = false;
+                            CollisionGrid[l, r, c] = CollisionType.wall;
+                        }
+                        else
+                        {
+                            grid[l, r, c] = true;
+                            CollisionGrid[l, r, c] = CollisionType.path;
+                        }
+                    }
+                }
+            }
+        }
+
+        /*public static void LoadMaze(string file)
+        {
+            grid = new bool[,,]
+            {
+                {
                 {false, false, false, false, false, false, false, false, false, false, false, false, false, false, false},
                 {false, true , true , true , false, false, true , true , true , true , false, true , true , true , false},
                 {false, true , false, true , true , true , true , false, false, true , true , true , false, true , false},
                 {false, true , true , true , false, false, true , true , true , true , false, true , true , true , false},
                 {false, false, false, false, false, false, false, false, false, false, false, false, false, false, false}
+                }
             };
 
-            CollisionGrid = new CollisionType[,]
+            CollisionGrid = new CollisionType[,,]
             {
+                {
                 {CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall},
                 {CollisionType.wall, CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.wall, CollisionType.wall, CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.wall, CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.wall},
                 {CollisionType.wall, CollisionType.path , CollisionType.wall, CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.wall, CollisionType.wall, CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.wall, CollisionType.path , CollisionType.wall},
                 {CollisionType.wall, CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.wall, CollisionType.wall, CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.wall, CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.wall},
                 {CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall}
+                }
             };
 
+            /*grid = new bool[15, 15];
+            try
+            {
+
+                TextReader read = new StreamReader(file);
+                string input = null;
+                int r = 0;
+                while ((input = read.ReadLine()) != null)
+                {
+                    for (int c = 0; c < input.Length; c++)
+                    {
+                        if (input.Substring(c, 1).Equals("1"))
+                        {
+                            grid[r, c] = true;
+                            Console.Write("1");
+                        }
+                        else
+                        {
+                            grid[r, c] = false;
+                            Console.Write("0");
+
+                        }
+                    }
+                    r++;
+                    Console.Write("/n");
+                }
+            }
+            catch { }
+            */
 
             //string filename = "RecordRobotContent/TextFiles/testmaze.txt";
             //string path = Path.Combine(StorageContainer.TitleLocation, filename);
@@ -83,7 +147,7 @@ namespace RecordRobot
             re.Close();
             */
 
-        }
+        //}
 
 
         /// <summary>
@@ -102,7 +166,7 @@ namespace RecordRobot
             //{
             //    return false; //TEMPORARY FIX
             //}
-            if ((grid[r - 1, c] || grid[r + 1, c]) && (grid[r, c - 1] || grid[r, c + 1]) 
+            if ((grid[level, r - 1, c] || grid[level, r + 1, c]) && (grid[level, r, c - 1] || grid[level, r, c + 1]) 
                 && ((p.X - 15) % 30 == 0 && (p.Y - 15) % 30 == 0))
             {
                 return true;
@@ -130,19 +194,19 @@ namespace RecordRobot
             switch (d)
             {
                 case Direction.Up:
-                    if (grid[r - 1, c] || ysquare > 15)
+                    if (grid[level, r - 1, c] || ysquare > 15)
                         return true;
                     break;
                 case Direction.Down:
-                    if (grid[r + 1, c] || ysquare < 15)
+                    if (grid[level, r + 1, c] || ysquare < 15)
                         return true;
                     break;
                 case Direction.Left:
-                    if (grid[r, c - 1] || xsquare > 15)
+                    if (grid[level, r, c - 1] || xsquare > 15)
                         return true;
                     break;
                 case Direction.Right:
-                    if (grid[r, c + 1] || xsquare < 15)
+                    if (grid[level, r, c + 1] || xsquare < 15)
                         return true;
                     break;
             }
@@ -158,7 +222,7 @@ namespace RecordRobot
         {
             int r = p.Y / 30;
             int c = p.X / 30;
-            CollisionGrid[r, c] = col;
+            CollisionGrid[level, r, c] = col;
         }
 
 
@@ -171,7 +235,7 @@ namespace RecordRobot
         {
             int r = p.Y / 30;
             int c = p.X / 30;
-            if ((int)CollisionGrid[r, c] == (int)CollisionType.robot)
+            if ((int)CollisionGrid[level, r, c] == (int)CollisionType.robot)
             {
                 return true;
             }
@@ -189,7 +253,7 @@ namespace RecordRobot
             int r = p.Y / 30;
             int c = p.X / 30;
 
-            if ((int)CollisionGrid[r, c] == (int)CollisionType.robot)
+            if ((int)CollisionGrid[level, r, c] == (int)CollisionType.robot)
             {
                 //Lives--;
             }
@@ -214,11 +278,11 @@ namespace RecordRobot
         public static void Draw()
         {
             Game1.spriteBatch.Begin();
-            for (int r = 0; r <= grid.GetUpperBound(0); r++)
+            for (int r = 0; r <= grid.GetUpperBound(1); r++)
             {
-                for (int c = 0; c <= grid.GetUpperBound(1); c++)
+                for (int c = 0; c <= grid.GetUpperBound(2); c++)
                 {
-                    if (grid[r, c])
+                    if (grid[level, r, c])
                         Game1.spriteBatch.Draw(Game1.mazepath, new Vector2(c * 30, r * 30), Color.Black);
                     else
                         Game1.spriteBatch.Draw(Game1.mazewall, new Vector2(c * 30, r * 30), Color.Blue);

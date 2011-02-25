@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -31,6 +32,8 @@ namespace RecordRobot
         public static Texture2D VioletRecord;
         public static Texture2D YellowRecord;
         public static Texture2D RobotWin;
+        public static TextReader tr;
+        //public static  Maze m;
         
         public Game1()
         {
@@ -74,6 +77,43 @@ namespace RecordRobot
             VioletRecord = this.Content.Load<Texture2D>("Images\\record-violet");
             YellowRecord = this.Content.Load<Texture2D>("Images\\record-yellow");
             RobotWin = this.Content.Load<Texture2D>("Images\\robot-win");
+
+            //load the maze files:
+            //Maze.LoadMaze(Content.RootDirectory + "\\TextFiles\\testmaze.txt");
+            //tr = new StreamReader(Content.RootDirectory + "\\TextFiles\\testmaze.txt");
+
+            TextReader read = new StreamReader(Content.RootDirectory + "\\TextFiles\\testmaze.txt");
+            string input = null;
+            int r = 0;
+            int l = 0;
+            int [,,] map = new int [16,16,16];
+            while ((input = read.ReadLine()) != null)
+            {
+                if (input.Substring(0, 1).Equals("=")) //start a new level
+                {
+                    l++;
+                    r = 0;
+                }
+                else
+                {
+                    for (int c = 0; c < input.Length; c++)
+                    {
+                        if (input.Substring(c, 1).Equals("1"))
+                        {
+                            map[l, r, c] = 1;
+                        }
+                        else
+                        {
+                            map[l, r, c] = 0;
+                        }
+                    }
+                    r++;
+                }
+                
+                
+            }
+            Maze.LoadMaze(map);
+
 
             // TODO: use this.Content to load your game content here
         }
