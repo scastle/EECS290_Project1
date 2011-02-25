@@ -35,6 +35,8 @@ namespace RecordRobot
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
+            graphics.PreferredBackBufferWidth = 600;
+            graphics.PreferredBackBufferHeight = 480;
             Content.RootDirectory = "Content";
         }
 

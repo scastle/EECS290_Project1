@@ -46,7 +46,7 @@ namespace RecordRobot.MovingObjects
             this.Position.X = x;
             this.Position.Y = y;
             this.color = c;
-            this.Speed = 1;
+            this.Speed = 2;
             this.CurrentDirection = Direction.None;
             //CanGo = false;
             switch (c)
