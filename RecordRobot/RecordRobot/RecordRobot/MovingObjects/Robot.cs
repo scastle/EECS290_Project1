@@ -19,8 +19,11 @@ namespace RecordRobot.MovingObjects
         /// </summary>
         public Direction CurrentDirection;
 
+        private DateTime invincibleUntil;
+        public bool IsInvincible = false;
+
         //public int Score;
-        //public int Lives;
+        public int Lives;
 
         /// <summary>
         /// Creates a new member of the Robot class
@@ -32,15 +35,35 @@ namespace RecordRobot.MovingObjects
             base.Position.X = x;
             base.Position.Y = y;
             this.Speed = Settings.RobotSpeed;
+            this.Lives = Settings.Lives;
             this.Texture = Game1.Robot;
-            Maze.TargetColor = Maze.CollisionType.redrecord;
 
             Maze.Lives = 3;
         }
 
+        public void LoseLife()
+        {
+            Lives--;
+            if (Lives <= 0)
+            {
+                MovingObjectManager.GameOver = true;
+            }
+        }
+
+        public void SetInvincible(TimeSpan time)
+        {
+            invincibleUntil = DateTime.Now + time;
+            IsInvincible = true;
+            Texture = Game1.RobotInvincible;
+        }
+
         public override void Update()
         {
-            Maze.UpdatePosition(this.Position, Maze.CollisionType.path);
+            if (IsInvincible && DateTime.Now > invincibleUntil)
+            {
+                Texture = Game1.Robot;
+                IsInvincible = false;
+            }
             Direction d = Controls.GetDirection();
             if (d != MovingObjects.Direction.None)
                 NextDirection = Controls.GetDirection();
@@ -49,11 +72,11 @@ namespace RecordRobot.MovingObjects
                 this.Direction = NextDirection;
 
                 // Change which direction robot is facing
-                if (this.Direction == MovingObjects.Direction.Left)
+                if (this.Direction == MovingObjects.Direction.Left && !IsInvincible)
                 {
                     this.Texture = Game1.RobotLeft;
                 }
-                else if (this.Direction == MovingObjects.Direction.Right)
+                else if (this.Direction == MovingObjects.Direction.Right && !IsInvincible)
                 {
                     this.Texture = Game1.RobotRight;
                 }
@@ -70,15 +93,16 @@ namespace RecordRobot.MovingObjects
                 // Change which direction robot is facing
                 if (this.Direction == MovingObjects.Direction.Up ||
                     this.Direction == MovingObjects.Direction.Down ||
-                    this.Direction == MovingObjects.Direction.None)
+                    this.Direction == MovingObjects.Direction.None &&
+                    !IsInvincible)
                 {
                     this.Texture = Game1.Robot;
                 }
-                else if (this.Direction == MovingObjects.Direction.Left)
+                else if (this.Direction == MovingObjects.Direction.Left && !IsInvincible)
                 {
                     this.Texture = Game1.RobotLeft;
                 }
-                else if (this.Direction == MovingObjects.Direction.Right)
+                else if (this.Direction == MovingObjects.Direction.Right && !IsInvincible)
                 {
                     this.Texture = Game1.RobotRight;
                 }
@@ -102,8 +126,6 @@ namespace RecordRobot.MovingObjects
                 this.Texture = this.BufferTexture;
 
             base.UpdatePosition();
-            //update robot position in collision grid
-            Maze.UpdatePosition(this.Position, Maze.CollisionType.robot);
         }
 
     }

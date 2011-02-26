@@ -46,7 +46,7 @@ namespace RecordRobot.MovingObjects
             this.Position.X = x;
             this.Position.Y = y;
             this.color = c;
-            this.Speed = 2;
+            this.Speed = 1;
             this.CurrentDirection = Direction.None;
             //CanGo = false;
             switch (c)
@@ -60,6 +60,9 @@ namespace RecordRobot.MovingObjects
             {
                 case RecordColor.red:
                     this.Texture = Game1.RedRecord;
+                    break;
+                case RecordColor.orange:
+                    this.Texture = Game1.OrangeRecord;
                     break;
                 case RecordColor.yellow:
                     this.Texture = Game1.YellowRecord;
@@ -152,62 +155,6 @@ namespace RecordRobot.MovingObjects
                 CanGo = false;
             }
 
-            //COLLISION DETECTION
-
-            if ((int)this.color != (int)RecordColor.grey && Maze.CheckCollisionRobot(this.Position))
-            {
-
-
-                if ((int)Maze.TargetColor == (int)this.color)
-                {
-                    this.Texture = Game1.GreyRecord;
-                    CountDown = true;
-                    Maze.NextTarget(this.color);
-                    Collision = true;
-                    CanLoseLives = false;
-                    Gathered = true;
-                }
-                else if ((int)Maze.TargetColor != (int)this.color && CanLoseLives && Maze.CheckCollisionRobot(this.Position))
-                {
-                    Maze.Lives--;
-                    Collision = true;
-                    CanLoseLives = false;
-                }
-
-            }
-            else
-            {
-                if ((DeathCount > 100 && CanLoseLives && !Collision) && Maze.CheckCollisionRobot(this.Position))
-                {
-                    Maze.CheckCollisionGreyRecord(this.Position);
-                    Collision = true;
-                    CanLoseLives = false;
-                    Maze.Lives--;
-                }               
-                
-            }
-
-            if(Collision)
-            {
-                CollisionCount++;
-            }
-
-            if (CollisionCount > 100)
-            {
-                CollisionCount = 0;
-                Collision = false;
-                CanLoseLives = true;
-                Gathered = false;
-            }
-
-            //if (CollisionCount <= 100 && Collision && (int)this.color != (int)Maze.TargetColor - 1)
-            //{
-            //    Maze.RobotDamaged(CollisionCount);
-            //}
-
-            if (Maze.Lives <= 0)
-                MovingObjectManager.GameOver = true;
-
             if (CountDown)
                 DeathCount++;
 
@@ -221,6 +168,9 @@ namespace RecordRobot.MovingObjects
                             break;
                         case RecordColor.yellow:
                             this.Texture = Game1.YellowRecord;
+                            break;
+                        case RecordColor.orange:
+                            this.Texture = Game1.OrangeRecord;
                             break;
                         case RecordColor.green:
                             this.Texture = Game1.GreenRecord;
@@ -253,12 +203,16 @@ namespace RecordRobot.MovingObjects
             //    Maze.RobotFlashing = false;
 
             //if we add objects other than records and the robot, we'll also need to subtract those
-            if ((int)Maze.TargetColor == MovingObjectManager.Objects.Count() - 1)
-                MovingObjectManager.GameWin = true;
 
 
             base.UpdatePosition();
                         
+        }
+
+        public void ChangeToGrey()
+        {
+            this.Texture = Game1.GreyRecord;
+            this.color = RecordColor.grey;
         }
     }
 }

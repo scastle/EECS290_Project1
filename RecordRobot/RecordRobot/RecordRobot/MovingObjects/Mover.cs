@@ -14,7 +14,7 @@ namespace RecordRobot.MovingObjects
 
     public enum RecordColor
     {
-        red = 0, yellow = 1, green = 2, blue = 3, violet = 4, grey = -1
+        red = 0, orange=1, yellow = 2, green = 3, blue = 4, violet = 5, grey = -1
     }
 
     abstract class Mover

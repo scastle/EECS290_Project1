@@ -17,7 +17,7 @@ namespace RecordRobot.MovingObjects
 
         const double SQRT2 = 1.414;
 
-        static RecordColor nextColor;
+        static RecordColor nextColor = RecordColor.red;
 
         public static bool GameWin;
 
@@ -36,6 +36,8 @@ namespace RecordRobot.MovingObjects
             Point p;
             p = Maze.getPointToPlace();
             Objects.Add(new Record(p.X, p.Y, RecordColor.red));
+            p = Maze.getPointToPlace();
+            Objects.Add(new Record(p.X, p.Y, RecordColor.orange));
             p = Maze.getPointToPlace();
             Objects.Add(new Record(p.X, p.Y, RecordColor.yellow));
             p = Maze.getPointToPlace();
@@ -58,24 +60,26 @@ namespace RecordRobot.MovingObjects
                 }
             else
                 RobotPlayer.Draw();
-
-            /*            
             
             Record r = (Record)CheckCollisions();
             if (r != null)
             {
+                RobotPlayer.SetInvincible(new TimeSpan(0, 0, 3));
                 if (r.color == nextColor)
                 {
                     r.ChangeToGrey();
-                    nextColor = ??;
+                    nextColor++;
+                    if ((int)nextColor > Objects.OfType<Record>().Count() - 1)
+                    {
+                        GameWin = true;
+                        Objects.RemoveAll(item => item is Record);
+                    }
                 }
-                else
+                else if (!RobotPlayer.IsInvincible)
                 {
                     RobotPlayer.LoseLife();
                 }
             }
-            
-             */
         }
 
 

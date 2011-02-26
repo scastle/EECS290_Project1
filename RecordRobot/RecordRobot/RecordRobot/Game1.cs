@@ -23,9 +23,11 @@ namespace RecordRobot
         public static Texture2D RobotLeft;
         public static Texture2D RobotRight;
         public static Texture2D RobotDead;
+        public static Texture2D RobotInvincible;
         public static Texture2D mazepath;
         public static Texture2D mazewall;
         public static Texture2D RedRecord;
+        public static Texture2D OrangeRecord;
         public static Texture2D GreyRecord;
         public static Texture2D BlueRecord;
         public static Texture2D GreenRecord;
@@ -69,10 +71,12 @@ namespace RecordRobot
             Robot = this.Content.Load<Texture2D>("Images\\robot-normal");
             RobotLeft = this.Content.Load<Texture2D>("Images\\robot-left");
             RobotRight = this.Content.Load<Texture2D>("Images\\robot-right");
+            RobotInvincible = this.Content.Load<Texture2D>("Images\\robot-invincible");
             RobotDead = this.Content.Load<Texture2D>("Images\\robot-dead");
             mazepath = this.Content.Load<Texture2D>("Images\\maze-path");
             mazewall = this.Content.Load<Texture2D>("Images\\maze-wall");
             RedRecord = this.Content.Load<Texture2D>("Images\\record-red");
+            OrangeRecord = this.Content.Load<Texture2D>("Images\\record-orange");
             GreyRecord = this.Content.Load<Texture2D>("Images\\record-grey");
             BlueRecord = this.Content.Load<Texture2D>("Images\\record-blue");
             GreenRecord = this.Content.Load<Texture2D>("Images\\record-green");

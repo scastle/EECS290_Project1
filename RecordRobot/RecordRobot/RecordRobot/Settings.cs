@@ -10,5 +10,6 @@ namespace RecordRobot
     {
         public static int RobotSpeed = 2;
         public static Point RobotStartingPosition = new Point(45, 45);
+        public static int Lives = 3;
     }
 }
