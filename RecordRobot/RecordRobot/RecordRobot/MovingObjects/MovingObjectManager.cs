@@ -53,32 +53,9 @@ namespace RecordRobot.MovingObjects
         /// </summary>
         public static void Draw()
         {
-            if(!GameOver && !GameWin)
-                foreach (Mover m in Objects)
-                {
-                    m.Draw();
-                }
-            else
-                RobotPlayer.Draw();
-            
-            Record r = (Record)CheckCollisions();
-            if (r != null)
+            foreach (Mover m in Objects)
             {
-                RobotPlayer.SetInvincible(new TimeSpan(0, 0, 3));
-                if (r.color == nextColor)
-                {
-                    r.ChangeToGrey();
-                    nextColor++;
-                    if ((int)nextColor > Objects.OfType<Record>().Count() - 1)
-                    {
-                        GameWin = true;
-                        Objects.RemoveAll(item => item is Record);
-                    }
-                }
-                else if (!RobotPlayer.IsInvincible)
-                {
-                    RobotPlayer.LoseLife();
-                }
+                m.Draw();
             }
         }
 
@@ -92,18 +69,34 @@ namespace RecordRobot.MovingObjects
             {
                 InitializeObjects();   
             }
-            if (!GameOver && !GameWin)
-                foreach (Mover m in Objects)
+            foreach (Mover m in Objects)
+            {
+                m.Update();
+            }
+            foreach (Record r in CheckCollisions())
+            {
+                if (r.color == nextColor)
                 {
-                    m.Update();
+                    r.ChangeToGrey();
+                    nextColor++;
+                    if ((int)nextColor > Objects.OfType<Record>().Count() - 1)
+                    {
+                        GameWin = true;
+                        Objects.RemoveAll(item => item is Record);
+                    }
                 }
-            else
-                RobotPlayer.Update();
+                else if (!RobotPlayer.IsInvincible)
+                {
+                    RobotPlayer.LoseLife();
+                    RobotPlayer.SetInvincible(new TimeSpan(0, 0, 3));
+                }
+            }
         }
 
-        public static Mover CheckCollisions()
+        public static IEnumerable<Mover> CheckCollisions()
         {
-            foreach (Mover m in Objects)
+            Mover[] objs = Objects.ToArray();
+            foreach (Mover m in objs)
             {
                 if (m is Record)
                 {
@@ -119,11 +112,10 @@ namespace RecordRobot.MovingObjects
                     double yColl = RobotPlayer.Texture.Height / 2 + radius / SQRT2;
                     if (Math.Abs(xDiff) < xColl && Math.Abs(yDiff) < yColl)
                     {
-                        return m;
+                        yield return m;
                     }
                 }
             }
-            return null;
         }
     }
 }
