@@ -13,6 +13,8 @@ namespace RecordRobot
         public static Texture2D RobotRight;
         public static Texture2D RobotDead;
         public static Texture2D RobotInvincible;
+        public static Texture2D RobotFlashingLeft;
+        public static Texture2D RobotFlashingRight;
         public static Texture2D mazepath;
         public static Texture2D mazewall;
         public static Texture2D RedRecord;
@@ -23,7 +25,5 @@ namespace RecordRobot
         public static Texture2D VioletRecord;
         public static Texture2D YellowRecord;
         public static Texture2D RobotWin;
-        public static Texture2D RobotFlashingLeft;
-        public static Texture2D RobotFlashingRight;
     }
 }

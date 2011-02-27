@@ -17,7 +17,7 @@ namespace RecordRobot.MovingObjects
 
         const double SQRT2 = 1.414;
 
-        static RecordColor nextColor = RecordColor.red;
+        public static RecordColor nextColor = RecordColor.red;
 
         public static bool GameWin;
 
@@ -58,7 +58,7 @@ namespace RecordRobot.MovingObjects
         /// </summary>
         public static void Update()
         {
-            if (Objects == null)
+            if (Objects == null || Objects.Count == 1)
             {
                 InitializeObjects();   
             }
@@ -77,8 +77,13 @@ namespace RecordRobot.MovingObjects
                         nextColor++;
                         if ((int)nextColor > Game1.CurrentLevel.NumRecords - 1)
                         {
-                            GameWin = true;
                             Objects.RemoveAll(item => item is Record);
+                            //GameWin = true;
+                            Maze.level++;
+                            Maze.Draw();
+                            InitializeObjects();
+
+                            
                         }
                     }
                     else if (!RobotPlayer.IsInvincible && r.CanDamage)

@@ -17,6 +17,7 @@ namespace RecordRobot.MovingObjects
         private DateTime invincibleUntil;
         public bool IsInvincible = false;
 
+
         private bool RobotFlashing = false;
 
         //public int Score;
@@ -51,7 +52,6 @@ namespace RecordRobot.MovingObjects
             invincibleUntil = DateTime.Now + time;
             IsInvincible = true;
             Texture = Textures.RobotInvincible;
-            RobotFlashing = true;
         }
 
         public override void Update()
@@ -82,7 +82,7 @@ namespace RecordRobot.MovingObjects
             }
 
             // Change which direction robot is facing
-            if(IsInvincible)
+            if (IsInvincible)
                 if ((invincibleUntil - DateTime.Now).TotalMilliseconds % 1000 > 500)
                 {
                     RobotFlashing = true;
@@ -115,8 +115,6 @@ namespace RecordRobot.MovingObjects
                 else
                     this.Texture = Textures.RobotRight;
             }
-
-            
             
             if (MovingObjectManager.GameOver)
                 this.Texture = Textures.RobotDead;

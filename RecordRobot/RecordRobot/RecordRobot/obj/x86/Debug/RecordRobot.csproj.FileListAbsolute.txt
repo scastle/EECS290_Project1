@@ -53,27 +53,36 @@ C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\De
 C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-win.xnb
 C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-orange.xnb
 C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-invincible.xnb
-C:\Users\Mike\Documents\scastle-EECS290_Project1-5fa5a0c\scastle-EECS290_Project1-a6e5505\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-red.xnb
-C:\Users\Mike\Documents\scastle-EECS290_Project1-5fa5a0c\scastle-EECS290_Project1-a6e5505\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-left.xnb
-C:\Users\Mike\Documents\scastle-EECS290_Project1-5fa5a0c\scastle-EECS290_Project1-a6e5505\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-normal.xnb
-C:\Users\Mike\Documents\scastle-EECS290_Project1-5fa5a0c\scastle-EECS290_Project1-a6e5505\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-right.xnb
-C:\Users\Mike\Documents\scastle-EECS290_Project1-5fa5a0c\scastle-EECS290_Project1-a6e5505\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\maze-path.xnb
-C:\Users\Mike\Documents\scastle-EECS290_Project1-5fa5a0c\scastle-EECS290_Project1-a6e5505\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\maze-wall.xnb
-C:\Users\Mike\Documents\scastle-EECS290_Project1-5fa5a0c\scastle-EECS290_Project1-a6e5505\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-grey.xnb
-C:\Users\Mike\Documents\scastle-EECS290_Project1-5fa5a0c\scastle-EECS290_Project1-a6e5505\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-blue.xnb
-C:\Users\Mike\Documents\scastle-EECS290_Project1-5fa5a0c\scastle-EECS290_Project1-a6e5505\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-green.xnb
-C:\Users\Mike\Documents\scastle-EECS290_Project1-5fa5a0c\scastle-EECS290_Project1-a6e5505\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-violet.xnb
-C:\Users\Mike\Documents\scastle-EECS290_Project1-5fa5a0c\scastle-EECS290_Project1-a6e5505\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-yellow.xnb
-C:\Users\Mike\Documents\scastle-EECS290_Project1-5fa5a0c\scastle-EECS290_Project1-a6e5505\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-dead.xnb
-C:\Users\Mike\Documents\scastle-EECS290_Project1-5fa5a0c\scastle-EECS290_Project1-a6e5505\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-win.xnb
-C:\Users\Mike\Documents\scastle-EECS290_Project1-5fa5a0c\scastle-EECS290_Project1-a6e5505\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-orange.xnb
-C:\Users\Mike\Documents\scastle-EECS290_Project1-5fa5a0c\scastle-EECS290_Project1-a6e5505\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-invincible.xnb
-C:\Users\Mike\Documents\scastle-EECS290_Project1-5fa5a0c\scastle-EECS290_Project1-a6e5505\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\TextFiles\testmaze.txt
-C:\Users\Mike\Documents\scastle-EECS290_Project1-5fa5a0c\scastle-EECS290_Project1-a6e5505\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\RecordRobot.exe
-C:\Users\Mike\Documents\scastle-EECS290_Project1-5fa5a0c\scastle-EECS290_Project1-a6e5505\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\RecordRobot.pdb
-C:\Users\Mike\Documents\scastle-EECS290_Project1-5fa5a0c\scastle-EECS290_Project1-a6e5505\RecordRobot\RecordRobot\RecordRobot\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\Mike\Documents\scastle-EECS290_Project1-5fa5a0c\scastle-EECS290_Project1-a6e5505\RecordRobot\RecordRobot\RecordRobot\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
-C:\Users\Mike\Documents\scastle-EECS290_Project1-5fa5a0c\scastle-EECS290_Project1-a6e5505\RecordRobot\RecordRobot\RecordRobot\obj\x86\Debug\RecordRobot.exe
-C:\Users\Mike\Documents\scastle-EECS290_Project1-5fa5a0c\scastle-EECS290_Project1-a6e5505\RecordRobot\RecordRobot\RecordRobot\obj\x86\Debug\RecordRobot.pdb
-C:\Users\Mike\Documents\scastle-EECS290_Project1-5fa5a0c\scastle-EECS290_Project1-a6e5505\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-right-dead.xnb
-C:\Users\Mike\Documents\scastle-EECS290_Project1-5fa5a0c\scastle-EECS290_Project1-a6e5505\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-left-dead.xnb
+C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-grey.xnb
+C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-blue.xnb
+C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-green.xnb
+C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-violet.xnb
+C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-yellow.xnb
+C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-dead.xnb
+C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-win.xnb
+C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-orange.xnb
+C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-invincible.xnb
+C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-red.xnb
+C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-left.xnb
+C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-normal.xnb
+C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-right.xnb
+C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\maze-path.xnb
+C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\maze-wall.xnb
+C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-grey.xnb
+C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-blue.xnb
+C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-green.xnb
+C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-violet.xnb
+C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-yellow.xnb
+C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-dead.xnb
+C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-win.xnb
+C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-orange.xnb
+C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-invincible.xnb
+C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\TextFiles\testmaze.txt
+C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\RecordRobot.exe
+C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\RecordRobot.pdb
+C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\obj\x86\Debug\RecordRobot.exe
+C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\obj\x86\Debug\RecordRobot.pdb
+C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-right-dead.xnb
+C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-left-dead.xnb
