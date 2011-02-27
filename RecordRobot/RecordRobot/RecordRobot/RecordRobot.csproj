@@ -93,6 +93,7 @@
     <Reference Include="System">
       <Private>False</Private>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml">
       <Private>False</Private>
     </Reference>
@@ -108,8 +109,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controls.cs" />
+    <Compile Include="GameScreen.cs" />
     <Compile Include="Maze.cs" />
     <Compile Include="Audio.cs" />
+    <Compile Include="MovingObjects\MovingObjectManager.cs" />
     <Compile Include="MovingObjects\Mover.cs" />
     <Compile Include="MovingObjects\Robot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

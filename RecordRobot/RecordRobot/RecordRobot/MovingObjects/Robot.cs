@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework;
 
 namespace RecordRobot.MovingObjects
 {
@@ -17,7 +18,7 @@ namespace RecordRobot.MovingObjects
 
         public int Lives;
 
-        public void Update()
+        public override void Update()
         {
             NextDirection = Controls.GetDirection();
 
@@ -50,7 +51,14 @@ namespace RecordRobot.MovingObjects
             }
             */
 
-            this.UpdatePosition();
+            base.UpdatePosition();
+        }
+
+        public override void Draw()
+        {
+            Game1.spriteBatch.Begin();
+            Game1.spriteBatch.Draw(Game1.Robot, new Vector2(Position.X, Position.Y), Color.White);
+            Game1.spriteBatch.End();
         }
     }
 }
