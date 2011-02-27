@@ -40,6 +40,7 @@ namespace RecordRobot.MovingObjects
             if (Lives <= 0)
             {
                 MovingObjectManager.GameOver = true;
+                MovingObjectManager.Objects.RemoveAll(item => item is Record);
             }
         }
 
@@ -93,6 +94,17 @@ namespace RecordRobot.MovingObjects
                 else if (this.Direction == MovingObjects.Direction.Right)
                 {
                     this.Texture = Textures.RobotRight;
+                }
+            }
+            else
+            {
+                if ((invincibleUntil - DateTime.Now).TotalMilliseconds % 1000 > 500)
+                {
+                    Texture = Textures.RobotDead;
+                }
+                else
+                {
+                    Texture = Textures.Robot;
                 }
             }
             

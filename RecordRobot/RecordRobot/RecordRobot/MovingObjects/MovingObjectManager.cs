@@ -33,19 +33,12 @@ namespace RecordRobot.MovingObjects
             RobotPlayer = new Robot(45, 45);
             Objects.Add(RobotPlayer);
 
-            Point p;
-            p = Maze.getPointToPlace();
-            Objects.Add(new Record(p.X, p.Y, RecordColor.red));
-            p = Maze.getPointToPlace();
-            Objects.Add(new Record(p.X, p.Y, RecordColor.orange));
-            p = Maze.getPointToPlace();
-            Objects.Add(new Record(p.X, p.Y, RecordColor.yellow));
-            p = Maze.getPointToPlace();
-            Objects.Add(new Record(p.X, p.Y, RecordColor.green));
-            p = Maze.getPointToPlace();
-            Objects.Add(new Record(p.X, p.Y, RecordColor.blue));
-            p = Maze.getPointToPlace();
-            Objects.Add(new Record(p.X, p.Y, RecordColor.violet));
+
+            for (int i = 0; i < Game1.CurrentLevel.NumRecords; i++)
+            {
+                Point p = Maze.getPointToPlace();
+                Objects.Add(new Record(p.X, p.Y, (RecordColor)i));
+            }
         }
 
         /// <summary>
@@ -73,22 +66,26 @@ namespace RecordRobot.MovingObjects
             {
                 m.Update();
             }
-            foreach (Record r in CheckCollisions())
+            foreach (Mover m in CheckCollisions())
             {
-                if (r.Color == nextColor)
+                if (m is Record)
                 {
-                    r.ChangeToGrey();
-                    nextColor++;
-                    if ((int)nextColor > Objects.OfType<Record>().Count() - 1)
+                    Record r = m as Record;
+                    if (r.Color == nextColor)
                     {
-                        GameWin = true;
-                        Objects.RemoveAll(item => item is Record);
+                        r.ChangeToGrey();
+                        nextColor++;
+                        if ((int)nextColor > Game1.CurrentLevel.NumRecords - 1)
+                        {
+                            GameWin = true;
+                            Objects.RemoveAll(item => item is Record);
+                        }
                     }
-                }
-                else if (!RobotPlayer.IsInvincible && r.CanDamage)
-                {
-                    RobotPlayer.LoseLife();
-                    RobotPlayer.SetInvincible(new TimeSpan(0, 0, 3));
+                    else if (!RobotPlayer.IsInvincible && r.CanDamage)
+                    {
+                        RobotPlayer.LoseLife();
+                        RobotPlayer.SetInvincible(new TimeSpan(0, 0, Settings.SecondsInvincible));
+                    }
                 }
             }
         }
@@ -98,7 +95,7 @@ namespace RecordRobot.MovingObjects
             Mover[] objs = Objects.ToArray();
             foreach (Mover m in objs)
             {
-                if (m is Record)
+                if (!(m is Robot))
                 {
                     // Calculate the difference in the X and Y positions
                     double xDiff = m.Position.X - RobotPlayer.Position.X;
@@ -108,8 +105,8 @@ namespace RecordRobot.MovingObjects
                     double radius = Textures.RedRecord.Width / 2;
 
                     // Calculate maximum distance for collision
-                    double xColl = RobotPlayer.Texture.Width / 2 + radius / SQRT2;
-                    double yColl = RobotPlayer.Texture.Height / 2 + radius / SQRT2;
+                    double xColl = RobotPlayer.Texture.Width / 2 + radius / SQRT2 - 7;
+                    double yColl = RobotPlayer.Texture.Height / 2 + radius / SQRT2 - 7;
                     if (Math.Abs(xDiff) < xColl && Math.Abs(yDiff) < yColl)
                     {
                         yield return m;

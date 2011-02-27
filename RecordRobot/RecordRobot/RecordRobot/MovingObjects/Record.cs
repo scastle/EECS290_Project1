@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace RecordRobot.MovingObjects
 {
@@ -28,6 +29,8 @@ namespace RecordRobot.MovingObjects
 
         private bool CanGo;
 
+        private Texture2D OriginalTexture;
+
         public Record(int x, int y, RecordColor c)
         {
             CanDamage = true;
@@ -35,7 +38,7 @@ namespace RecordRobot.MovingObjects
             this.Position.X = x;
             this.Position.Y = y;
             this.Color = c;
-            this.Speed = 1;
+            this.Speed = Settings.RecordSpeed;
             this.CurrentDirection = Direction.None;
             //CanGo = false;
             switch (c)
@@ -67,6 +70,7 @@ namespace RecordRobot.MovingObjects
                     break;
 
             }
+            this.OriginalTexture = Texture;
             Random rand = new Random(); 
             int r = rand.Next(4);
             switch (r)      //This is used to determine a random initial direction for the records
@@ -150,27 +154,7 @@ namespace RecordRobot.MovingObjects
             if (DeathCount < 100 && CountDown)
             {
                 if ((DeathCount > 20 && DeathCount < 40) || (DeathCount > 60 && DeathCount < 80))
-                    switch (this.Color)
-                    {
-                        case RecordColor.red:
-                            this.Texture = Textures.RedRecord;
-                            break;
-                        case RecordColor.yellow:
-                            this.Texture = Textures.YellowRecord;
-                            break;
-                        case RecordColor.orange:
-                            this.Texture = Textures.OrangeRecord;
-                            break;
-                        case RecordColor.green:
-                            this.Texture = Textures.GreenRecord;
-                            break;
-                        case RecordColor.blue:
-                            this.Texture = Textures.BlueRecord;
-                            break;
-                        case RecordColor.violet:
-                            this.Texture = Textures.VioletRecord;
-                            break;
-                    }
+                    this.Texture = OriginalTexture;
                 else
                     this.Texture = Textures.GreyRecord;
                 

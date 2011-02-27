@@ -21,7 +21,8 @@ namespace RecordRobot
         public static SpriteBatch spriteBatch;
         public static TextReader tr;
         public static Random rand;
-        //public static  Maze m;
+
+        public static Level CurrentLevel;
         
         public Game1()
         {
@@ -29,6 +30,7 @@ namespace RecordRobot
             graphics.PreferredBackBufferWidth = 600;
             graphics.PreferredBackBufferHeight = 480;
             Content.RootDirectory = "Content";
+            CurrentLevel = new Level();
             rand = new Random();
         }
 

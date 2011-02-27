@@ -9,6 +9,9 @@ namespace RecordRobot
     class Settings
     {
         public static int RobotSpeed = 2;
+        public static int RecordSpeed = 1;
+        public static int SecondsInvincible = 3;
+        public static int NumRecords = 3;
         public static Point RobotStartingPosition = new Point(45, 45);
         public static int Lives = 3;
     }
