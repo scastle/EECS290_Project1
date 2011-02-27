@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace RecordRobot.MovingObjects
 {
@@ -14,56 +15,62 @@ namespace RecordRobot.MovingObjects
          * for different AIs use an enum and logic here, or another class that will compute next direction on its own
          * 
          */
+        public bool CanDamage;
 
-        
+        public bool Gathered;
+
+        public int DeathCount;
+
+        public bool CountDown;
 
         public Direction CurrentDirection;
 
-        //public Direction CurrentDirection;
-
-        public RecordColor color;
-
-        
+        public RecordColor Color;
 
         private bool CanGo;
 
+        private Texture2D OriginalTexture;
+
         public Record(int x, int y, RecordColor c)
         {
-
-            Maze.LoadMaze("TextFiles\\testmaze.txt");
-            Maze.Draw();
+            CanDamage = true;
+            CountDown = false;
             this.Position.X = x;
             this.Position.Y = y;
-            this.color = c;
-            this.Speed = 2;
+            this.Color = c;
+            this.Speed = Settings.RecordSpeed;
             this.CurrentDirection = Direction.None;
             //CanGo = false;
             switch (c)
             {
                 case RecordColor.red:
-                    this.Texture = Game1.RedRecord;
+                    this.Texture = Textures.RedRecord;
                     break;
 
             }
             switch (c)
             {
                 case RecordColor.red:
-                    this.Texture = Game1.RedRecord;
+                    this.Texture = Textures.RedRecord;
+                    break;
+                case RecordColor.orange:
+                    this.Texture = Textures.OrangeRecord;
                     break;
                 case RecordColor.yellow:
-                    this.Texture = Game1.YellowRecord;
+                    this.Texture = Textures.YellowRecord;
                     break;
                 case RecordColor.green:
-                    this.Texture = Game1.GreenRecord;
+                    this.Texture = Textures.GreenRecord;
                     break;
                 case RecordColor.blue:
-                    this.Texture = Game1.BlueRecord;
+                    this.Texture = Textures.BlueRecord;
                     break;
                 case RecordColor.violet:
-                    this.Texture = Game1.VioletRecord;
+                    this.Texture = Textures.VioletRecord;
                     break;
 
             }
+            this.OriginalTexture = Texture;
             Random rand = new Random(); 
             int r = rand.Next(4);
             switch (r)      //This is used to determine a random initial direction for the records
@@ -84,8 +91,8 @@ namespace RecordRobot.MovingObjects
             if (Maze.grid == null)
                 Console.WriteLine("THE GRID IS NOT INSTANTIATED");
 
-            
-                while (!Maze.CanGo(this.Position, this.Direction))   //This will choose a random direction if the initial random direction pointed the record towards a wall
+
+            while (!Maze.CanGo(this.Position, this.Direction))   //This will choose a random direction if the initial random direction pointed the record towards a wall
                 {
                     if ((int)this.Direction == 2)
                     {
@@ -96,12 +103,13 @@ namespace RecordRobot.MovingObjects
                     //else
                     //CanGo = true;
                 }
+            //this.Direction = Direction.None;
 
         }
 
         public override void Update()
         {
-            Random rand = new Random();     // I am not putting in an ai that knows where the robot is yet, so this is used in helping choose the direction
+            //Random rand = new Random();     // I am not putting in an ai that knows where the robot is yet, so this is used in helping choose the direction
             int r;
             if (Maze.grid == null)
                 Console.WriteLine("THE GRID IS NOT INSTANTIATED");
@@ -112,7 +120,7 @@ namespace RecordRobot.MovingObjects
                 do   //This do while loop will choose a random direction to go at an intersection (until we want to implement an ai that will chase or flee from the robot which is not a priority for the demo)
                 {
                     
-                    r = rand.Next(4);
+                    r = Game1.rand.Next(4);
                     switch (r)
                     {
                         case 0:
@@ -140,9 +148,34 @@ namespace RecordRobot.MovingObjects
                 CanGo = false;
             }
 
+            if (CountDown)
+                DeathCount++;
+
+            if (DeathCount < 100 && CountDown)
+            {
+                if ((DeathCount > 20 && DeathCount < 40) || (DeathCount > 60 && DeathCount < 80))
+                    this.Texture = OriginalTexture;
+                else
+                    this.Texture = Textures.GreyRecord;
+                
+            }
+
+            if(DeathCount == 100)
+            {
+                this.Texture = Textures.GreyRecord;
+                this.Color = RecordColor.grey;
+                this.CanDamage = true;
+                Gathered = false;
+            }
 
             base.UpdatePosition();
                         
+        }
+
+        public void ChangeToGrey()
+        {
+            CountDown = true;
+            CanDamage = false;
         }
     }
 }

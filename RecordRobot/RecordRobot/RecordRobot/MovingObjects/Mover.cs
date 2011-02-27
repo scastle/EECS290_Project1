@@ -14,7 +14,7 @@ namespace RecordRobot.MovingObjects
 
     public enum RecordColor
     {
-        red = 0, orange = 1, yellow = 2, green = 3, blue = 4, indigo = 5, violet = 6, grey = -1
+        red = 0, orange=1, yellow = 2, green = 3, blue = 4, violet = 5, grey = -1
     }
 
     abstract class Mover
@@ -30,6 +30,8 @@ namespace RecordRobot.MovingObjects
         /// The current location of the object.
         /// </summary>
         public Point Position;
+
+        private Vector2 drawPosition = new Vector2();
 
         /// <summary>
         /// The current direction the robot is moving.
@@ -54,8 +56,10 @@ namespace RecordRobot.MovingObjects
 
         public virtual void Draw()
         {
+            drawPosition.X = Position.X - Texture.Width / 2;
+            drawPosition.Y = Position.Y - Texture.Height / 2;
             Game1.spriteBatch.Begin();
-            Game1.spriteBatch.Draw(Texture, new Vector2(Position.X - Texture.Width / 2, Position.Y - Texture.Height / 2), Color.White);
+            Game1.spriteBatch.Draw(Texture, drawPosition, Color.White);
             Game1.spriteBatch.End();
         }
     }

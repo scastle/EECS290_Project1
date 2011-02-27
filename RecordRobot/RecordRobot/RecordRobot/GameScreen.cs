@@ -10,7 +10,7 @@ namespace RecordRobot
     {
         public static void Draw()
         {
-            Maze.LoadMaze("TextFiles\\testmaze.txt");
+
             Maze.Draw();
             MovingObjectManager.Draw();
             

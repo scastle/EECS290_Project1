@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -18,22 +19,19 @@ namespace RecordRobot
     {
         GraphicsDeviceManager graphics;
         public static SpriteBatch spriteBatch;
-        public static Texture2D Robot;
-        public static Texture2D RobotLeft;
-        public static Texture2D RobotRight;
-        public static Texture2D mazepath;
-        public static Texture2D mazewall;
-        public static Texture2D RedRecord;
-        public static Texture2D GreyRecord;
-        public static Texture2D BlueRecord;
-        public static Texture2D GreenRecord;
-        public static Texture2D VioletRecord;
-        public static Texture2D YellowRecord;
+        public static TextReader tr;
+        public static Random rand;
+
+        public static Level CurrentLevel;
         
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
+            graphics.PreferredBackBufferWidth = 600;
+            graphics.PreferredBackBufferHeight = 480;
             Content.RootDirectory = "Content";
+            CurrentLevel = new Level();
+            rand = new Random();
         }
 
         /// <summary>
@@ -57,18 +55,58 @@ namespace RecordRobot
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            Robot = this.Content.Load<Texture2D>("Images\\robot-normal");
-            RobotLeft = this.Content.Load<Texture2D>("Images\\robot-left");
-            RobotRight = this.Content.Load<Texture2D>("Images\\robot-right");
-            mazepath = this.Content.Load<Texture2D>("Images\\maze-path");
-            mazewall = this.Content.Load<Texture2D>("Images\\maze-wall");
-            RedRecord = this.Content.Load<Texture2D>("Images\\record-red");
-            GreyRecord = this.Content.Load<Texture2D>("Images\\record-grey");
-            BlueRecord = this.Content.Load<Texture2D>("Images\\record-blue");
-            GreenRecord = this.Content.Load<Texture2D>("Images\\record-green");
-            VioletRecord = this.Content.Load<Texture2D>("Images\\record-violet");
-            YellowRecord = this.Content.Load<Texture2D>("Images\\record-yellow");
+            Textures.Robot = this.Content.Load<Texture2D>("Images\\robot-normal");
+            Textures.RobotLeft = this.Content.Load<Texture2D>("Images\\robot-left");
+            Textures.RobotRight = this.Content.Load<Texture2D>("Images\\robot-right");
+            Textures.RobotInvincible = this.Content.Load<Texture2D>("Images\\robot-invincible");
+            Textures.RobotDead = this.Content.Load<Texture2D>("Images\\robot-dead");
+            Textures.RobotFlashingLeft = this.Content.Load<Texture2D>("Images\\robot-left-dead");
+            Textures.RobotFlashingRight = this.Content.Load<Texture2D>("Images\\robot-right-dead");
+            Textures.mazepath = this.Content.Load<Texture2D>("Images\\maze-path");
+            Textures.mazewall = this.Content.Load<Texture2D>("Images\\maze-wall");
+            Textures.RedRecord = this.Content.Load<Texture2D>("Images\\record-red");
+            Textures.OrangeRecord = this.Content.Load<Texture2D>("Images\\record-orange");
+            Textures.GreyRecord = this.Content.Load<Texture2D>("Images\\record-grey");
+            Textures.BlueRecord = this.Content.Load<Texture2D>("Images\\record-blue");
+            Textures.GreenRecord = this.Content.Load<Texture2D>("Images\\record-green");
+            Textures.VioletRecord = this.Content.Load<Texture2D>("Images\\record-violet");
+            Textures.YellowRecord = this.Content.Load<Texture2D>("Images\\record-yellow");
+            Textures.RobotWin = this.Content.Load<Texture2D>("Images\\robot-win");
 
+            //load the maze file and instantiate the grid
+            TextReader read = new StreamReader(Content.RootDirectory + "\\TextFiles\\testmaze.txt");
+            string input = null;
+            int r = 0;
+            int l = 0;
+            int [,,] map = new int [5,17,21];
+            while ((input = read.ReadLine()) != null)
+            {
+                if (input.Substring(0, 1).Equals("=")) //start a new level
+                {
+                    l++;
+                    r = 0;
+                }
+                else
+                {
+                    for (int c = 0; c < input.Length; c++)
+                    {
+                        if (input.Substring(c, 1).Equals("1"))
+                        {
+                            map[l, r, c] = 1;
+                        }
+                        else
+                        {
+                            map[l, r, c] = 0;
+                        }
+                    }
+                    r++;
+                }
+                
+                
+            }
+            Maze.LoadMaze(map);
+
+            
             // TODO: use this.Content to load your game content here
         }
 
@@ -105,7 +143,7 @@ namespace RecordRobot
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            //GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
             GameScreen.Draw();
             // TODO: Add your drawing code here
 
