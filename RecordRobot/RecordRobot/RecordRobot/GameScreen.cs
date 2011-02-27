@@ -8,9 +8,17 @@ namespace RecordRobot
 {
     class GameScreen
     {
+
+       
         public static void Draw()
         {
+            if (MovingObjectManager.GameWin)
+            {
+                Maze.level++;
+                Maze.Draw();
+                MovingObjectManager.GameWin = false;
 
+            }
             Maze.Draw();
             MovingObjectManager.Draw();
             

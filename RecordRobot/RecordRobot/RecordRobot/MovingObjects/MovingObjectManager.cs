@@ -77,8 +77,13 @@ namespace RecordRobot.MovingObjects
                         nextColor++;
                         if ((int)nextColor > Game1.CurrentLevel.NumRecords - 1)
                         {
-                            GameWin = true;
                             Objects.RemoveAll(item => item is Record);
+                            //GameWin = true;
+                            Maze.level++;
+                            Maze.Draw();
+                            InitializeObjects();
+
+                            
                         }
                     }
                     else if (!RobotPlayer.IsInvincible && r.CanDamage)

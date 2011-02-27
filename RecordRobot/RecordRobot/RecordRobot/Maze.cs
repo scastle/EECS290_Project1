@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +13,10 @@ namespace RecordRobot
 
         public static int level;
 
+        /// <summary>
+        /// Loads all levels into 3d matrix at beginning of the game.
+        /// </summary>
+        /// <param name="p">the 3d array that has been read from a text file</param>
         public static void LoadMaze(int[,,] map)
         {
             level = 0;
@@ -21,6 +24,7 @@ namespace RecordRobot
             int rows = map.GetUpperBound(1);
             int columns = map.GetUpperBound(2);
             grid = new bool[levels,rows,columns];
+
             for (int l = 0; l < levels; l++)
             {
                 for (int r = 0; r < rows; r++)
@@ -40,98 +44,6 @@ namespace RecordRobot
             }
         }
 
-        /*public static void LoadMaze(string file)
-        {
-            grid = new bool[,,]
-            {
-                {
-                {false, false, false, false, false, false, false, false, false, false, false, false, false, false, false},
-                {false, true , true , true , false, false, true , true , true , true , false, true , true , true , false},
-                {false, true , false, true , true , true , true , false, false, true , true , true , false, true , false},
-                {false, true , true , true , false, false, true , true , true , true , false, true , true , true , false},
-                {false, false, false, false, false, false, false, false, false, false, false, false, false, false, false}
-                }
-            };
-
-            CollisionGrid = new CollisionType[,,]
-            {
-                {
-                {CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall},
-                {CollisionType.wall, CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.wall, CollisionType.wall, CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.wall, CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.wall},
-                {CollisionType.wall, CollisionType.path , CollisionType.wall, CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.wall, CollisionType.wall, CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.wall, CollisionType.path , CollisionType.wall},
-                {CollisionType.wall, CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.wall, CollisionType.wall, CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.wall, CollisionType.path , CollisionType.path , CollisionType.path , CollisionType.wall},
-                {CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall, CollisionType.wall}
-                }
-            };
-
-            /*grid = new bool[15, 15];
-            try
-            {
-
-                TextReader read = new StreamReader(file);
-                string input = null;
-                int r = 0;
-                while ((input = read.ReadLine()) != null)
-                {
-                    for (int c = 0; c < input.Length; c++)
-                    {
-                        if (input.Substring(c, 1).Equals("1"))
-                        {
-                            grid[r, c] = true;
-                            Console.Write("1");
-                        }
-                        else
-                        {
-                            grid[r, c] = false;
-                            Console.Write("0");
-
-                        }
-                    }
-                    r++;
-                    Console.Write("/n");
-                }
-            }
-            catch { }
-            */
-
-            //string filename = "RecordRobotContent/TextFiles/testmaze.txt";
-            //string path = Path.Combine(StorageContainer.TitleLocation, filename);
-            //int i ;
-            //string lineOfText;
-            //System.IO.Stream stream = TitleContainer.OpenStream("RecordRobotContent/TextFiles/testmaze.txt");
-            //StreamReader sr = new StreamReader(filename);
-            //while ((i = stream.ReadByte()) != -1)
-            //{
-                // do something
-            //}
-
-            /*
-            StreamReader re = File.OpenText(file);
-            string input = null;
-            int r = 0;
-            while ((input = re.ReadLine()) != null)
-            {
-                for (int c = 0; c < input.Length; c++)
-                {
-                    if (input.Substring(c, 1).Equals("1"))
-                    {
-                        grid[r, c] = true;
-                        Console.Write("1");
-                    }
-                    else
-                    {
-                        grid[r, c] = false;
-                        Console.Write("0");
-
-                    }
-                }
-                r++;
-                Console.Write("/n");
-            }
-            re.Close();
-            */
-
-        //}
 
 
         /// <summary>
@@ -141,7 +53,6 @@ namespace RecordRobot
         /// <returns>true if the point is an intersection</returns>
         public static bool IsIntersection(Point p)
         {
-            //return true;
             int r = p.Y / 30;
             int c = p.X / 30;
 
@@ -154,17 +65,15 @@ namespace RecordRobot
             {
                 return false;
             }
-
         }
 
         /// <summary>
-        /// Checks if the robot can move in the current direction
+        /// Checks if the robot or record can move in the current direction
         /// </summary>
-        /// <param name="d">The direction to move</param>
+        /// <param name="d">the Location, and the direction to move</param>
         /// <returns>true if the robot can move in the direction</returns>
         public static bool CanGo(Point p, Direction d)
         {
-            //return true;
             int r = p.Y / 30;
             int c = p.X / 30;
             int xsquare = p.X % 30;
