@@ -82,6 +82,7 @@ namespace RecordRobot.MovingObjects
                             Maze.level++;
                             Maze.Draw();
                             InitializeObjects();
+                            nextColor = RecordColor.red;
 
                             
                         }
