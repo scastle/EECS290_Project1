@@ -41,29 +41,29 @@ namespace RecordRobot.MovingObjects
             switch (c)
             {
                 case RecordColor.red:
-                    this.Texture = Game1.RedRecord;
+                    this.Texture = Textures.RedRecord;
                     break;
 
             }
             switch (c)
             {
                 case RecordColor.red:
-                    this.Texture = Game1.RedRecord;
+                    this.Texture = Textures.RedRecord;
                     break;
                 case RecordColor.orange:
-                    this.Texture = Game1.OrangeRecord;
+                    this.Texture = Textures.OrangeRecord;
                     break;
                 case RecordColor.yellow:
-                    this.Texture = Game1.YellowRecord;
+                    this.Texture = Textures.YellowRecord;
                     break;
                 case RecordColor.green:
-                    this.Texture = Game1.GreenRecord;
+                    this.Texture = Textures.GreenRecord;
                     break;
                 case RecordColor.blue:
-                    this.Texture = Game1.BlueRecord;
+                    this.Texture = Textures.BlueRecord;
                     break;
                 case RecordColor.violet:
-                    this.Texture = Game1.VioletRecord;
+                    this.Texture = Textures.VioletRecord;
                     break;
 
             }
@@ -153,32 +153,32 @@ namespace RecordRobot.MovingObjects
                     switch (this.Color)
                     {
                         case RecordColor.red:
-                            this.Texture = Game1.RedRecord;
+                            this.Texture = Textures.RedRecord;
                             break;
                         case RecordColor.yellow:
-                            this.Texture = Game1.YellowRecord;
+                            this.Texture = Textures.YellowRecord;
                             break;
                         case RecordColor.orange:
-                            this.Texture = Game1.OrangeRecord;
+                            this.Texture = Textures.OrangeRecord;
                             break;
                         case RecordColor.green:
-                            this.Texture = Game1.GreenRecord;
+                            this.Texture = Textures.GreenRecord;
                             break;
                         case RecordColor.blue:
-                            this.Texture = Game1.BlueRecord;
+                            this.Texture = Textures.BlueRecord;
                             break;
                         case RecordColor.violet:
-                            this.Texture = Game1.VioletRecord;
+                            this.Texture = Textures.VioletRecord;
                             break;
                     }
                 else
-                    this.Texture = Game1.GreyRecord;
+                    this.Texture = Textures.GreyRecord;
                 
             }
 
             if(DeathCount == 100)
             {
-                this.Texture = Game1.GreyRecord;
+                this.Texture = Textures.GreyRecord;
                 this.Color = RecordColor.grey;
                 this.CanDamage = true;
                 Gathered = false;

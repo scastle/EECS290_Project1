@@ -105,7 +105,7 @@ namespace RecordRobot.MovingObjects
                     double yDiff = m.Position.Y - RobotPlayer.Position.Y;
 
                     // Calculate record radius
-                    double radius = Game1.RedRecord.Width / 2;
+                    double radius = Textures.RedRecord.Width / 2;
 
                     // Calculate maximum distance for collision
                     double xColl = RobotPlayer.Texture.Width / 2 + radius / SQRT2;

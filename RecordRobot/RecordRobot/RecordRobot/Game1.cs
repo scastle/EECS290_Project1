@@ -19,21 +19,6 @@ namespace RecordRobot
     {
         GraphicsDeviceManager graphics;
         public static SpriteBatch spriteBatch;
-        public static Texture2D Robot;
-        public static Texture2D RobotLeft;
-        public static Texture2D RobotRight;
-        public static Texture2D RobotDead;
-        public static Texture2D RobotInvincible;
-        public static Texture2D mazepath;
-        public static Texture2D mazewall;
-        public static Texture2D RedRecord;
-        public static Texture2D OrangeRecord;
-        public static Texture2D GreyRecord;
-        public static Texture2D BlueRecord;
-        public static Texture2D GreenRecord;
-        public static Texture2D VioletRecord;
-        public static Texture2D YellowRecord;
-        public static Texture2D RobotWin;
         public static TextReader tr;
         public static Random rand;
         //public static  Maze m;
@@ -68,21 +53,21 @@ namespace RecordRobot
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            Robot = this.Content.Load<Texture2D>("Images\\robot-normal");
-            RobotLeft = this.Content.Load<Texture2D>("Images\\robot-left");
-            RobotRight = this.Content.Load<Texture2D>("Images\\robot-right");
-            RobotInvincible = this.Content.Load<Texture2D>("Images\\robot-invincible");
-            RobotDead = this.Content.Load<Texture2D>("Images\\robot-dead");
-            mazepath = this.Content.Load<Texture2D>("Images\\maze-path");
-            mazewall = this.Content.Load<Texture2D>("Images\\maze-wall");
-            RedRecord = this.Content.Load<Texture2D>("Images\\record-red");
-            OrangeRecord = this.Content.Load<Texture2D>("Images\\record-orange");
-            GreyRecord = this.Content.Load<Texture2D>("Images\\record-grey");
-            BlueRecord = this.Content.Load<Texture2D>("Images\\record-blue");
-            GreenRecord = this.Content.Load<Texture2D>("Images\\record-green");
-            VioletRecord = this.Content.Load<Texture2D>("Images\\record-violet");
-            YellowRecord = this.Content.Load<Texture2D>("Images\\record-yellow");
-            RobotWin = this.Content.Load<Texture2D>("Images\\robot-win");
+            Textures.Robot = this.Content.Load<Texture2D>("Images\\robot-normal");
+            Textures.RobotLeft = this.Content.Load<Texture2D>("Images\\robot-left");
+            Textures.RobotRight = this.Content.Load<Texture2D>("Images\\robot-right");
+            Textures.RobotInvincible = this.Content.Load<Texture2D>("Images\\robot-invincible");
+            Textures.RobotDead = this.Content.Load<Texture2D>("Images\\robot-dead");
+            Textures.mazepath = this.Content.Load<Texture2D>("Images\\maze-path");
+            Textures.mazewall = this.Content.Load<Texture2D>("Images\\maze-wall");
+            Textures.RedRecord = this.Content.Load<Texture2D>("Images\\record-red");
+            Textures.OrangeRecord = this.Content.Load<Texture2D>("Images\\record-orange");
+            Textures.GreyRecord = this.Content.Load<Texture2D>("Images\\record-grey");
+            Textures.BlueRecord = this.Content.Load<Texture2D>("Images\\record-blue");
+            Textures.GreenRecord = this.Content.Load<Texture2D>("Images\\record-green");
+            Textures.VioletRecord = this.Content.Load<Texture2D>("Images\\record-violet");
+            Textures.YellowRecord = this.Content.Load<Texture2D>("Images\\record-yellow");
+            Textures.RobotWin = this.Content.Load<Texture2D>("Images\\robot-win");
 
             //load the maze file and instantiate the grid
             TextReader read = new StreamReader(Content.RootDirectory + "\\TextFiles\\testmaze.txt");

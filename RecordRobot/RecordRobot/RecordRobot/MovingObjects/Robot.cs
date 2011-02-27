@@ -31,7 +31,7 @@ namespace RecordRobot.MovingObjects
             base.Position.Y = y;
             this.Speed = Settings.RobotSpeed;
             this.Lives = Settings.Lives;
-            this.Texture = Game1.Robot;
+            this.Texture = Textures.Robot;
         }
 
         public void LoseLife()
@@ -47,14 +47,14 @@ namespace RecordRobot.MovingObjects
         {
             invincibleUntil = DateTime.Now + time;
             IsInvincible = true;
-            Texture = Game1.RobotInvincible;
+            Texture = Textures.RobotInvincible;
         }
 
         public override void Update()
         {
             if (IsInvincible && DateTime.Now > invincibleUntil)
             {
-                Texture = Game1.Robot;
+                Texture = Textures.Robot;
                 IsInvincible = false;
             }
             Direction d = Controls.GetDirection();
@@ -84,22 +84,22 @@ namespace RecordRobot.MovingObjects
                     this.Direction == MovingObjects.Direction.Down ||
                     this.Direction == MovingObjects.Direction.None)
                 {
-                    this.Texture = Game1.Robot;
+                    this.Texture = Textures.Robot;
                 }
                 else if (this.Direction == MovingObjects.Direction.Left)
                 {
-                    this.Texture = Game1.RobotLeft;
+                    this.Texture = Textures.RobotLeft;
                 }
                 else if (this.Direction == MovingObjects.Direction.Right)
                 {
-                    this.Texture = Game1.RobotRight;
+                    this.Texture = Textures.RobotRight;
                 }
             }
             
             if (MovingObjectManager.GameOver)
-                this.Texture = Game1.RobotDead;
+                this.Texture = Textures.RobotDead;
             if (MovingObjectManager.GameWin)
-                this.Texture = Game1.RobotWin;
+                this.Texture = Textures.RobotWin;
 
             base.UpdatePosition();
         }
