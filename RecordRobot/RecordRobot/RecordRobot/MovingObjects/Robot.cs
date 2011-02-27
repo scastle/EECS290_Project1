@@ -43,7 +43,7 @@ namespace RecordRobot.MovingObjects
             if (Lives <= 0)
             {
                 MovingObjectManager.GameOver = true;
-                MovingObjectManager.Objects.RemoveAll(item => item is Record);
+                //MovingObjectManager.Objects.RemoveAll(item => item is Record);
             }
         }
 

@@ -13,6 +13,6 @@ namespace RecordRobot
         public static int SecondsInvincible = 3;
         public static int NumRecords = 6;
         public static Point RobotStartingPosition = new Point(45, 45);
-        public static int Lives = 3;
+        public static int Lives = 1000;
     }
 }

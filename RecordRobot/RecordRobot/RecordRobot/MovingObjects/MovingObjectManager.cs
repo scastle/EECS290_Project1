@@ -17,7 +17,9 @@ namespace RecordRobot.MovingObjects
 
         const double SQRT2 = 1.414;
 
-        public static RecordColor nextColor = RecordColor.red;
+        public static RecordColor nextColor;
+
+        public static bool NewLevel = true;
 
         public static bool GameWin;
 
@@ -28,6 +30,8 @@ namespace RecordRobot.MovingObjects
         /// </summary>
         private static void InitializeObjects()
         {
+            NewLevel = false;
+
             Objects = new List<Mover>();
 
             RobotPlayer = new Robot(45, 45);
@@ -39,6 +43,8 @@ namespace RecordRobot.MovingObjects
                 Point p = Maze.getPointToPlace();
                 Objects.Add(new Record(p.X, p.Y, (RecordColor)i));
             }
+
+            nextColor = RecordColor.red;
         }
 
         /// <summary>
@@ -58,9 +64,9 @@ namespace RecordRobot.MovingObjects
         /// </summary>
         public static void Update()
         {
-            if (Objects == null || Objects.Count == 1)
+            if (Objects == null || NewLevel)
             {
-                InitializeObjects();   
+                InitializeObjects();
             }
             foreach (Mover m in Objects)
             {

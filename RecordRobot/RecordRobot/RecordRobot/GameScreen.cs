@@ -17,6 +17,7 @@ namespace RecordRobot
                 Maze.level++;
                 Maze.Draw();
                 MovingObjectManager.GameWin = false;
+                MovingObjectManager.NewLevel = true;
 
             }
             Maze.Draw();
