@@ -75,7 +75,7 @@ namespace RecordRobot.MovingObjects
             }
             foreach (Record r in CheckCollisions())
             {
-                if (r.color == nextColor)
+                if (r.Color == nextColor)
                 {
                     r.ChangeToGrey();
                     nextColor++;
@@ -85,7 +85,7 @@ namespace RecordRobot.MovingObjects
                         Objects.RemoveAll(item => item is Record);
                     }
                 }
-                else if (!RobotPlayer.IsInvincible)
+                else if (!RobotPlayer.IsInvincible && r.CanDamage)
                 {
                     RobotPlayer.LoseLife();
                     RobotPlayer.SetInvincible(new TimeSpan(0, 0, 3));

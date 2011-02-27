@@ -14,11 +14,6 @@ namespace RecordRobot.MovingObjects
         /// </summary>
         public Direction NextDirection;
 
-        /// <summary>
-        /// The current direction of the robot
-        /// </summary>
-        public Direction CurrentDirection;
-
         private DateTime invincibleUntil;
         public bool IsInvincible = false;
 
@@ -37,8 +32,6 @@ namespace RecordRobot.MovingObjects
             this.Speed = Settings.RobotSpeed;
             this.Lives = Settings.Lives;
             this.Texture = Game1.Robot;
-
-            Maze.Lives = 3;
         }
 
         public void LoseLife()
@@ -67,63 +60,46 @@ namespace RecordRobot.MovingObjects
             Direction d = Controls.GetDirection();
             if (d != MovingObjects.Direction.None)
                 NextDirection = Controls.GetDirection();
-            if ((int)NextDirection + (int)this.Direction == 0)
-            {
-                this.Direction = NextDirection;
 
-                // Change which direction robot is facing
-                if (this.Direction == MovingObjects.Direction.Left && !IsInvincible)
-                {
-                    this.Texture = Game1.RobotLeft;
-                }
-                else if (this.Direction == MovingObjects.Direction.Right && !IsInvincible)
-                {
-                    this.Texture = Game1.RobotRight;
-                }
-            }
-
-            else if (Maze.IsIntersection(this.Position))
+            // Check if robot can 
+            if (Maze.IsIntersection(this.Position))
             {
                 this.Direction = NextDirection;
                 if (!Maze.CanGo(this.Position, this.Direction))
                 {
                     this.Direction = Direction.None;
                 }
+            }
 
-                // Change which direction robot is facing
+            // Check if NextDirection is the opposite of Direction
+            else if ((int)NextDirection + (int)this.Direction == 0)
+            {
+                this.Direction = NextDirection;
+            }
+
+            // Change which direction robot is facing
+            if (!IsInvincible)
+            {
                 if (this.Direction == MovingObjects.Direction.Up ||
                     this.Direction == MovingObjects.Direction.Down ||
-                    this.Direction == MovingObjects.Direction.None &&
-                    !IsInvincible)
+                    this.Direction == MovingObjects.Direction.None)
                 {
                     this.Texture = Game1.Robot;
                 }
-                else if (this.Direction == MovingObjects.Direction.Left && !IsInvincible)
+                else if (this.Direction == MovingObjects.Direction.Left)
                 {
                     this.Texture = Game1.RobotLeft;
                 }
-                else if (this.Direction == MovingObjects.Direction.Right && !IsInvincible)
+                else if (this.Direction == MovingObjects.Direction.Right)
                 {
                     this.Texture = Game1.RobotRight;
                 }
             }
-
-
-            this.CurrentDirection = this.Direction;
-            // Check for collisions with other moving objects? MOVED TO RECORD BECAUSE IT WILL BE EASIER
-
             
             if (MovingObjectManager.GameOver)
                 this.Texture = Game1.RobotDead;
             if (MovingObjectManager.GameWin)
                 this.Texture = Game1.RobotWin;
-
-            this.BufferTexture = this.Texture;
-
-            if (Maze.RobotFlashing)
-                this.Texture = Game1.RobotDead;
-            else
-                this.Texture = this.BufferTexture;
 
             base.UpdatePosition();
         }

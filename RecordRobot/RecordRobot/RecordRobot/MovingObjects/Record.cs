@@ -14,13 +14,9 @@ namespace RecordRobot.MovingObjects
          * for different AIs use an enum and logic here, or another class that will compute next direction on its own
          * 
          */
-        public bool CanLoseLives;
-
-        public bool Collision;
+        public bool CanDamage;
 
         public bool Gathered;
-
-        public int CollisionCount;
 
         public int DeathCount;
 
@@ -28,24 +24,17 @@ namespace RecordRobot.MovingObjects
 
         public Direction CurrentDirection;
 
-        //public Direction CurrentDirection;
-
-        public RecordColor color;
+        public RecordColor Color;
 
         private bool CanGo;
 
         public Record(int x, int y, RecordColor c)
         {
-            CanLoseLives = true;
-            Collision = false;
-            CollisionCount = 0;
+            CanDamage = true;
             CountDown = false;
-            DeathCount = 0;
-            //Maze.LoadMaze("TextFiles\\testmaze.txt");
-            //Maze.Draw();
             this.Position.X = x;
             this.Position.Y = y;
-            this.color = c;
+            this.Color = c;
             this.Speed = 1;
             this.CurrentDirection = Direction.None;
             //CanGo = false;
@@ -161,7 +150,7 @@ namespace RecordRobot.MovingObjects
             if (DeathCount < 100 && CountDown)
             {
                 if ((DeathCount > 20 && DeathCount < 40) || (DeathCount > 60 && DeathCount < 80))
-                    switch (this.color)
+                    switch (this.Color)
                     {
                         case RecordColor.red:
                             this.Texture = Game1.RedRecord;
@@ -190,20 +179,10 @@ namespace RecordRobot.MovingObjects
             if(DeathCount == 100)
             {
                 this.Texture = Game1.GreyRecord;
-                this.color = RecordColor.grey;
-                CanLoseLives = true;
+                this.Color = RecordColor.grey;
+                this.CanDamage = true;
                 Gathered = false;
             }
-
-            //if (Collision && !Gathered)
-            //{
-            //    Maze.RobotDamaged(CollisionCount);
-            //}
-            //else
-            //    Maze.RobotFlashing = false;
-
-            //if we add objects other than records and the robot, we'll also need to subtract those
-
 
             base.UpdatePosition();
                         
@@ -211,8 +190,8 @@ namespace RecordRobot.MovingObjects
 
         public void ChangeToGrey()
         {
-            this.Texture = Game1.GreyRecord;
-            this.color = RecordColor.grey;
+            CountDown = true;
+            CanDamage = false;
         }
     }
 }

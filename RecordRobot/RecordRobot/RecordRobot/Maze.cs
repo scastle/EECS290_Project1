@@ -12,16 +12,7 @@ namespace RecordRobot
     {
         public static bool[,,] grid; //true for paths, false for walls
 
-        public enum CollisionType
-        {
-            wall = -4, path = -3, robot = -2, greyrecord = -1, redrecord = 0, orangerecord = 1, yellowrecord = 2, greenrecord = 3, bluerecord = 4, violetrecord = 5
-        }
-
-        public static int Lives;
-
         public static int level;
-
-        public static bool RobotFlashing;
 
         public static void LoadMaze(int[,,] map)
         {
@@ -154,11 +145,6 @@ namespace RecordRobot
             int r = p.Y / 30;
             int c = p.X / 30;
 
-
-            //if (r < 1 || c < 1)
-            //{
-            //    return false; //TEMPORARY FIX
-            //}
             if ((grid[level, r - 1, c] || grid[level, r + 1, c]) && (grid[level, r, c - 1] || grid[level, r, c + 1]) 
                 && ((p.X - 15) % 30 == 0 && (p.Y - 15) % 30 == 0))
             {

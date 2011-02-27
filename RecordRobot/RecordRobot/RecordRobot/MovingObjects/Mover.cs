@@ -24,13 +24,6 @@ namespace RecordRobot.MovingObjects
         /// </summary>
         public int Speed;
 
-        ///// <summary>
-        ///// The speed of the moving object.
-        ///// </summary>
-        //public static Point RobotPosition;
-
-        public Texture2D BufferTexture;
-
         public Texture2D Texture;
 
         /// <summary>
