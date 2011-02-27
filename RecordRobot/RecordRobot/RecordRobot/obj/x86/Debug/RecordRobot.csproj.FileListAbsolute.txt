@@ -86,3 +86,5 @@ C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRob
 C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\obj\x86\Debug\RecordRobot.pdb
 C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-right-dead.xnb
 C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-left-dead.xnb
+C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-right-dead.xnb
+C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-left-dead.xnb
