@@ -59,8 +59,11 @@ namespace RecordRobot
             Textures.RobotLeft = this.Content.Load<Texture2D>("Images\\robot-left");
             Textures.RobotRight = this.Content.Load<Texture2D>("Images\\robot-right");
             Textures.RobotInvincible = this.Content.Load<Texture2D>("Images\\robot-invincible");
+<<<<<<< HEAD
             Textures.RobotFlashingLeft = this.Content.Load<Texture2D>("Images\\robot-left-dead");
             Textures.RobotFlashingRight = this.Content.Load<Texture2D>("Images\\robot-right-dead");
+=======
+>>>>>>> 294ea4a0bda05748f7fea20fc598096fa766071e
             Textures.RobotDead = this.Content.Load<Texture2D>("Images\\robot-dead");
             Textures.mazepath = this.Content.Load<Texture2D>("Images\\maze-path");
             Textures.mazewall = this.Content.Load<Texture2D>("Images\\maze-wall");

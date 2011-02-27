@@ -62,6 +62,7 @@ C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\bin\x8
 C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-win.xnb
 C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-orange.xnb
 C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-invincible.xnb
+<<<<<<< HEAD
 C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-red.xnb
 C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-left.xnb
 C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-normal.xnb
@@ -86,3 +87,5 @@ C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRob
 C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\obj\x86\Debug\RecordRobot.pdb
 C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-right-dead.xnb
 C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-left-dead.xnb
+=======
+>>>>>>> 294ea4a0bda05748f7fea20fc598096fa766071e

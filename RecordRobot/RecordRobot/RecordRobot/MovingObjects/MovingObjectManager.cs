@@ -17,7 +17,11 @@ namespace RecordRobot.MovingObjects
 
         const double SQRT2 = 1.414;
 
+<<<<<<< HEAD
         public static RecordColor nextColor = RecordColor.red;
+=======
+        static RecordColor nextColor = RecordColor.red;
+>>>>>>> 294ea4a0bda05748f7fea20fc598096fa766071e
 
         public static bool GameWin;
 
@@ -58,7 +62,11 @@ namespace RecordRobot.MovingObjects
         /// </summary>
         public static void Update()
         {
+<<<<<<< HEAD
             if (Objects == null || Objects.Count == 1)
+=======
+            if (Objects == null)
+>>>>>>> 294ea4a0bda05748f7fea20fc598096fa766071e
             {
                 InitializeObjects();   
             }
@@ -82,7 +90,11 @@ namespace RecordRobot.MovingObjects
                             Maze.level++;
                             Maze.Draw();
                             InitializeObjects();
+<<<<<<< HEAD
 
+=======
+                            nextColor = RecordColor.red;
+>>>>>>> 294ea4a0bda05748f7fea20fc598096fa766071e
                             
                         }
                     }
