@@ -86,7 +86,15 @@ namespace RecordRobot.MovingObjects
                         {
                             Objects.RemoveAll(item => item is Record);
                             //GameWin = true;
-                            Maze.level++;
+                            if (Maze.level == 4)
+                            {
+                                Maze.level = 0;
+                                Game1.CurrentLevel.NumRecords = 6;
+                            }
+                            else
+                            {
+                                Maze.level++;
+                            }
                             Maze.Draw();
                             InitializeObjects();
                             nextColor = RecordColor.red;

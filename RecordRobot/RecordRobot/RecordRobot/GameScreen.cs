@@ -39,9 +39,18 @@ namespace RecordRobot
 
         public void Draw()
         {
+            //this checking is being handled in movingobjectmanager's update method, I have to look into it to see where it should be.
             if (MovingObjectManager.GameWin)
             {
-                Maze.level++;
+                if (Maze.level == 4)
+                {
+                    Maze.level = 0;
+                    Settings.NumRecords = 6;
+                }
+                else
+                {
+                    Maze.level++;
+                }
                 Maze.Draw();
                 MovingObjectManager.GameWin = false;
                 MovingObjectManager.NewLevel = true;
