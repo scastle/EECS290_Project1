@@ -106,7 +106,7 @@ namespace RecordRobot
             string input = null;
             int r = 0;
             int l = 0;
-            int [,,] map = new int [5,17,21];
+            int [,,] map = new int [6,17,21];
             while ((input = read.ReadLine()) != null)
             {
                 if (input.Substring(0, 1).Equals("=")) //start a new level

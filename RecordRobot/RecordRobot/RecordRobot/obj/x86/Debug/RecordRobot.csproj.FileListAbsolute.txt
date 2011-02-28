@@ -141,3 +141,4 @@ C:\Users\Mike\Documents\CurrentRecordRobotIteration\scastle-EECS290_Project1-dd7
 C:\Users\Mike\Documents\CurrentRecordRobotIteration\scastle-EECS290_Project1-dd7fa6f\RecordRobot\RecordRobot\RecordRobot\obj\x86\Debug\RecordRobot.exe
 C:\Users\Mike\Documents\CurrentRecordRobotIteration\scastle-EECS290_Project1-dd7fa6f\RecordRobot\RecordRobot\RecordRobot\obj\x86\Debug\RecordRobot.pdb
 C:\Users\Mike\Documents\GitRepository\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Font1.xnb
+C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Font1.xnb
