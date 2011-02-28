@@ -81,6 +81,7 @@ namespace RecordRobot.MovingObjects
                     {
                         r.ChangeToGrey();
                         nextColor++;
+                        ScoreManager.CurrentScore += r.Value;
                         if ((int)nextColor > Game1.CurrentLevel.NumRecords - 1)
                         {
                             Objects.RemoveAll(item => item is Record);

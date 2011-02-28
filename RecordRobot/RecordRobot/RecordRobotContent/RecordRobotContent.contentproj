@@ -64,6 +64,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Font1.spritefont">
+      <Name>Font1</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
     <None Include="TextFiles\testmaze.txt">
       <Name>testmaze</Name>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

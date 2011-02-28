@@ -110,6 +110,7 @@
   <ItemGroup>
     <Compile Include="Controls.cs" />
     <Compile Include="GameScreen.cs" />
+    <Compile Include="InfoBar.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="Maze.cs" />
     <Compile Include="Audio.cs" />
@@ -117,6 +118,7 @@
     <Compile Include="MovingObjects\Mover.cs" />
     <Compile Include="MovingObjects\Record.cs" />
     <Compile Include="MovingObjects\Robot.cs" />
+    <Compile Include="ScoreManager.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />

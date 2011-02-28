@@ -17,10 +17,12 @@ namespace RecordRobot
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
+        public static SpriteFont Font;
         GraphicsDeviceManager graphics;
         public static SpriteBatch spriteBatch;
         public static TextReader tr;
         public static Random rand;
+        public static DateTime Time;
 
         public static Level CurrentLevel;
         
@@ -53,6 +55,8 @@ namespace RecordRobot
         /// </summary>
         protected override void LoadContent()
         {
+            Time = DateTime.Now;
+
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Textures.Robot = this.Content.Load<Texture2D>("Images\\robot-normal");
@@ -72,6 +76,16 @@ namespace RecordRobot
             Textures.VioletRecord = this.Content.Load<Texture2D>("Images\\record-violet");
             Textures.YellowRecord = this.Content.Load<Texture2D>("Images\\record-yellow");
             Textures.RobotWin = this.Content.Load<Texture2D>("Images\\robot-win");
+            Textures.InfobarBackground = new Texture2D(GraphicsDevice, InfoBar.Width, InfoBar.Height);
+
+            Font = Content.Load<SpriteFont>("Font1");
+
+            Color[] colors = new Color[InfoBar.Width * InfoBar.Height];
+            for (int i = 0; i < colors.Length; i++)
+            {
+                colors[i] = Color.Black;
+            }
+            Textures.InfobarBackground.SetData(colors);
 
             //load the maze file and instantiate the grid
             TextReader read = new StreamReader(Content.RootDirectory + "\\TextFiles\\testmaze.txt");

@@ -112,3 +112,6 @@ C:\Users\Mike\Documents\GitRepository\RecordRobot\RecordRobot\RecordRobot\obj\x8
 C:\Users\Mike\Documents\GitRepository\RecordRobot\RecordRobot\RecordRobot\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Mike\Documents\GitRepository\RecordRobot\RecordRobot\RecordRobot\obj\x86\Debug\RecordRobot.exe
 C:\Users\Mike\Documents\GitRepository\RecordRobot\RecordRobot\RecordRobot\obj\x86\Debug\RecordRobot.pdb
+C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-right-dead.xnb
+C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-left-dead.xnb
+C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Font1.xnb

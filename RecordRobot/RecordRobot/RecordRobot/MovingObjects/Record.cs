@@ -23,6 +23,8 @@ namespace RecordRobot.MovingObjects
 
         public bool CountDown;
 
+        public int Value;
+
         public Direction CurrentDirection;
 
         public RecordColor Color;

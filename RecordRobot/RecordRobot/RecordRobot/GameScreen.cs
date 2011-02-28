@@ -22,7 +22,7 @@ namespace RecordRobot
             }
             Maze.Draw();
             MovingObjectManager.Draw();
-            
+            InfoBar.Draw();
         }
     }
 }
