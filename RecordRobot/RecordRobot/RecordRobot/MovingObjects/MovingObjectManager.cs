@@ -139,13 +139,13 @@ namespace RecordRobot.MovingObjects
                 else
                 {
                     Record rec = m as Record;
-                    if ((int)rec.Color == (int)RecordColor.grey)
+                    if (rec.Color == RecordColor.grey || rec.Color == nextColor)
                     {
 
                         // Calculate the difference in the X and Y positions
                         double xDiff = RobotPlayer.Position.X - m.Position.X;
                         double yDiff = RobotPlayer.Position.Y - m.Position.Y;
-                        if (xDiff > 0 && yDiff > 0)
+                        if (xDiff >= 0 && yDiff >= 0)
                         {
                             if (r == 1)
                             {
@@ -158,7 +158,7 @@ namespace RecordRobot.MovingObjects
                                 m.AIChoice2 = Direction.Down;
                             }
                         }
-                        else if (xDiff > 0 && yDiff < 0)
+                        else if (xDiff >= 0 && yDiff <= 0)
                         {
                             if (r == 1)
                             {
@@ -171,7 +171,7 @@ namespace RecordRobot.MovingObjects
                                 m.AIChoice2 = Direction.Up;
                             }
                         }
-                        else if (xDiff < 0 && yDiff < 0)
+                        else if (xDiff <= 0 && yDiff <= 0)
                         {
                             if (r == 1)
                             {
@@ -184,7 +184,7 @@ namespace RecordRobot.MovingObjects
                                 m.AIChoice2 = Direction.Up;
                             }
                         }
-                        else if (xDiff < 0 && yDiff > 0)
+                        else if (xDiff <= 0 && yDiff >= 0)
                         {
                             if (r == 1)
                             {

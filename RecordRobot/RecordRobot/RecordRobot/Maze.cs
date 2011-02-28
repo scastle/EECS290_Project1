@@ -20,7 +20,7 @@ namespace RecordRobot
         public static void LoadMaze(int[,,] map)
         {
             level = 0;
-            int levels = map.GetUpperBound(0);
+            int levels = map.GetUpperBound(0) + 1;
             int rows = map.GetUpperBound(1);
             int columns = map.GetUpperBound(2);
             grid = new bool[levels,rows,columns];

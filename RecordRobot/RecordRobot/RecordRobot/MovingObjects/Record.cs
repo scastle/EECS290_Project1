@@ -119,7 +119,7 @@ namespace RecordRobot.MovingObjects
             if (Maze.IsIntersection(this.Position))
             {
                 this.CurrentDirection = this.Direction;
-                if((int)this.Color != (int) RecordColor.grey)
+                if(this.Color != RecordColor.grey && this.Color != MovingObjectManager.nextColor)
                 {
                     do   //This do while loop will choose a random direction to go at an intersection (until we want to implement an ai that will chase or flee from the robot which is not a priority for the demo)
                     {
@@ -151,7 +151,7 @@ namespace RecordRobot.MovingObjects
                     } while (!CanGo);
                     CanGo = false;
                 }                
-                else
+                else if(this.Color == RecordColor.grey)
                 {
                     MovingObjectManager.SetRelativeDirection(this.Color);
                     if (Maze.CanGo(this.Position, this.AIChoice1))
@@ -174,6 +174,33 @@ namespace RecordRobot.MovingObjects
                                 this.Direction = (Direction)((int)this.AIChoice1 * -1);
                         }
                             
+                    }
+                }
+                else if (this.Color == MovingObjectManager.nextColor)
+                {
+                    MovingObjectManager.SetRelativeDirection(this.Color);
+                    this.AIChoice1 = (Direction)((int)this.AIChoice1 * -1);
+                    this.AIChoice2 = (Direction)((int)this.AIChoice2 * -1);
+                    if (Maze.CanGo(this.Position, this.AIChoice1))
+                        this.Direction = this.AIChoice1;
+                    else if (Maze.CanGo(this.Position, this.AIChoice2))
+                        this.Direction = this.AIChoice2;
+                    else
+                    {
+                        r = Game1.rand.Next(2);
+                        if (r == 0)
+                        {
+                            this.Direction = (Direction)((int)this.AIChoice1 * -1);
+                            if (!Maze.CanGo(this.Position, this.Direction))
+                                this.Direction = (Direction)((int)this.AIChoice2 * -1);
+                        }
+                        else
+                        {
+                            this.Direction = (Direction)((int)this.AIChoice2 * -1);
+                            if (!Maze.CanGo(this.Position, this.Direction))
+                                this.Direction = (Direction)((int)this.AIChoice1 * -1);
+                        }
+
                     }
                 }
             }
