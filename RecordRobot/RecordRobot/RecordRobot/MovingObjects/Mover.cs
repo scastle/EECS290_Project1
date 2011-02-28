@@ -38,6 +38,19 @@ namespace RecordRobot.MovingObjects
         /// </summary>
         public Direction Direction;
 
+
+
+
+        /// <summary>
+        /// The direction the grey record will choose to go to chase the robot.
+        /// </summary>
+        public Direction AIChoice1;
+
+        /// <summary>
+        /// The direction the grey record will choose to go to chase the robot.
+        /// </summary>
+        public Direction AIChoice2;
+
         public abstract void Update();
 
         /// <summary>
