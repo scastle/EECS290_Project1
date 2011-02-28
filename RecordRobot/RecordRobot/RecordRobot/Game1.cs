@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using RecordRobot.Screens;
 
 namespace RecordRobot
 {
@@ -17,12 +18,22 @@ namespace RecordRobot
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
+        /// <summary>
+        /// Gets the stack of screens used in the game.
+        /// </summary>
+        /// <value>The screens.</value>
+        public static ScreenContainer screens { get; private set; }
+
+        public static bool GamePaused;
+
         public static SpriteFont Font;
         GraphicsDeviceManager graphics;
         public static SpriteBatch spriteBatch;
         public static TextReader tr;
         public static Random rand;
         public static DateTime Time;
+        public static bool ExitStatus;
+        public GameScreen MainGame { get; private set; }
 
         public static Level CurrentLevel;
         
@@ -34,6 +45,9 @@ namespace RecordRobot
             Content.RootDirectory = "Content";
             CurrentLevel = new Level();
             rand = new Random();
+            ExitStatus = false;
+            GamePaused = false;
+            MainGame = new GameScreen();
         }
 
         /// <summary>
@@ -133,6 +147,11 @@ namespace RecordRobot
             // TODO: Unload any non ContentManager content here
         }
 
+        public static void ExitGame()
+        {
+            ExitStatus = true;
+        }
+
         /// <summary>
         /// Allows the game to run logic such as updating the world,
         /// checking for collisions, gathering input, and playing audio.
@@ -140,6 +159,8 @@ namespace RecordRobot
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            if (ExitStatus)
+                this.Exit();
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
@@ -158,7 +179,7 @@ namespace RecordRobot
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
-            GameScreen.Draw();
+            MainGame.Draw();
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);

@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace RecordRobot.MovingObjects
 {
-    class Record : Mover
+    public class Record : Mover
     {
         /*
          * I feel like most of the methods for moving around in here are going to be the same as the Robot

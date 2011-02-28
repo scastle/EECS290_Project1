@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace RecordRobot.MovingObjects
 {
-    class MovingObjectManager
+    public class MovingObjectManager
     {
         /// <summary>
         /// All moving objects to be updated and drawn are placed in this list.

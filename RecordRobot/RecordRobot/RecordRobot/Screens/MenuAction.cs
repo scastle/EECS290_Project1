@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace RecordRobot
+namespace RecordRobot.Screens
 {
-    public class Audio
+    public class MenuAction
     {
     }
 }

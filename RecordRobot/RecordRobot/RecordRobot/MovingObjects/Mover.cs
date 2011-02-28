@@ -17,7 +17,7 @@ namespace RecordRobot.MovingObjects
         red = 0, orange=1, yellow = 2, green = 3, blue = 4, violet = 5, grey = -1
     }
 
-    abstract class Mover
+    public abstract class Mover
     {
         /// <summary>
         /// The speed of the moving object.

@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace RecordRobot
 {
-    class InfoBar
+    public class InfoBar
     {
         public static int Height = 30;
         public static int Width = 600;

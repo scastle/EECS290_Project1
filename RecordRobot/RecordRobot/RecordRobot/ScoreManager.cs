@@ -5,7 +5,7 @@ using System.Text;
 
 namespace RecordRobot
 {
-    class ScoreManager
+    public class ScoreManager
     {
         public static int CurrentScore;
     }
