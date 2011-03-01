@@ -189,6 +189,7 @@ namespace RecordRobot.MovingObjects
                         }
                     }
                 }
+                MovingObjectManager.
             }
             else if ((this.Color == RecordColor.grey || this.Color == MovingObjectManager.nextColor) && elapsedTime.Milliseconds % 7 == 0)
             {
