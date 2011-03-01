@@ -52,7 +52,7 @@ namespace RecordRobot
         /// <param name="p">The point to check</param>
         /// <returns>true if the point is an intersection</returns>
         public static bool IsIntersection(Point p)
-        {
+        {/////////////////////
             int r = p.Y / 30;
             int c = p.X / 30;
 
