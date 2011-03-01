@@ -34,7 +34,10 @@ namespace RecordRobot.MovingObjects
 
             Objects = new List<Mover>();
 
-            RobotPlayer = new Robot(45, 45);
+            if (RobotPlayer == null)
+                RobotPlayer = new Robot(45, 45);
+            else
+                RobotPlayer.Position = Settings.RobotStartingPosition;
             Objects.Add(RobotPlayer);
 
 
@@ -95,6 +98,8 @@ namespace RecordRobot.MovingObjects
                             {
                                 Maze.level++;
                             }
+                            Game1.CurrentLevel.LevelNumber++;
+                            //put in settings for harder level groups here.
                             Maze.Draw();
                             InitializeObjects();
                             nextColor = RecordColor.red;
@@ -209,5 +214,74 @@ namespace RecordRobot.MovingObjects
                 }
             }
         }
+
+        public static void AIChangeDirection(RecordColor c)
+        {
+            Mover[] objs = Objects.ToArray();
+            foreach (Mover m in objs)
+            {
+                if (m is Robot)
+                    m.Direction = m.Direction;
+                else
+                {
+                    Record rec = m as Record;
+                    if (rec.Color == RecordColor.grey)
+                    {
+                        // Calculate the difference in the X and Y positions
+                        double xDiff = RobotPlayer.Position.X - m.Position.X;
+                        double yDiff = RobotPlayer.Position.Y - m.Position.Y;
+
+                        if (rec.Direction == Direction.Down && Maze.CanGo(rec.Position, (Direction)((int)rec.Direction * -1)))
+                        {
+                            if (yDiff <= 0)
+                                rec.Direction = (Direction)((int)rec.Direction * -1);
+                        }
+                        else if (rec.Direction == Direction.Up && Maze.CanGo(rec.Position, (Direction)((int)rec.Direction * -1)))
+                        {
+                            if (yDiff >= 0)
+                                rec.Direction = (Direction)((int)rec.Direction * -1);
+                        }
+                        if (rec.Direction == Direction.Right && Maze.CanGo(rec.Position, (Direction)((int)rec.Direction * -1)))
+                        {
+                            if (xDiff <= 0)
+                                rec.Direction = (Direction)((int)rec.Direction * -1);
+                        }
+                        else if (rec.Direction == Direction.Left && Maze.CanGo(rec.Position, (Direction)((int)rec.Direction * -1)))
+                        {
+                            if (xDiff >= 0)
+                                rec.Direction = (Direction)((int)rec.Direction * -1);
+                        }
+                    }
+                    else if (rec.Color == MovingObjectManager.nextColor)
+                    {
+                        // Calculate the difference in the X and Y positions
+                        double xDiff = RobotPlayer.Position.X - m.Position.X;
+                        double yDiff = RobotPlayer.Position.Y - m.Position.Y;
+
+                        if (rec.Direction == Direction.Down && Maze.CanGo(rec.Position, (Direction)((int)rec.Direction * -1)))
+                        {
+                            if (yDiff >= 0)
+                                rec.Direction = (Direction)((int)rec.Direction * -1);
+                        }
+                        else if (rec.Direction == Direction.Up && Maze.CanGo(rec.Position, (Direction)((int)rec.Direction * -1)))
+                        {
+                            if (yDiff <= 0)
+                                rec.Direction = (Direction)((int)rec.Direction * -1);
+                        }
+                        if (rec.Direction == Direction.Right && Maze.CanGo(rec.Position, (Direction)((int)rec.Direction * -1)))
+                        {
+                            if (xDiff >= 0)
+                                rec.Direction = (Direction)((int)rec.Direction * -1);
+                        }
+                        else if (rec.Direction == Direction.Left && Maze.CanGo(rec.Position, (Direction)((int)rec.Direction * -1)))
+                        {
+                            if (xDiff <= 0)
+                                rec.Direction = (Direction)((int)rec.Direction * -1);
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }
