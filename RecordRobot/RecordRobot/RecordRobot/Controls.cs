@@ -42,5 +42,12 @@ namespace RecordRobot
             if (State.IsKeyDown(Keys.Escape))
                 Game1.GamePaused = true;
         }
+
+        public static void SkipLevel()
+        {
+            TimeSpan elapsedTime = DateTime.Now - Game1.Time;
+            if (State.IsKeyDown(Keys.P) && elapsedTime.Milliseconds % 100 == 0)
+                MovingObjectManager.GameWin = true;
+        }
     }
 }
