@@ -34,7 +34,8 @@ namespace RecordRobot.MovingObjects
 
             Objects = new List<Mover>();
 
-            RobotPlayer = new Robot(45, 45);
+            if(RobotPlayer == null)
+                RobotPlayer = new Robot(45, 45);
             Objects.Add(RobotPlayer);
 
 

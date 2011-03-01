@@ -68,11 +68,13 @@ namespace RecordRobot.MovingObjects
             // Check if robot can 
             if (Maze.IsIntersection(this.Position))
             {
-                this.Direction = NextDirection;
-                if (!Maze.CanGo(this.Position, this.Direction))
+                if (!Maze.CanGo(this.Position, this.NextDirection))
                 {
-                    this.Direction = Direction.None;
+                    if (!Maze.CanGo(this.Position, this.Direction))
+                        this.Direction = Direction.None;
                 }
+                else
+                    this.Direction = NextDirection;
             }
 
             // Check if NextDirection is the opposite of Direction
