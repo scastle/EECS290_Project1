@@ -34,8 +34,10 @@ namespace RecordRobot.MovingObjects
 
             Objects = new List<Mover>();
 
-            if(RobotPlayer == null)
+            if (RobotPlayer == null)
                 RobotPlayer = new Robot(45, 45);
+            else
+                RobotPlayer.Position = Settings.RobotStartingPosition;
             Objects.Add(RobotPlayer);
 
 
@@ -96,6 +98,8 @@ namespace RecordRobot.MovingObjects
                             {
                                 Maze.level++;
                             }
+                            Game1.CurrentLevel.LevelNumber++;
+                            //put in settings for harder level groups here.
                             Maze.Draw();
                             InitializeObjects();
                             nextColor = RecordColor.red;
