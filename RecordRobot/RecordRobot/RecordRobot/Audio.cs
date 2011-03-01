@@ -5,7 +5,7 @@ using System.Text;
 
 namespace RecordRobot
 {
-    class Audio
+    public class Audio
     {
     }
 }

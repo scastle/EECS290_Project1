@@ -9,28 +9,47 @@ namespace RecordRobot.MovingObjects
 {
     public enum Direction
     {
-        None, Up, Down, Left, Right
+        None = 0, Up = 1, Down = -1, Left = 2, Right = -2
     }
 
-    abstract class Mover
+    public enum RecordColor
+    {
+        red = 0, orange=1, yellow = 2, green = 3, blue = 4, violet = 5, grey = -1
+    }
+
+    public abstract class Mover
     {
         /// <summary>
         /// The speed of the moving object.
         /// </summary>
-        public int Speed = 1;
+        public int Speed;
 
-        SpriteBatch Batch;
-        Texture2D Texture;
+        public Texture2D Texture;
 
         /// <summary>
         /// The current location of the object.
         /// </summary>
         public Point Position;
 
+        private Vector2 drawPosition = new Vector2();
+
         /// <summary>
         /// The current direction the robot is moving.
         /// </summary>
         public Direction Direction;
+
+
+
+
+        /// <summary>
+        /// The direction the grey record will choose to go to chase the robot.
+        /// </summary>
+        public Direction AIChoice1;
+
+        /// <summary>
+        /// The direction the grey record will choose to go to chase the robot.
+        /// </summary>
+        public Direction AIChoice2;
 
         public abstract void Update();
 
@@ -48,6 +67,13 @@ namespace RecordRobot.MovingObjects
             }
         }
 
-        public abstract void Draw();
+        public virtual void Draw()
+        {
+            drawPosition.X = Position.X - Texture.Width / 2;
+            drawPosition.Y = Position.Y - Texture.Height / 2;
+            Game1.spriteBatch.Begin();
+            Game1.spriteBatch.Draw(Texture, drawPosition, Color.White);
+            Game1.spriteBatch.End();
+        }
     }
 }
