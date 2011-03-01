@@ -17,7 +17,7 @@ namespace RecordRobot.MovingObjects
         red = 0, orange=1, yellow = 2, green = 3, blue = 4, violet = 5, grey = -1
     }
 
-    abstract class Mover
+    public abstract class Mover
     {
         /// <summary>
         /// The speed of the moving object.
@@ -37,6 +37,19 @@ namespace RecordRobot.MovingObjects
         /// The current direction the robot is moving.
         /// </summary>
         public Direction Direction;
+
+
+
+
+        /// <summary>
+        /// The direction the grey record will choose to go to chase the robot.
+        /// </summary>
+        public Direction AIChoice1;
+
+        /// <summary>
+        /// The direction the grey record will choose to go to chase the robot.
+        /// </summary>
+        public Direction AIChoice2;
 
         public abstract void Update();
 

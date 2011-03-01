@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace RecordRobot.MovingObjects
 {
-    class Record : Mover
+    public class Record : Mover
     {
         /*
          * I feel like most of the methods for moving around in here are going to be the same as the Robot
@@ -27,9 +27,9 @@ namespace RecordRobot.MovingObjects
 
         public Direction CurrentDirection;
 
-        public RecordColor Color;
-
         private bool CanGo;
+
+        public RecordColor Color;
 
         private Texture2D OriginalTexture;
 
@@ -119,35 +119,90 @@ namespace RecordRobot.MovingObjects
             if (Maze.IsIntersection(this.Position))
             {
                 this.CurrentDirection = this.Direction;
-                do   //This do while loop will choose a random direction to go at an intersection (until we want to implement an ai that will chase or flee from the robot which is not a priority for the demo)
+                if(this.Color != RecordColor.grey && this.Color != MovingObjectManager.nextColor)
                 {
-                    
-                    r = Game1.rand.Next(4);
-                    switch (r)
+                    do   //This do while loop will choose a random direction to go at an intersection (until we want to implement an ai that will chase or flee from the robot which is not a priority for the demo)
                     {
-                        case 0:
-                            this.Direction = Direction.Right;
-                            break;
-                        case 1:
-                            this.Direction = Direction.Left;
-                            break;
-                        case 2:
-                            this.Direction = Direction.Up;
-                            break;
-                        case 3:
-                            this.Direction = Direction.Down;
-                            break;
-                    }
+                    
+                        r = Game1.rand.Next(4);
+                        switch (r)
+                        {
+                            case 0:
+                                this.Direction = Direction.Right;
+                                break;
+                            case 1:
+                                this.Direction = Direction.Left;
+                                break;
+                            case 2:
+                                this.Direction = Direction.Up;
+                                break;
+                            case 3:
+                                this.Direction = Direction.Down;
+                                break;
+                        }
 
-                    if (Maze.CanGo(this.Position, this.Direction))
-                    {
-                        CanGo = true;
-                        if ((int)this.CurrentDirection + (int)this.Direction == 0)
-                            CanGo = false;
-                    }
+                        if (Maze.CanGo(this.Position, this.Direction))
+                        {
+                            CanGo = true;
+                            if ((int)this.CurrentDirection + (int)this.Direction == 0)
+                                CanGo = false;
+                        }
                     
-                } while (!CanGo);
-                CanGo = false;
+                    } while (!CanGo);
+                    CanGo = false;
+                }                
+                else if(this.Color == RecordColor.grey)
+                {
+                    MovingObjectManager.SetRelativeDirection(this.Color);
+                    if (Maze.CanGo(this.Position, this.AIChoice1))
+                        this.Direction = this.AIChoice1;
+                    else if (Maze.CanGo(this.Position, this.AIChoice2))
+                        this.Direction = this.AIChoice2;
+                    else
+                    {
+                        r = Game1.rand.Next(2);
+                        if (r == 0)
+                        {
+                            this.Direction = (Direction)((int)this.AIChoice1 * -1);
+                            if(!Maze.CanGo(this.Position, this.Direction))
+                                this.Direction = (Direction)((int)this.AIChoice2 * -1);
+                        }
+                        else
+                        {
+                            this.Direction = (Direction)((int)this.AIChoice2 * -1);
+                            if(!Maze.CanGo(this.Position, this.Direction))
+                                this.Direction = (Direction)((int)this.AIChoice1 * -1);
+                        }
+                            
+                    }
+                }
+                else if (this.Color == MovingObjectManager.nextColor)
+                {
+                    MovingObjectManager.SetRelativeDirection(this.Color);
+                    this.AIChoice1 = (Direction)((int)this.AIChoice1 * -1);
+                    this.AIChoice2 = (Direction)((int)this.AIChoice2 * -1);
+                    if (Maze.CanGo(this.Position, this.AIChoice1))
+                        this.Direction = this.AIChoice1;
+                    else if (Maze.CanGo(this.Position, this.AIChoice2))
+                        this.Direction = this.AIChoice2;
+                    else
+                    {
+                        r = Game1.rand.Next(2);
+                        if (r == 0)
+                        {
+                            this.Direction = (Direction)((int)this.AIChoice1 * -1);
+                            if (!Maze.CanGo(this.Position, this.Direction))
+                                this.Direction = (Direction)((int)this.AIChoice2 * -1);
+                        }
+                        else
+                        {
+                            this.Direction = (Direction)((int)this.AIChoice2 * -1);
+                            if (!Maze.CanGo(this.Position, this.Direction))
+                                this.Direction = (Direction)((int)this.AIChoice1 * -1);
+                        }
+
+                    }
+                }
             }
 
             if (CountDown)

@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 namespace RecordRobot.MovingObjects
 {
 
-    class Robot : Mover
+    public class Robot : Mover
     {
         /// <summary>
         /// The direction the robot will go at the next intersection

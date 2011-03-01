@@ -119,6 +119,15 @@
     <Compile Include="MovingObjects\Record.cs" />
     <Compile Include="MovingObjects\Robot.cs" />
     <Compile Include="ScoreManager.cs" />
+    <Compile Include="Screens\ScreenContainer.cs" />
+    <Compile Include="Screens\MenuAction.cs" />
+    <Compile Include="Screens\MenuDelegates\QuitTopDelegate.cs" />
+    <Compile Include="Screens\MenuDelegates\QuitGameDelegate.cs" />
+    <Compile Include="Screens\MenuDelegates\IMenuDelegate.cs" />
+    <Compile Include="Screens\MenuEntry.cs" />
+    <Compile Include="Screens\Menu.cs" />
+    <Compile Include="Screens\PauseMenu.cs" />
+    <Compile Include="Screens\PauseScreen.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />

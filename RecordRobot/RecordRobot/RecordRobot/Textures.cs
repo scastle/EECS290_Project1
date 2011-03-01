@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace RecordRobot
 {
-    class Textures
+    public class Textures
     {
         public static Texture2D Robot;
         public static Texture2D RobotLeft;

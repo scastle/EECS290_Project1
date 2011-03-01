@@ -8,7 +8,7 @@ using RecordRobot.MovingObjects;
 
 namespace RecordRobot
 {
-    class Controls
+    public class Controls
     {
         public static KeyboardState State;
 
@@ -35,6 +35,12 @@ namespace RecordRobot
             {
                 return Direction.None;
             }
+        }
+
+        public static void PauseGame()
+        {
+            if (State.IsKeyDown(Keys.Escape))
+                Game1.GamePaused = true;
         }
     }
 }

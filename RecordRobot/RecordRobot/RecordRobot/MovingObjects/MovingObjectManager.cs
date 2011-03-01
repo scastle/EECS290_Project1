@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace RecordRobot.MovingObjects
 {
-    class MovingObjectManager
+    public class MovingObjectManager
     {
         /// <summary>
         /// All moving objects to be updated and drawn are placed in this list.
@@ -86,7 +86,15 @@ namespace RecordRobot.MovingObjects
                         {
                             Objects.RemoveAll(item => item is Record);
                             //GameWin = true;
-                            Maze.level++;
+                            if (Maze.level == 4)
+                            {
+                                Maze.level = 0;
+                                Game1.CurrentLevel.NumRecords = 6;
+                            }
+                            else
+                            {
+                                Maze.level++;
+                            }
                             Maze.Draw();
                             InitializeObjects();
                             nextColor = RecordColor.red;
@@ -123,6 +131,80 @@ namespace RecordRobot.MovingObjects
                     if (Math.Abs(xDiff) < xColl && Math.Abs(yDiff) < yColl)
                     {
                         yield return m;
+                    }
+                }
+            }
+        }
+
+        public static void SetRelativeDirection(RecordColor color)
+        {
+            Mover[] objs = Objects.ToArray();
+            int r = Game1.rand.Next(2);
+            foreach (Mover m in objs)
+            {
+                if (m is Robot)
+                    m.Direction = m.Direction;
+                else
+                {
+                    Record rec = m as Record;
+                    if (rec.Color == RecordColor.grey || rec.Color == nextColor)
+                    {
+
+                        // Calculate the difference in the X and Y positions
+                        double xDiff = RobotPlayer.Position.X - m.Position.X;
+                        double yDiff = RobotPlayer.Position.Y - m.Position.Y;
+                        if (xDiff >= 0 && yDiff >= 0)
+                        {
+                            if (r == 1)
+                            {
+                                m.AIChoice1 = Direction.Down;
+                                m.AIChoice2 = Direction.Right;
+                            }
+                            else
+                            {
+                                m.AIChoice1 = Direction.Right;
+                                m.AIChoice2 = Direction.Down;
+                            }
+                        }
+                        else if (xDiff >= 0 && yDiff <= 0)
+                        {
+                            if (r == 1)
+                            {
+                                m.AIChoice1 = Direction.Up;
+                                m.AIChoice2 = Direction.Right;
+                            }
+                            else
+                            {
+                                m.AIChoice1 = Direction.Right;
+                                m.AIChoice2 = Direction.Up;
+                            }
+                        }
+                        else if (xDiff <= 0 && yDiff <= 0)
+                        {
+                            if (r == 1)
+                            {
+                                m.AIChoice1 = Direction.Up;
+                                m.AIChoice2 = Direction.Left;
+                            }
+                            else
+                            {
+                                m.AIChoice1 = Direction.Left;
+                                m.AIChoice2 = Direction.Up;
+                            }
+                        }
+                        else if (xDiff <= 0 && yDiff >= 0)
+                        {
+                            if (r == 1)
+                            {
+                                m.AIChoice1 = Direction.Down;
+                                m.AIChoice2 = Direction.Left;
+                            }
+                            else
+                            {
+                                m.AIChoice1 = Direction.Left;
+                                m.AIChoice2 = Direction.Down;
+                            }
+                        }
                     }
                 }
             }
