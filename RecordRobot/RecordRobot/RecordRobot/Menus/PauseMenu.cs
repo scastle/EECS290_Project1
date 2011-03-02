@@ -29,14 +29,20 @@ namespace RecordRobot.Menus
 
             MenuEntry quit = new MenuEntry("Quit", position + new Vector2(0, spacing), new QuitGameDelegate());
 
-            resume.UpperMenu = quit;
+            MenuEntry main = new MenuEntry("Main Menu", position + new Vector2(0, spacing * 2), new MainMenuDelegate());
+
+            resume.UpperMenu = main;
             resume.LowerMenu = quit;
 
             quit.UpperMenu = resume;
-            quit.LowerMenu = resume;
+            quit.LowerMenu = main;
+
+            main.UpperMenu = quit;
+            main.LowerMenu = resume;
 
             this.Add(resume);
             this.Add(quit);
+            this.Add(main);
         }
     }
 }

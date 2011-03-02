@@ -35,11 +35,13 @@ namespace RecordRobot.Screens
         private Vector2 textDrawOrigin;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PauseScreen"/> class.
+        /// Initializes a new instance of the <see cref="TitleScreen"/> class.
         /// </summary>
         public TitleScreen()
             : base()
         {
+            Game1.screens.IsTitle = true;
+            Game1.screens.IsPaused = false;
             // Note: Do not use GameClock, it will be paused!
             this.initialTime = DateTime.Now.Ticks;
             this.menu = new TitleMenu(new Vector2(200, 200), 100);

@@ -36,9 +36,7 @@ namespace RecordRobot
         public static Random rand;
         public static DateTime Time;
         public static bool ExitStatus;
-        public static WorldScreen MainGame { get; private set; }
-        
-
+        public static WorldScreen MainGame;
         public static Level CurrentLevel;
         
         public Game1()
@@ -52,7 +50,7 @@ namespace RecordRobot
             ExitStatus = false;
             GamePaused = false;
             screens = new ScreenContainer();
-            MainGame = new WorldScreen();
+            
 
         }
 
@@ -155,12 +153,18 @@ namespace RecordRobot
 
         public static void StartGame()
         {
-            screens.Play(MainGame);
+            screens.Play(new WorldScreen());
         }
 
         public static void ExitGame()
         {
             ExitStatus = true;
+        }
+
+        public static void ToTitle()
+        {
+            screens.Play(new TitleScreen());
+            //need to reset the level, robot, records, lives, time, score
         }
 
         /// <summary>
