@@ -30,6 +30,8 @@ namespace RecordRobot.MovingObjects
 
         public Direction CurrentDirection;
 
+        public Point RelativePosition;
+
         private bool CanGo;
 
         private Point OldPosition;
@@ -123,7 +125,9 @@ namespace RecordRobot.MovingObjects
             int r;
             if (Maze.grid == null)
                 Console.WriteLine("THE GRID IS NOT INSTANTIATED");
-
+            if(Maze.IsDeadEnd(this.Position))
+                this.Direction = (Direction) ((int) this.Direction * -1);
+            this.RelativePosition = MovingObjectManager.GetRelativePosition(this.Color);
             if (Maze.IsIntersection(this.Position))
             {
                 this.CurrentDirection = this.Direction;
@@ -188,10 +192,10 @@ namespace RecordRobot.MovingObjects
                                 this.Direction = (Direction)((int)this.AIChoice1 * -1);
                         }
                     }
+                    
                 }
-                MovingObjectManager.
             }
-            else if ((this.Color == RecordColor.grey || this.Color == MovingObjectManager.nextColor) && elapsedTime.Milliseconds % 7 == 0)
+            else if ((this.Color == RecordColor.grey || this.Color == MovingObjectManager.nextColor) && (RelativePosition.X < 59 && RelativePosition.Y < 59))
             {
                 MovingObjectManager.AIChangeDirection(this.Color);
             }

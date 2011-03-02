@@ -39,6 +39,7 @@ namespace RecordRobot
 
         public void Draw()
         {
+            Controls.SkipLevel();
             //this checking is being handled in movingobjectmanager's update method, I have to look into it to see where it should be.
             if (MovingObjectManager.GameWin)
             {

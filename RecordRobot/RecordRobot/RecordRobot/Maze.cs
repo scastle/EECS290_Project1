@@ -67,6 +67,21 @@ namespace RecordRobot
             }
         }
 
+        public static bool IsDeadEnd(Point p)
+        {
+            int r = p.Y / 30;
+            int c = p.X / 30;
+
+            if (((grid[level, r - 1, c]) && !(grid[level, r + 1, c] || grid[level, r, c - 1] || grid[level, r, c + 1])) ||
+                ((grid[level, r + 1, c]) && !(grid[level, r - 1, c] || grid[level, r, c - 1] || grid[level, r, c + 1])) ||
+                ((grid[level, r, c + 1]) && !(grid[level, r + 1, c] || grid[level, r, c - 1] || grid[level, r - 1, c])) ||
+                ((grid[level, r, c - 1]) && !(grid[level, r + 1, c] || grid[level, r - 1, c] || grid[level, r, c + 1]))
+                && ((p.X - 15) % 30 == 0 && (p.Y - 15) % 30 == 0))
+                return true;
+            else
+                return false;
+        }
+
         /// <summary>
         /// Checks if the robot or record can move in the current direction
         /// </summary>

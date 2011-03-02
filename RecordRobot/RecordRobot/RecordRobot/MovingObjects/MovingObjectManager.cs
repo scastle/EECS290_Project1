@@ -283,5 +283,25 @@ namespace RecordRobot.MovingObjects
             }
         }
 
+
+        public static Point GetRelativePosition(RecordColor c)
+        {
+            Mover[] objs = Objects.ToArray();
+            int r = Game1.rand.Next(2);
+            foreach (Mover m in objs)
+            {
+                if (m is Robot)
+                    m.Direction = m.Direction;
+                else
+                {
+                    Record rec = m as Record;
+                    if(rec.Color == c)
+                        return new Point(Math.Abs(RobotPlayer.Position.X - m.Position.X),
+                            Math.Abs(RobotPlayer.Position.Y - m.Position.Y));
+                }
+            }
+            return new Point(-9999, -9999);
+            
+        }
     }
 }
