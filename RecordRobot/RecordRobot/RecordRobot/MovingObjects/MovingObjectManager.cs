@@ -95,7 +95,10 @@ namespace RecordRobot.MovingObjects
                             if (Maze.level == 4)
                             {
                                 Maze.level = 0;
-                                Game1.CurrentLevel.NumRecords = 6;
+                                //more records
+                                //if (Game1.CurrentLevel.NumRecords < 6)
+                                    Game1.CurrentLevel.NumRecords = 6;
+                            
                             }
                             else
                             {
@@ -105,7 +108,11 @@ namespace RecordRobot.MovingObjects
                             //display a screen between levels
                             Game1.screens.Play(new PreLevelScreen());
 
-                            //put in settings for harder level groups here.
+                            if (Game1.CurrentLevel.LevelNumber == 9)
+                            {
+                                GameWin = true;
+                                //win the game
+                            }
                             Maze.Draw();
                             InitializeObjects();
                             nextColor = RecordColor.red;

@@ -83,8 +83,10 @@ namespace RecordRobot.GameElements
                     {
                         this.IsPaused = false;
                     }
-                    this.IsTitle = false;
-
+                    if ((this[i] as TitleScreen) != null)
+                    {
+                        this.IsTitle = false;
+                    }
                     Remove(this[i]);
                     //return;
                 }

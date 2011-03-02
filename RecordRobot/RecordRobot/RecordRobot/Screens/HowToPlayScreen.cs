@@ -43,7 +43,7 @@ namespace RecordRobot.Screens
             // Note: Do not use GameClock, it will be paused!
             this.initialTime = DateTime.Now.Ticks;
             drawPosition = new Vector2(0, 0);
-            this.duration = 1000000;
+            this.duration = 10000000;
             this.texture = Textures.HowToPlay;
 
         }
@@ -72,6 +72,7 @@ namespace RecordRobot.Screens
                     if (Game1.screens.Count > 0)
                     {
                         Game1.screens[Game1.screens.Count - 1].Disposed = true;
+                        Game1.screens.Update();
                     }
                 }
             }
