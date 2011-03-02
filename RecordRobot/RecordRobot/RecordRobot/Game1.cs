@@ -10,6 +10,9 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using RecordRobot.Screens;
+using RecordRobot.GameElements;
+using RecordRobot.RRClasses;
+using RecordRobot.Clock;
 
 namespace RecordRobot
 {
@@ -33,7 +36,8 @@ namespace RecordRobot
         public static Random rand;
         public static DateTime Time;
         public static bool ExitStatus;
-        public GameScreen MainGame { get; private set; }
+        public static WorldScreen MainGame { get; private set; }
+        
 
         public static Level CurrentLevel;
         
@@ -47,7 +51,9 @@ namespace RecordRobot
             rand = new Random();
             ExitStatus = false;
             GamePaused = false;
-            MainGame = new GameScreen();
+            screens = new ScreenContainer();
+            MainGame = new WorldScreen();
+
         }
 
         /// <summary>
@@ -133,7 +139,7 @@ namespace RecordRobot
                 
             }
             Maze.LoadMaze(map);
-
+            screens.Play(new TitleScreen());
             
             // TODO: use this.Content to load your game content here
         }
@@ -145,6 +151,11 @@ namespace RecordRobot
         protected override void UnloadContent()
         {
             // TODO: Unload any non ContentManager content here
+        }
+
+        public static void StartGame()
+        {
+            screens.Play(MainGame);
         }
 
         public static void ExitGame()
@@ -159,17 +170,22 @@ namespace RecordRobot
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+
+            base.Update(gameTime);
+
             if (ExitStatus)
                 this.Exit();
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            MovingObjects.MovingObjectManager.Update();
+            GameClock.Update();
+            screens.Update();
+            
 
             // TODO: Add your update logic here
 
-            base.Update(gameTime);
+            
         }
 
         /// <summary>
@@ -179,9 +195,9 @@ namespace RecordRobot
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
-            MainGame.Draw();
+            
             // TODO: Add your drawing code here
-
+            screens.Draw();
             base.Draw(gameTime);
         }
     }

@@ -108,27 +108,33 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clock\GameClock.cs" />
     <Compile Include="Controls.cs" />
-    <Compile Include="GameScreen.cs" />
+    <Compile Include="GameElements\GameScreen.cs" />
+    <Compile Include="Menus\MenuDelegates\MainMenuDelegate.cs" />
+    <Compile Include="Menus\MenuDelegates\StartDelegate.cs" />
+    <Compile Include="Menus\TitleMenu.cs" />
+    <Compile Include="Screens\TitleScreen.cs" />
+    <Compile Include="Screens\WorldScreen.cs" />
     <Compile Include="InfoBar.cs" />
-    <Compile Include="Level.cs" />
-    <Compile Include="Maze.cs" />
+    <Compile Include="RRClasses\Level.cs" />
+    <Compile Include="RRClasses\Maze.cs" />
     <Compile Include="Audio.cs" />
     <Compile Include="MovingObjects\MovingObjectManager.cs" />
     <Compile Include="MovingObjects\Mover.cs" />
     <Compile Include="MovingObjects\Record.cs" />
     <Compile Include="MovingObjects\Robot.cs" />
-    <Compile Include="ScoreManager.cs" />
-    <Compile Include="Screens\ScreenContainer.cs" />
-    <Compile Include="Screens\MenuAction.cs" />
-    <Compile Include="Screens\MenuDelegates\QuitTopDelegate.cs" />
-    <Compile Include="Screens\MenuDelegates\QuitGameDelegate.cs" />
-    <Compile Include="Screens\MenuDelegates\IMenuDelegate.cs" />
-    <Compile Include="Screens\MenuEntry.cs" />
-    <Compile Include="Screens\Menu.cs" />
-    <Compile Include="Screens\PauseMenu.cs" />
+    <Compile Include="RRClasses\ScoreManager.cs" />
+    <Compile Include="GameElements\ScreenContainer.cs" />
+    <Compile Include="Menus\MenuAction.cs" />
+    <Compile Include="Menus\MenuDelegates\QuitTopDelegate.cs" />
+    <Compile Include="Menus\MenuDelegates\QuitGameDelegate.cs" />
+    <Compile Include="Menus\MenuDelegates\IMenuDelegate.cs" />
+    <Compile Include="Menus\MenuEntry.cs" />
+    <Compile Include="Menus\Menu.cs" />
+    <Compile Include="Menus\PauseMenu.cs" />
     <Compile Include="Screens\PauseScreen.cs" />
-    <Compile Include="Settings.cs" />
+    <Compile Include="GameElements\Settings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />

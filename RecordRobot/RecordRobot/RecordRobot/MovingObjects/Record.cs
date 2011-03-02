@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using RecordRobot.RRClasses;
+using RecordRobot.GameElements;
 
 namespace RecordRobot.MovingObjects
 {

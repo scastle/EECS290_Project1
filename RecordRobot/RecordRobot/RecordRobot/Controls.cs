@@ -37,10 +37,32 @@ namespace RecordRobot
             }
         }
 
-        public static void PauseGame()
+        //returns true if enter is pressed
+        //for use by menus
+        public static bool Enter()
+        {
+            if(State.IsKeyDown(Keys.Enter))
+                return true;
+            else
+                return false;
+        }
+
+        //returns true if back is pressed for menus
+        public static bool Back()
+        {
+            if( State.IsKeyDown(Keys.Escape) || State.IsKeyDown(Keys.Back) )
+                return true;
+            else
+                return false;
+        }
+
+        public static bool PauseGame()
         {
             if (State.IsKeyDown(Keys.Escape))
-                Game1.GamePaused = true;
+                return true;
+            else
+                return false;
+
         }
 
         public static void SkipLevel()

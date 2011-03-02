@@ -2,18 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Microsoft.Xna.Framework;
-using RecordRobot.GameElements;
-using RecordRobot.Menus;
 using RecordRobot.Clock;
+using RecordRobot.Menus;
+using RecordRobot.GameElements;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace RecordRobot.Screens
 {
-    /// <summary>
-    /// This instanciates a new Pause Screen.
-    /// </summary>
-    public class PauseScreen : GameScreen
+    class TitleScreen : GameScreen
     {
+
         /// <summary>
         /// This is the time (DateTime, not GameClock) 
         /// that the screen is created.
@@ -23,7 +22,7 @@ namespace RecordRobot.Screens
         /// <summary>
         /// This is the menu used for the pause screen.
         /// </summary>
-        private PauseMenu menu;
+        private TitleMenu menu;
 
         /// <summary>
         /// Where to write "Paused"
@@ -38,14 +37,15 @@ namespace RecordRobot.Screens
         /// <summary>
         /// Initializes a new instance of the <see cref="PauseScreen"/> class.
         /// </summary>
-        public PauseScreen()
+        public TitleScreen()
             : base()
         {
             // Note: Do not use GameClock, it will be paused!
             this.initialTime = DateTime.Now.Ticks;
-            this.menu = new PauseMenu(new Vector2(300, 100), 50);
+            this.menu = new TitleMenu(new Vector2(200, 200), 100);
 
-            this.textDrawPosition = new Vector2(300, 50);
+            this.textDrawPosition = new Vector2(250, 200);
+            //this.textDrawOrigin = Drawer.font.MeasureString("Paused") / 2f;
         }
 
         /// <summary>
@@ -74,20 +74,10 @@ namespace RecordRobot.Screens
         /// </summary>
         public override void Draw()
         {
+            // Write "RecordRobot" at the center of the screen.
             Game1.spriteBatch.Begin();
-            Game1.spriteBatch.DrawString(Game1.Font, "Paused", this.textDrawPosition, Color.White);
+            Game1.spriteBatch.DrawString(Game1.Font, "Record Robot", this.textDrawPosition, Color.White);
             Game1.spriteBatch.End();
-            // Write "Paused" at the center of the screen.
-            /*Drawer.DrawString(
-                "Paused",
-                this.textDrawPosition,
-                Color.Black,
-                0f,
-                this.textDrawOrigin,
-                0.35f,
-                SpriteEffects.None,
-                1f);
-            */
             // Draw menu
             this.menu.Draw();
         }

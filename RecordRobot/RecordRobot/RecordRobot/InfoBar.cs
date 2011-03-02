@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using System.Globalization;
 using Microsoft.Xna.Framework.Graphics;
+using RecordRobot.RRClasses;
 
 namespace RecordRobot
 {

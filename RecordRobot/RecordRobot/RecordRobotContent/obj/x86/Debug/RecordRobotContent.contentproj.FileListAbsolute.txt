@@ -5,3 +5,4 @@ C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRob
 C:\Users\Mike\Documents\GitRepository\RecordRobot\RecordRobot\RecordRobotContent\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Mike\Documents\CurrentRecordRobotIteration\scastle-EECS290_Project1-dd7fa6f\RecordRobot\RecordRobot\RecordRobotContent\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Mike\Documents\EECS290_Project1\RecordRobot\RecordRobot\RecordRobotContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Michael\Desktop\new menus stuff\RecordRobot\RecordRobot\RecordRobotContent\obj\x86\Debug\ResolveAssemblyReference.cache
