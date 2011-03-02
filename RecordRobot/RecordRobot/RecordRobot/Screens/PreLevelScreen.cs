@@ -3,51 +3,44 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using RecordRobot.Clock;
-using RecordRobot.Menus;
 using RecordRobot.GameElements;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace RecordRobot.Screens
 {
-    class TitleScreen : GameScreen
+    class PreLevelScreen : GameScreen
     {
-
         /// <summary>
         /// This is the time (DateTime, not GameClock) 
         /// that the screen is created.
         /// </summary>
         private long initialTime;
 
-        /// <summary>
-        /// This is the menu used for the pause screen.
-        /// </summary>
-        private TitleMenu menu;
 
         /// <summary>
-        /// Where to write "Record Robot"
+        /// This is the duration of the screen
+        /// </summary>
+        private long duration;
+
+        /// <summary>
+        /// Where to write text
         /// </summary>
         private Vector2 textDrawPosition;
 
-        /// <summary>
-        /// The center of the word "Paused".
-        /// </summary>
-        private Vector2 textDrawOrigin;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TitleScreen"/> class.
+        /// Initializes a new instance of the <see cref="PreLevelScreen"/> class.
         /// </summary>
-        public TitleScreen()
+        public PreLevelScreen()
             : base()
         {
-            Game1.screens.IsTitle = true;
-            Game1.screens.IsPaused = false;
+            Game1.screens.IsTitle = false;
+            Game1.screens.IsPaused = true;
             // Note: Do not use GameClock, it will be paused!
             this.initialTime = DateTime.Now.Ticks;
-            this.menu = new TitleMenu(new Vector2(150, 175), 50);
-
-            this.textDrawPosition = new Vector2(150, 100);
-            //this.textDrawOrigin = Drawer.font.MeasureString("Paused") / 2f;
+            duration = 50000000;
+            textDrawPosition = new Vector2(260, 230);
+            
         }
 
         /// <summary>
@@ -68,7 +61,13 @@ namespace RecordRobot.Screens
                 GameClock.Unpause();
             }
 
-            this.menu.Update();
+            //exit screen and start level after certain time has passed
+            if (DateTime.Now.Ticks > duration + initialTime)
+            {
+                Game1.screens.IsPaused = false;
+                this.Disposed = true;
+
+            }
         }
 
         /// <summary>
@@ -78,10 +77,9 @@ namespace RecordRobot.Screens
         {
             // Write "RecordRobot" at the center of the screen.
             Game1.spriteBatch.Begin();
-            Game1.spriteBatch.DrawString(Game1.Font, "Record Robot", this.textDrawPosition, Color.White);
+            Game1.spriteBatch.DrawString(Game1.Font, "Level " + (Game1.CurrentLevel.LevelNumber + 1), this.textDrawPosition, Color.White);
             Game1.spriteBatch.End();
-            // Draw menu
-            this.menu.Draw();
+            
         }
     }
 }

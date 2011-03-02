@@ -165,6 +165,13 @@ namespace RecordRobot
         {
             screens.Play(new TitleScreen());
             //need to reset the level, robot, records, lives, time, score
+            Maze.level = 0;
+            CurrentLevel.LevelNumber = 0;
+            CurrentLevel.NumRecords = Settings.NumRecords;
+            MovingObjects.MovingObjectManager.Objects = null;
+            MovingObjects.MovingObjectManager.RobotPlayer = new MovingObjects.Robot(45, 45);
+            MovingObjects.MovingObjectManager.Update();
+
         }
 
         /// <summary>
