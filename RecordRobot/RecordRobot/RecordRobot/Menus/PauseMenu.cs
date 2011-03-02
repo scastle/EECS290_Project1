@@ -20,10 +20,10 @@ namespace RecordRobot.Menus
         /// </summary>
         /// <param name="position">The position.</param>
         /// <param name="spacing">The spacing.</param>
-        public PauseMenu(Vector2 position, float spacing)
+        public PauseMenu(Vector2 position, float spacing, String MainAction)
             : base(position)
         {
-            MenuEntry resume = new MenuEntry("Resume", position, new QuitTopDelegate());
+            MenuEntry resume = new MenuEntry(MainAction, position, new QuitTopDelegate());
 
             MenuEntry quit = new MenuEntry("Quit", position + new Vector2(0, spacing), new QuitGameDelegate());
 

@@ -14,6 +14,7 @@ namespace RecordRobot
 
         public static Direction GetDirection()
         {
+            
             State = Keyboard.GetState();
             if (State.IsKeyDown(Keys.Up) || State.IsKeyDown(Keys.W))
             {
