@@ -151,6 +151,11 @@ namespace RecordRobot
             // TODO: Unload any non ContentManager content here
         }
 
+        public static void GameOver()
+        {
+            screens.Play(new GameOverScreen());
+        }
+
         public static void StartGame()
         {
             screens.Play(new WorldScreen());
@@ -169,6 +174,7 @@ namespace RecordRobot
             CurrentLevel.LevelNumber = 0;
             CurrentLevel.NumRecords = Settings.NumRecords;
             MovingObjects.MovingObjectManager.Objects = null;
+            MovingObjects.MovingObjectManager.GameOver = false;
             MovingObjects.MovingObjectManager.RobotPlayer = new MovingObjects.Robot(45, 45);
             MovingObjects.MovingObjectManager.Update();
 

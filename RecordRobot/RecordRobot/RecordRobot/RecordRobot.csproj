@@ -114,6 +114,7 @@
     <Compile Include="Menus\MenuDelegates\MainMenuDelegate.cs" />
     <Compile Include="Menus\MenuDelegates\StartDelegate.cs" />
     <Compile Include="Menus\TitleMenu.cs" />
+    <Compile Include="Screens\GameOverScreen.cs" />
     <Compile Include="Screens\PreLevelScreen.cs" />
     <Compile Include="Screens\TitleScreen.cs" />
     <Compile Include="Screens\WorldScreen.cs" />
