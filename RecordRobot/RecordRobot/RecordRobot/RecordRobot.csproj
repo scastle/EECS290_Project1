@@ -128,7 +128,6 @@
     <Compile Include="MovingObjects\Robot.cs" />
     <Compile Include="RRClasses\ScoreManager.cs" />
     <Compile Include="GameElements\ScreenContainer.cs" />
-    <Compile Include="Menus\MenuAction.cs" />
     <Compile Include="Menus\MenuDelegates\QuitTopDelegate.cs" />
     <Compile Include="Menus\MenuDelegates\QuitGameDelegate.cs" />
     <Compile Include="Menus\MenuDelegates\IMenuDelegate.cs" />

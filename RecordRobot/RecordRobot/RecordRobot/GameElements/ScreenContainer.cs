@@ -10,7 +10,7 @@ namespace RecordRobot.GameElements
     /// This is a stack of screens used in the game.
     /// Do not Add or Remove screens yourself. Use the "Play"
     /// method to pop a new screen on the stack, and if you want
-    /// to remove a screen, so the GameScreen.Disposed value
+    /// to remove a screen, set the GameScreen.Disposed value
     /// to true for a screen and it will get removed for you.
     /// </summary>
     public class ScreenContainer : List<GameScreen>
@@ -137,13 +137,6 @@ namespace RecordRobot.GameElements
                 this.IsPaused = true;
                 this.Pause();
             }
-
-            //if (!this.IsTitle && !this.IsPaused && !Beginning)
-            //{
-            //    this.Title();
-            //}
-
-
         }
 
         /// <summary>

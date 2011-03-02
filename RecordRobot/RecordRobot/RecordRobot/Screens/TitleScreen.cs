@@ -30,11 +30,6 @@ namespace RecordRobot.Screens
         private Vector2 textDrawPosition;
 
         /// <summary>
-        /// The center of the word "Paused".
-        /// </summary>
-        private Vector2 textDrawOrigin;
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="TitleScreen"/> class.
         /// </summary>
         public TitleScreen()

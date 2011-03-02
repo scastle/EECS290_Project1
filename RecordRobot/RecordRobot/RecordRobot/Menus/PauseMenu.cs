@@ -10,8 +10,7 @@ namespace RecordRobot.Menus
 {
     /// <summary>
     /// An instance of a pause menu. This will support the options
-    /// to resume the game, restart the level, go to the options menu,
-    /// buy the game (if in trial mode), go to the title sceen, and 
+    /// to resume the game, go to the title sceen, and 
     /// quit the game.
     /// </summary>
     public class PauseMenu : Menu
@@ -20,7 +19,6 @@ namespace RecordRobot.Menus
         /// Initializes a new instance of the <see cref="PauseMenu"/> class.
         /// </summary>
         /// <param name="position">The position.</param>
-        /// <param name="actions">The actions.</param>
         /// <param name="spacing">The spacing.</param>
         public PauseMenu(Vector2 position, float spacing)
             : base(position)

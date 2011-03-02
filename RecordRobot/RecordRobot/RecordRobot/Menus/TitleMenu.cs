@@ -11,10 +11,9 @@ namespace RecordRobot.Menus
     class TitleMenu : Menu
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PauseMenu"/> class.
+        /// Initializes a new instance of the <see cref="TitleMenu"/> class.
         /// </summary>
         /// <param name="position">The position.</param>
-        /// <param name="actions">The actions.</param>
         /// <param name="spacing">The spacing.</param>
         public TitleMenu(Vector2 position, float spacing)
             : base(position)

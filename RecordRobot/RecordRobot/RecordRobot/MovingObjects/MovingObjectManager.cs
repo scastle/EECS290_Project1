@@ -153,9 +153,7 @@ namespace RecordRobot.MovingObjects
             int r = Game1.rand.Next(2);
             foreach (Mover m in objs)
             {
-                if (m is Robot)
-                    m.Direction = m.Direction;
-                else
+                if (!(m is Robot))
                 {
                     Record rec = m as Record;
                     if (rec.Color == RecordColor.grey || rec.Color == nextColor)
@@ -226,9 +224,7 @@ namespace RecordRobot.MovingObjects
             Mover[] objs = Objects.ToArray();
             foreach (Mover m in objs)
             {
-                if (m is Robot)
-                    m.Direction = m.Direction;
-                else
+                if (!(m is Robot))
                 {
                     Record rec = m as Record;
                     if (rec.Color == RecordColor.grey)
@@ -296,9 +292,7 @@ namespace RecordRobot.MovingObjects
             int r = Game1.rand.Next(2);
             foreach (Mover m in objs)
             {
-                if (m is Robot)
-                    m.Direction = m.Direction;
-                else
+                if (!(m is Robot))
                 {
                     Record rec = m as Record;
                     if(rec.Color == c)

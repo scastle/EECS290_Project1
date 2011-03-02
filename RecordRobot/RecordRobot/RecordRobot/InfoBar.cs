@@ -13,8 +13,7 @@ namespace RecordRobot
     {
         public static int Height = 30;
         public static int Width = 600;
-        private static SpriteFont font;
-
+ 
         public static Vector2 LivesPosition = new Vector2(0, 450);
         public static Vector2 ScorePosition = new Vector2(150, 450);
         public static Vector2 TimePosition = new Vector2(300, 450);

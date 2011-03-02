@@ -30,18 +30,6 @@ namespace RecordRobot.Menus.MenuDelegates
                 Game1.screens[i].Disposed = true;
             }
             Game1.ToTitle();
-            
-
-
-            //Game1.MainGame = new Screens.WorldScreen();
-            
-            //Game1.screens.Update();
-            //Game1.screens.Title();
-            
-            //Game1.screens = new GameElements.ScreenContainer();
-            //Game1.ToTitle();
-            //Game1.screens.Play(new Screens.TitleScreen());
-            //Game1.screens.Update();
 
         }
     }

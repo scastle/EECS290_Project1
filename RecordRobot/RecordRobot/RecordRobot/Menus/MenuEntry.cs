@@ -38,22 +38,6 @@ namespace RecordRobot.Menus
         public MenuEntry LowerMenu { get; set; }
 
         /// <summary>
-        /// Gets or sets the right menu, which is the menu entry that will
-        /// be highlighted if this menu entry is highlighted and the player
-        /// presses Right. If this is null, then no action will be taken.
-        /// </summary>
-        /// <value>The right menu.</value>
-        public MenuEntry RightMenu { get; set; }
-
-        /// <summary>
-        /// Gets or sets the left menu, which is the menu entry that will
-        /// be highlighted if this menu entry is highlighted and the player
-        /// presses Left. If this is null, then no action will be taken.
-        /// </summary>
-        /// <value>The left menu.</value>
-        public MenuEntry LeftMenu { get; set; }
-
-        /// <summary>
         /// Gets the position of the menu entry.
         /// </summary>
         /// <value>The position.</value>
@@ -68,20 +52,15 @@ namespace RecordRobot.Menus
         }
 
         /// <summary>
-        /// Tries to run the delegate. This should be called every cycle, as
-        /// this will check the controller to see if the corresponding action
-        /// has been performed. If so, and if the delegate is not null, then
-        /// the delegated action is performed.
+        /// Tries to run the delegate. This should be called when the delegate is
+        /// highlighted. If so, the delegated action is performed.
         /// </summary>
         public void TryRunDelegate()
         {
-            if (this.menuDelegate != null)
-            {
                 if (Controls.Enter())
                 {
                     this.menuDelegate.Run();
                 }
-            }
         }
 
         public virtual void Update(bool highlighted)
@@ -95,7 +74,7 @@ namespace RecordRobot.Menus
                 this.textColor = Color.White;
         }
 
-        public virtual void Draw(bool highlighted)
+        public virtual void Draw()
         {
             Game1.spriteBatch.Begin();
             Game1.spriteBatch.DrawString(Game1.Font, this.text, this.position, textColor);
