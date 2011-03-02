@@ -163,6 +163,15 @@
       <Output>C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Font1.xnb</Output>
       <Time>2011-03-01T22:40:11.384-05:00</Time>
     </Item>
+    <Item>
+      <Source>Images\how-to-play.png</Source>
+      <Name>Images\how-to-play</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\how-to-play.xnb</Output>
+      <Time>2011-03-02T16:51:20.8859251-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

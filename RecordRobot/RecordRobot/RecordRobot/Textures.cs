@@ -26,5 +26,6 @@ namespace RecordRobot
         public static Texture2D YellowRecord;
         public static Texture2D RobotWin;
         public static Texture2D InfobarBackground;
+        public static Texture2D HowToPlay;
     }
 }

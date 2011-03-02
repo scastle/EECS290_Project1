@@ -192,3 +192,4 @@ C:\Users\Michael\Desktop\new menus stuff\RecordRobot\RecordRobot\RecordRobot\obj
 C:\Users\Michael\Desktop\new menus stuff\RecordRobot\RecordRobot\RecordRobot\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Michael\Desktop\new menus stuff\RecordRobot\RecordRobot\RecordRobot\obj\x86\Debug\RecordRobot.exe
 C:\Users\Michael\Desktop\new menus stuff\RecordRobot\RecordRobot\RecordRobot\obj\x86\Debug\RecordRobot.pdb
+C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\how-to-play.xnb

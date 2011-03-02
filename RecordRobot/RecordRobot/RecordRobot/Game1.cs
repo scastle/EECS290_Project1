@@ -94,6 +94,7 @@ namespace RecordRobot
             Textures.VioletRecord = this.Content.Load<Texture2D>("Images\\record-violet");
             Textures.YellowRecord = this.Content.Load<Texture2D>("Images\\record-yellow");
             Textures.RobotWin = this.Content.Load<Texture2D>("Images\\robot-win");
+            Textures.HowToPlay = this.Content.Load<Texture2D>("Images\\how-to-play");
             Textures.InfobarBackground = new Texture2D(GraphicsDevice, InfoBar.Width, InfoBar.Height);
 
             Font = Content.Load<SpriteFont>("Font1");

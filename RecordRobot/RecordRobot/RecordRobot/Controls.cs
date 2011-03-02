@@ -41,6 +41,7 @@ namespace RecordRobot
         //for use by menus
         public static bool Enter()
         {
+            State = Keyboard.GetState();
             if(State.IsKeyDown(Keys.Enter))
                 return true;
             else
@@ -50,6 +51,7 @@ namespace RecordRobot
         //returns true if back is pressed for menus
         public static bool Back()
         {
+            State = Keyboard.GetState();
             if( State.IsKeyDown(Keys.Escape) || State.IsKeyDown(Keys.Back) )
                 return true;
             else
