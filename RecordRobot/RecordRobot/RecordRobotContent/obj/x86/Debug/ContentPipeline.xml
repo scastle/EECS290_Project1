@@ -7,8 +7,18 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Michael\Desktop\new menus stuff\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-red.xnb</Output>
       <Time>2011-03-01T22:40:11.401-05:00</Time>
+=======
+<<<<<<< HEAD
+      <Output>C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-red.xnb</Output>
+      <Time>2011-02-28T14:12:06-05:00</Time>
+=======
+      <Output>C:\Users\Mike\Documents\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-red.xnb</Output>
+      <Time>2011-03-01T06:04:56-05:00</Time>
+>>>>>>> 2d16ebe7b3f231faf4abbba7b66e85cbd5933d98
+>>>>>>> 98b0afa971a499b9ed48d3be1f4181e8512f5c34
     </Item>
     <Item>
       <Source>Images\robot-left.png</Source>
@@ -16,8 +26,18 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Michael\Desktop\new menus stuff\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-left.xnb</Output>
       <Time>2011-03-01T22:40:11.413-05:00</Time>
+=======
+<<<<<<< HEAD
+      <Output>C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-left.xnb</Output>
+      <Time>2011-02-28T14:12:06-05:00</Time>
+=======
+      <Output>C:\Users\Mike\Documents\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-left.xnb</Output>
+      <Time>2011-03-01T06:04:56-05:00</Time>
+>>>>>>> 2d16ebe7b3f231faf4abbba7b66e85cbd5933d98
+>>>>>>> 98b0afa971a499b9ed48d3be1f4181e8512f5c34
     </Item>
     <Item>
       <Source>Images\robot-normal.png</Source>
@@ -25,8 +45,18 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Michael\Desktop\new menus stuff\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-normal.xnb</Output>
       <Time>2011-03-01T22:40:11.415-05:00</Time>
+=======
+<<<<<<< HEAD
+      <Output>C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-normal.xnb</Output>
+      <Time>2011-02-28T14:12:06-05:00</Time>
+=======
+      <Output>C:\Users\Mike\Documents\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-normal.xnb</Output>
+      <Time>2011-03-01T06:04:56-05:00</Time>
+>>>>>>> 2d16ebe7b3f231faf4abbba7b66e85cbd5933d98
+>>>>>>> 98b0afa971a499b9ed48d3be1f4181e8512f5c34
     </Item>
     <Item>
       <Source>Images\robot-right.png</Source>
@@ -34,8 +64,18 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Michael\Desktop\new menus stuff\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-right.xnb</Output>
       <Time>2011-03-01T22:40:11.419-05:00</Time>
+=======
+<<<<<<< HEAD
+      <Output>C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-right.xnb</Output>
+      <Time>2011-02-28T14:12:06-05:00</Time>
+=======
+      <Output>C:\Users\Mike\Documents\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-right.xnb</Output>
+      <Time>2011-03-01T06:04:56-05:00</Time>
+>>>>>>> 2d16ebe7b3f231faf4abbba7b66e85cbd5933d98
+>>>>>>> 98b0afa971a499b9ed48d3be1f4181e8512f5c34
     </Item>
     <Item>
       <Source>Images\maze-path.png</Source>
@@ -43,8 +83,18 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Michael\Desktop\new menus stuff\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\maze-path.xnb</Output>
       <Time>2011-03-01T22:40:11.387-05:00</Time>
+=======
+<<<<<<< HEAD
+      <Output>C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\maze-path.xnb</Output>
+      <Time>2011-02-28T14:12:06-05:00</Time>
+=======
+      <Output>C:\Users\Mike\Documents\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\maze-path.xnb</Output>
+      <Time>2011-03-01T06:04:56-05:00</Time>
+>>>>>>> 2d16ebe7b3f231faf4abbba7b66e85cbd5933d98
+>>>>>>> 98b0afa971a499b9ed48d3be1f4181e8512f5c34
     </Item>
     <Item>
       <Source>Images\maze-wall.png</Source>
@@ -52,8 +102,18 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Michael\Desktop\new menus stuff\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\maze-wall.xnb</Output>
       <Time>2011-03-01T22:40:11.389-05:00</Time>
+=======
+<<<<<<< HEAD
+      <Output>C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\maze-wall.xnb</Output>
+      <Time>2011-02-28T14:12:06-05:00</Time>
+=======
+      <Output>C:\Users\Mike\Documents\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\maze-wall.xnb</Output>
+      <Time>2011-03-01T06:04:56-05:00</Time>
+>>>>>>> 2d16ebe7b3f231faf4abbba7b66e85cbd5933d98
+>>>>>>> 98b0afa971a499b9ed48d3be1f4181e8512f5c34
     </Item>
     <Item>
       <Source>Images\record-grey.png</Source>
@@ -61,8 +121,18 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Michael\Desktop\new menus stuff\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-grey.xnb</Output>
       <Time>2011-03-01T22:40:11.397-05:00</Time>
+=======
+<<<<<<< HEAD
+      <Output>C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-grey.xnb</Output>
+      <Time>2011-02-28T14:12:06-05:00</Time>
+=======
+      <Output>C:\Users\Mike\Documents\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-grey.xnb</Output>
+      <Time>2011-03-01T06:04:56-05:00</Time>
+>>>>>>> 2d16ebe7b3f231faf4abbba7b66e85cbd5933d98
+>>>>>>> 98b0afa971a499b9ed48d3be1f4181e8512f5c34
     </Item>
     <Item>
       <Source>Images\record-blue.png</Source>
@@ -70,8 +140,18 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Michael\Desktop\new menus stuff\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-blue.xnb</Output>
       <Time>2011-03-01T22:40:11.392-05:00</Time>
+=======
+<<<<<<< HEAD
+      <Output>C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-blue.xnb</Output>
+      <Time>2011-02-28T14:12:06-05:00</Time>
+=======
+      <Output>C:\Users\Mike\Documents\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-blue.xnb</Output>
+      <Time>2011-03-01T06:04:56-05:00</Time>
+>>>>>>> 2d16ebe7b3f231faf4abbba7b66e85cbd5933d98
+>>>>>>> 98b0afa971a499b9ed48d3be1f4181e8512f5c34
     </Item>
     <Item>
       <Source>Images\record-green.png</Source>
@@ -79,8 +159,18 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Michael\Desktop\new menus stuff\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-green.xnb</Output>
       <Time>2011-03-01T22:40:11.396-05:00</Time>
+=======
+<<<<<<< HEAD
+      <Output>C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-green.xnb</Output>
+      <Time>2011-02-28T14:12:06-05:00</Time>
+=======
+      <Output>C:\Users\Mike\Documents\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-green.xnb</Output>
+      <Time>2011-03-01T06:04:56-05:00</Time>
+>>>>>>> 2d16ebe7b3f231faf4abbba7b66e85cbd5933d98
+>>>>>>> 98b0afa971a499b9ed48d3be1f4181e8512f5c34
     </Item>
     <Item>
       <Source>Images\record-violet.png</Source>
@@ -88,8 +178,18 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Michael\Desktop\new menus stuff\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-violet.xnb</Output>
       <Time>2011-03-01T22:40:11.403-05:00</Time>
+=======
+<<<<<<< HEAD
+      <Output>C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-violet.xnb</Output>
+      <Time>2011-02-28T14:12:06-05:00</Time>
+=======
+      <Output>C:\Users\Mike\Documents\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-violet.xnb</Output>
+      <Time>2011-03-01T06:04:56-05:00</Time>
+>>>>>>> 2d16ebe7b3f231faf4abbba7b66e85cbd5933d98
+>>>>>>> 98b0afa971a499b9ed48d3be1f4181e8512f5c34
     </Item>
     <Item>
       <Source>Images\record-yellow.png</Source>
@@ -97,8 +197,18 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Michael\Desktop\new menus stuff\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-yellow.xnb</Output>
       <Time>2011-03-01T22:40:11.406-05:00</Time>
+=======
+<<<<<<< HEAD
+      <Output>C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-yellow.xnb</Output>
+      <Time>2011-02-28T14:12:06-05:00</Time>
+=======
+      <Output>C:\Users\Mike\Documents\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-yellow.xnb</Output>
+      <Time>2011-03-01T06:04:56-05:00</Time>
+>>>>>>> 2d16ebe7b3f231faf4abbba7b66e85cbd5933d98
+>>>>>>> 98b0afa971a499b9ed48d3be1f4181e8512f5c34
     </Item>
     <Item>
       <Source>Images\robot-dead.png</Source>
@@ -106,8 +216,18 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Michael\Desktop\new menus stuff\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-dead.xnb</Output>
       <Time>2011-03-01T22:40:11.408-05:00</Time>
+=======
+<<<<<<< HEAD
+      <Output>C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-dead.xnb</Output>
+      <Time>2011-02-28T14:12:06-05:00</Time>
+=======
+      <Output>C:\Users\Mike\Documents\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-dead.xnb</Output>
+      <Time>2011-03-01T06:04:56-05:00</Time>
+>>>>>>> 2d16ebe7b3f231faf4abbba7b66e85cbd5933d98
+>>>>>>> 98b0afa971a499b9ed48d3be1f4181e8512f5c34
     </Item>
     <Item>
       <Source>Images\robot-win.png</Source>
@@ -115,8 +235,18 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Michael\Desktop\new menus stuff\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-win.xnb</Output>
       <Time>2011-03-01T22:40:11.421-05:00</Time>
+=======
+<<<<<<< HEAD
+      <Output>C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-win.xnb</Output>
+      <Time>2011-02-28T14:12:06-05:00</Time>
+=======
+      <Output>C:\Users\Mike\Documents\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-win.xnb</Output>
+      <Time>2011-03-01T06:04:56-05:00</Time>
+>>>>>>> 2d16ebe7b3f231faf4abbba7b66e85cbd5933d98
+>>>>>>> 98b0afa971a499b9ed48d3be1f4181e8512f5c34
     </Item>
     <Item>
       <Source>Images\record-orange.png</Source>
@@ -124,8 +254,18 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Michael\Desktop\new menus stuff\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-orange.xnb</Output>
       <Time>2011-03-01T22:40:11.399-05:00</Time>
+=======
+<<<<<<< HEAD
+      <Output>C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-orange.xnb</Output>
+      <Time>2011-02-28T14:12:06-05:00</Time>
+=======
+      <Output>C:\Users\Mike\Documents\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\record-orange.xnb</Output>
+      <Time>2011-03-01T06:04:56-05:00</Time>
+>>>>>>> 2d16ebe7b3f231faf4abbba7b66e85cbd5933d98
+>>>>>>> 98b0afa971a499b9ed48d3be1f4181e8512f5c34
     </Item>
     <Item>
       <Source>Images\robot-invincible.png</Source>
@@ -133,8 +273,18 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Michael\Desktop\new menus stuff\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-invincible.xnb</Output>
       <Time>2011-03-01T22:40:11.41-05:00</Time>
+=======
+<<<<<<< HEAD
+      <Output>C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-invincible.xnb</Output>
+      <Time>2011-02-28T14:12:06-05:00</Time>
+=======
+      <Output>C:\Users\Mike\Documents\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-invincible.xnb</Output>
+      <Time>2011-03-01T06:04:56-05:00</Time>
+>>>>>>> 2d16ebe7b3f231faf4abbba7b66e85cbd5933d98
+>>>>>>> 98b0afa971a499b9ed48d3be1f4181e8512f5c34
     </Item>
     <Item>
       <Source>Images\robot-right-dead.png</Source>
@@ -142,8 +292,18 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Michael\Desktop\new menus stuff\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-right-dead.xnb</Output>
       <Time>2011-03-01T22:40:11.417-05:00</Time>
+=======
+<<<<<<< HEAD
+      <Output>C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-right-dead.xnb</Output>
+      <Time>2011-02-28T14:12:06-05:00</Time>
+=======
+      <Output>C:\Users\Mike\Documents\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-right-dead.xnb</Output>
+      <Time>2011-03-01T06:04:56-05:00</Time>
+>>>>>>> 2d16ebe7b3f231faf4abbba7b66e85cbd5933d98
+>>>>>>> 98b0afa971a499b9ed48d3be1f4181e8512f5c34
     </Item>
     <Item>
       <Source>Images\robot-left-dead.png</Source>
@@ -151,8 +311,18 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Michael\Desktop\new menus stuff\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-left-dead.xnb</Output>
       <Time>2011-03-01T22:40:11.411-05:00</Time>
+=======
+<<<<<<< HEAD
+      <Output>C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-left-dead.xnb</Output>
+      <Time>2011-02-28T14:12:06-05:00</Time>
+=======
+      <Output>C:\Users\Mike\Documents\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\robot-left-dead.xnb</Output>
+      <Time>2011-03-01T06:04:56-05:00</Time>
+>>>>>>> 2d16ebe7b3f231faf4abbba7b66e85cbd5933d98
+>>>>>>> 98b0afa971a499b9ed48d3be1f4181e8512f5c34
     </Item>
     <Item>
       <Source>Font1.spritefont</Source>
@@ -160,8 +330,18 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Michael\Desktop\new menus stuff\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Font1.xnb</Output>
       <Time>2011-03-01T22:40:11.384-05:00</Time>
+=======
+<<<<<<< HEAD
+      <Output>C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Font1.xnb</Output>
+      <Time>2011-02-28T14:12:06-05:00</Time>
+=======
+      <Output>C:\Users\Mike\Documents\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Font1.xnb</Output>
+      <Time>2011-03-01T06:04:56-05:00</Time>
+>>>>>>> 2d16ebe7b3f231faf4abbba7b66e85cbd5933d98
+>>>>>>> 98b0afa971a499b9ed48d3be1f4181e8512f5c34
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -169,10 +349,24 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
+<<<<<<< HEAD
       <RootDirectory>C:\Users\Michael\Desktop\new menus stuff\RecordRobot\RecordRobot\RecordRobotContent\</RootDirectory>
       <LoggerRootDirectory>C:\Users\Michael\Desktop\new menus stuff\RecordRobot\RecordRobot\RecordRobot\</LoggerRootDirectory>
       <IntermediateDirectory>C:\Users\Michael\Desktop\new menus stuff\RecordRobot\RecordRobot\RecordRobotContent\obj\x86\Debug\</IntermediateDirectory>
       <OutputDirectory>C:\Users\Michael\Desktop\new menus stuff\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\</OutputDirectory>
+=======
+<<<<<<< HEAD
+      <RootDirectory>C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobotContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobotContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\</OutputDirectory>
+=======
+      <RootDirectory>C:\Users\Mike\Documents\EECS290_Project1\RecordRobot\RecordRobot\RecordRobotContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Mike\Documents\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Mike\Documents\EECS290_Project1\RecordRobot\RecordRobot\RecordRobotContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Mike\Documents\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\</OutputDirectory>
+>>>>>>> 2d16ebe7b3f231faf4abbba7b66e85cbd5933d98
+>>>>>>> 98b0afa971a499b9ed48d3be1f4181e8512f5c34
     </Settings>
     <Assemblies>
       <Assembly>
@@ -201,7 +395,15 @@
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+<<<<<<< HEAD
         <Value>2011-02-01T17:59:25.4545068-05:00</Value>
+=======
+<<<<<<< HEAD
+        <Value>2011-02-01T13:50:55.9827584-05:00</Value>
+=======
+        <Value>2011-02-08T13:26:08.6762452-05:00</Value>
+>>>>>>> 2d16ebe7b3f231faf4abbba7b66e85cbd5933d98
+>>>>>>> 98b0afa971a499b9ed48d3be1f4181e8512f5c34
       </Assembly>
     </Assemblies>
   </Asset>
