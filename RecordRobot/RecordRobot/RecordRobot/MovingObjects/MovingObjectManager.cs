@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using RecordRobot.RRClasses;
 using RecordRobot.GameElements;
+using RecordRobot.Screens;
 
 namespace RecordRobot.MovingObjects
 {
@@ -25,7 +26,7 @@ namespace RecordRobot.MovingObjects
 
         public static bool GameWin;
 
-        public static Robot RobotPlayer { get; private set; }
+        public static Robot RobotPlayer { get; set; }
 
         /// <summary>
         /// Adds all initial moving objects to the Objects list
@@ -101,6 +102,9 @@ namespace RecordRobot.MovingObjects
                                 Maze.level++;
                             }
                             Game1.CurrentLevel.LevelNumber++;
+                            //display a screen between levels
+                            Game1.screens.Play(new PreLevelScreen());
+
                             //put in settings for harder level groups here.
                             Maze.Draw();
                             InitializeObjects();
@@ -149,9 +153,7 @@ namespace RecordRobot.MovingObjects
             int r = Game1.rand.Next(2);
             foreach (Mover m in objs)
             {
-                if (m is Robot)
-                    m.Direction = m.Direction;
-                else
+                if (!(m is Robot))
                 {
                     Record rec = m as Record;
                     if (rec.Color == RecordColor.grey || rec.Color == nextColor)
@@ -222,9 +224,7 @@ namespace RecordRobot.MovingObjects
             Mover[] objs = Objects.ToArray();
             foreach (Mover m in objs)
             {
-                if (m is Robot)
-                    m.Direction = m.Direction;
-                else
+                if (!(m is Robot))
                 {
                     Record rec = m as Record;
                     if (rec.Color == RecordColor.grey)
@@ -292,9 +292,7 @@ namespace RecordRobot.MovingObjects
             int r = Game1.rand.Next(2);
             foreach (Mover m in objs)
             {
-                if (m is Robot)
-                    m.Direction = m.Direction;
-                else
+                if (!(m is Robot))
                 {
                     Record rec = m as Record;
                     if(rec.Color == c)

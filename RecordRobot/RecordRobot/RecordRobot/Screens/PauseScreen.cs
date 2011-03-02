@@ -31,19 +31,16 @@ namespace RecordRobot.Screens
         private Vector2 textDrawPosition;
 
         /// <summary>
-        /// The center of the word "Paused".
-        /// </summary>
-        private Vector2 textDrawOrigin;
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="PauseScreen"/> class.
         /// </summary>
         public PauseScreen()
             : base()
         {
+            Game1.screens.IsPaused = true;
+            Game1.screens.IsTitle = false;
             // Note: Do not use GameClock, it will be paused!
             this.initialTime = DateTime.Now.Ticks;
-            this.menu = new PauseMenu(new Vector2(300, 100), 50);
+            this.menu = new PauseMenu(new Vector2(300, 100), 50, "Resume");
 
             this.textDrawPosition = new Vector2(300, 50);
         }

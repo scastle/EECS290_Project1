@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using RecordRobot.Clock;
-using RecordRobot.Menus;
 using RecordRobot.GameElements;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using RecordRobot.Clock;
+
 
 namespace RecordRobot.Screens
 {
-    class TitleScreen : GameScreen
+    class HowToPlayScreen : GameScreen
     {
-
         /// <summary>
         /// This is the time (DateTime, not GameClock) 
         /// that the screen is created.
@@ -20,29 +19,33 @@ namespace RecordRobot.Screens
         private long initialTime;
 
         /// <summary>
-        /// This is the menu used for the pause screen.
+        /// This is the duration of the screen
         /// </summary>
-        private TitleMenu menu;
+        private long duration;
 
         /// <summary>
-        /// Where to write "Record Robot"
+        /// This is the texture displayed in the screen
         /// </summary>
-        private Vector2 textDrawPosition;
+        private Texture2D texture;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TitleScreen"/> class.
+        /// Where to draw screen
         /// </summary>
-        public TitleScreen()
+        private Vector2 drawPosition;
+
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HowToScreen"/> class.
+        /// </summary>
+        public HowToPlayScreen()
             : base()
         {
-            Game1.screens.IsTitle = true;
-            Game1.screens.IsPaused = false;
             // Note: Do not use GameClock, it will be paused!
             this.initialTime = DateTime.Now.Ticks;
-            this.menu = new TitleMenu(new Vector2(150, 175), 50);
+            drawPosition = new Vector2(0, 0);
+            this.duration = 1000000;
+            this.texture = Textures.HowToPlay;
 
-            this.textDrawPosition = new Vector2(150, 100);
-            //this.textDrawOrigin = Drawer.font.MeasureString("Paused") / 2f;
         }
 
         /// <summary>
@@ -62,8 +65,19 @@ namespace RecordRobot.Screens
             {
                 GameClock.Unpause();
             }
+            if (DateTime.Now.Ticks > initialTime + duration)
+            {
+                if (Controls.Back() || Controls.Enter())
+                {
+                    if (Game1.screens.Count > 0)
+                    {
+                        Game1.screens[Game1.screens.Count - 1].Disposed = true;
+                    }
+                }
+            }
+            
 
-            this.menu.Update();
+            
         }
 
         /// <summary>
@@ -71,12 +85,11 @@ namespace RecordRobot.Screens
         /// </summary>
         public override void Draw()
         {
-            // Write "RecordRobot" at the center of the screen.
+            // Draw help screen.
             Game1.spriteBatch.Begin();
-            Game1.spriteBatch.DrawString(Game1.Font, "Record Robot", this.textDrawPosition, Color.White);
+            Game1.spriteBatch.Draw(this.texture, this.drawPosition, Color.White);
             Game1.spriteBatch.End();
-            // Draw menu
-            this.menu.Draw();
+
         }
     }
 }

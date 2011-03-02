@@ -11,7 +11,7 @@ namespace RecordRobot.Menus.MenuDelegates
         public class QuitGameDelegate : IMenuDelegate
         {
             /// <summary>
-            /// Initializes a new instance of the <see cref="QuitGameDeleage"/> class.
+            /// Initializes a new instance of the <see cref="QuitGameDelegate"/> class.
             /// </summary>
             public QuitGameDelegate()
                 : base()

@@ -36,9 +36,7 @@ namespace RecordRobot
         public static Random rand;
         public static DateTime Time;
         public static bool ExitStatus;
-        public static WorldScreen MainGame { get; private set; }
-        
-
+        public static WorldScreen MainGame;
         public static Level CurrentLevel;
         
         public Game1()
@@ -52,7 +50,7 @@ namespace RecordRobot
             ExitStatus = false;
             GamePaused = false;
             screens = new ScreenContainer();
-            MainGame = new WorldScreen();
+            
 
         }
 
@@ -96,6 +94,7 @@ namespace RecordRobot
             Textures.VioletRecord = this.Content.Load<Texture2D>("Images\\record-violet");
             Textures.YellowRecord = this.Content.Load<Texture2D>("Images\\record-yellow");
             Textures.RobotWin = this.Content.Load<Texture2D>("Images\\robot-win");
+            Textures.HowToPlay = this.Content.Load<Texture2D>("Images\\how-to-play");
             Textures.InfobarBackground = new Texture2D(GraphicsDevice, InfoBar.Width, InfoBar.Height);
 
             Font = Content.Load<SpriteFont>("Font1");
@@ -153,14 +152,33 @@ namespace RecordRobot
             // TODO: Unload any non ContentManager content here
         }
 
+        public static void GameOver()
+        {
+            screens.Play(new GameOverScreen());
+        }
+
         public static void StartGame()
         {
-            screens.Play(MainGame);
+            screens.Play(new WorldScreen());
         }
 
         public static void ExitGame()
         {
             ExitStatus = true;
+        }
+
+        public static void ToTitle()
+        {
+            screens.Play(new TitleScreen());
+            //need to reset the level, robot, records, lives, time, score
+            Maze.level = 0;
+            CurrentLevel.LevelNumber = 0;
+            CurrentLevel.NumRecords = Settings.NumRecords;
+            MovingObjects.MovingObjectManager.Objects = null;
+            MovingObjects.MovingObjectManager.GameOver = false;
+            MovingObjects.MovingObjectManager.RobotPlayer = new MovingObjects.Robot(45, 45);
+            MovingObjects.MovingObjectManager.Update();
+
         }
 
         /// <summary>

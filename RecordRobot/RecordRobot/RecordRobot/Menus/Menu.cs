@@ -17,61 +17,38 @@ namespace RecordRobot.Menus
         public int CurrentSelected { get; private set; }
 
         /// <summary>
+        /// This is the time (DateTime, not GameClock) 
+        /// that the screen is created.
+        /// </summary>
+        private long initialTime;
+
+
+        /// <summary>
+        /// This is the duration of the screen
+        /// </summary>
+        private long duration;
+
+        public bool CanMoveAgain;
+
+        /// <summary>
         /// The base this.position of the entire set of menu entries.
         /// </summary>
         /// <value>The position.</value>
         public Vector2 position { get; private set; }
 
-        /// <summary>
-        /// The set of this.actions corresponding the the menu system
-        /// as a whole. For example, pressing B to exit the menu
-        /// instead of clicking a "back" menu entry would be an
-        /// appropriate action to add.
-        /// </summary>
-        private MenuAction[] actions;
-
-        /// <summary>
-        /// A variable used for optimization, so that the list of
-        /// this.actions does not need to be looped through every cycle.
-        /// </summary>
-        private bool containsUpAction;
-
-        /// <summary>
-        /// A variable used for optimization, so that the list of
-        /// this.actions does not need to be looped through every cycle.
-        /// </summary>
-        private bool containsDownAction;
-
-        /// <summary>
-        /// A variable used for optimization, so that the list of
-        /// this.actions does not need to be looped through every cycle.
-        /// </summary>
-        private bool containsRightAction;
-
-        /// <summary>
-        /// A variable used for optimization, so that the list of
-        /// this.actions does not need to be looped through every cycle.
-        /// </summary>
-        private bool containsLeftAction;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Menu"/> class.
         /// </summary>
         /// <param name="position">The this.position of the menu system.</param>
-        /// <param name="actions">The set of this.actions corresponding the the menu system
-        /// as a whole. For example, pressing B to exit the menu
-        /// instead of clicking a "back" menu entry would be an
-        /// appropriate action to add.</param>
         public Menu(Vector2 position)
         {
+            this.CanMoveAgain = true;
             this.position = new Vector2(position.X, position.Y);
             this.CurrentSelected = 0;
-
-            this.containsLeftAction = false;
-            this.containsRightAction = false;
-            this.containsDownAction = true;
-            this.containsUpAction = true;
-
+            // Note: Do not use GameClock, it will be paused!
+            this.initialTime = DateTime.Now.Ticks;
+            duration = 1000000;
         }
 
         /// <summary>
@@ -98,25 +75,28 @@ namespace RecordRobot.Menus
 
         /// <summary>
         /// Updates this instance. This checks to see if the user has made an
-        /// up, down, left, or right selection, and if so, and if the set of
-        /// action delegates does not overwrite this, it tries to change the
-        /// highlighted menu entry accordingly. This also runs menu entry
-        /// delegate this.actions when they are pressed and updates each menu
-        /// entry individually.
+        /// up or down selection, and if so, it tries to change the
+        /// highlighted menu entry accordingly.
         /// </summary>
         public virtual void Update()
         {
-            
-            
-            if (Controls.GetDirection() == Direction.Up)// .ContainsBool(ActionType.SelectionUp))
+            if (DateTime.Now.Ticks > duration + initialTime)
+            {
+                this.CanMoveAgain = true;
+                this.initialTime = DateTime.Now.Ticks;
+            }
+            if (Controls.GetDirection() == Direction.Up && this.CanMoveAgain)
             {
                 this.TrySet(this[this.CurrentSelected].UpperMenu);
+                this.CanMoveAgain = false;
             }
-    
-            if (Controls.GetDirection() == Direction.Down)
+
+            if (Controls.GetDirection() == Direction.Down && this.CanMoveAgain)
             {
                 this.TrySet(this[this.CurrentSelected].LowerMenu);
+                this.CanMoveAgain = false;
             }
+            
 
             //update newly highlighted option, and make sure others are not highlighted
             for (int i = 0; i < this.Count; i++)
@@ -139,7 +119,7 @@ namespace RecordRobot.Menus
         {
             foreach (MenuEntry entry in this)
             {
-                entry.Draw(this.IndexOf(entry) == this.CurrentSelected);
+                entry.Draw();
             }
         }
     }

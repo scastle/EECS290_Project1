@@ -155,6 +155,15 @@
       <Time>2011-02-28T14:12:06-05:00</Time>
     </Item>
     <Item>
+      <Source>Images\how-to-play.png</Source>
+      <Name>Images\how-to-play</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\how-to-play.xnb</Output>
+      <Time>2011-03-02T18:23:29.0654043-05:00</Time>
+    </Item>
+    <Item>
       <Source>Font1.spritefont</Source>
       <Name>Font1</Name>
       <Importer>FontDescriptionImporter</Importer>

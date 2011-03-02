@@ -111,9 +111,13 @@
     <Compile Include="Clock\GameClock.cs" />
     <Compile Include="Controls.cs" />
     <Compile Include="GameElements\GameScreen.cs" />
+    <Compile Include="Menus\MenuDelegates\HowToPlayDelegate.cs" />
     <Compile Include="Menus\MenuDelegates\MainMenuDelegate.cs" />
     <Compile Include="Menus\MenuDelegates\StartDelegate.cs" />
     <Compile Include="Menus\TitleMenu.cs" />
+    <Compile Include="Screens\GameOverScreen.cs" />
+    <Compile Include="Screens\HowToPlayScreen.cs" />
+    <Compile Include="Screens\PreLevelScreen.cs" />
     <Compile Include="Screens\TitleScreen.cs" />
     <Compile Include="Screens\WorldScreen.cs" />
     <Compile Include="InfoBar.cs" />
@@ -126,7 +130,6 @@
     <Compile Include="MovingObjects\Robot.cs" />
     <Compile Include="RRClasses\ScoreManager.cs" />
     <Compile Include="GameElements\ScreenContainer.cs" />
-    <Compile Include="Menus\MenuAction.cs" />
     <Compile Include="Menus\MenuDelegates\QuitTopDelegate.cs" />
     <Compile Include="Menus\MenuDelegates\QuitGameDelegate.cs" />
     <Compile Include="Menus\MenuDelegates\IMenuDelegate.cs" />

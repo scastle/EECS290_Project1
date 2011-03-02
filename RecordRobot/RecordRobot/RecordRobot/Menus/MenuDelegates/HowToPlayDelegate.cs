@@ -3,18 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-
 namespace RecordRobot.Menus.MenuDelegates
 {
-    /// <summary>
-    /// A delegate used for returning to the main menu.
-    /// </summary>
-    public class MainMenuDelegate : IMenuDelegate
+    class HowToPlayDelegate : IMenuDelegate
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="MainMenuDeleage"/> class.
+        /// Initializes a new instance of the <see cref="HowToPlayDeleage"/> class.
         /// </summary>
-        public MainMenuDelegate()
+        public HowToPlayDelegate()
             : base()
         {
         }
@@ -25,11 +21,8 @@ namespace RecordRobot.Menus.MenuDelegates
         /// </summary>
         public void Run()
         {
-            for (int i = Game1.screens.Count - 1; i >= 0; i--)
-            {
-                Game1.screens[i].Disposed = true;
-            }
-            Game1.ToTitle();
+
+            Game1.screens.Play(new Screens.HowToPlayScreen());
 
         }
     }

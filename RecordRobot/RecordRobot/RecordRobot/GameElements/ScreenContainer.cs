@@ -10,7 +10,7 @@ namespace RecordRobot.GameElements
     /// This is a stack of screens used in the game.
     /// Do not Add or Remove screens yourself. Use the "Play"
     /// method to pop a new screen on the stack, and if you want
-    /// to remove a screen, so the GameScreen.Disposed value
+    /// to remove a screen, set the GameScreen.Disposed value
     /// to true for a screen and it will get removed for you.
     /// </summary>
     public class ScreenContainer : List<GameScreen>
@@ -19,7 +19,7 @@ namespace RecordRobot.GameElements
         /// Gets a value indicating whether the game is paused.
         /// </summary>
         /// <value><c>true</c> if this instance is paused; otherwise, <c>false</c>.</value>
-        public bool IsPaused { get; private set; }
+        public bool IsPaused { get; set; }
 
         public bool Beginning { get; private set; }
 
@@ -27,7 +27,7 @@ namespace RecordRobot.GameElements
         /// Gets a value indicating whether the game is in Title Screen.
         /// </summary>
         /// <value><c>true</c> if this instance is in Title; otherwise, <c>false</c>.</value>
-        public bool IsTitle { get; private set; }
+        public bool IsTitle { get; set; }
 
         /// <summary>
         /// This is the screen that will be added as soon as this instance updates.
@@ -86,7 +86,7 @@ namespace RecordRobot.GameElements
                     this.IsTitle = false;
 
                     Remove(this[i]);
-                    return;
+                    //return;
                 }
             }
         }
@@ -109,18 +109,8 @@ namespace RecordRobot.GameElements
         public void Pause()
         {
             this.Add(new PauseScreen());
-            this.IsPaused = true;
         }
 
-        ///// <summary>
-        ///// Sets the game in the Title screen mode.
-        ///// </summary>
-        //public void Title()
-        //{
-        //    Beginning = true;
-        //    this.Add(new TitleScreen());
-        //    this.IsTitle = true;
-        //}
 
         /// <summary>
         /// Updates this instance.
@@ -144,15 +134,9 @@ namespace RecordRobot.GameElements
             // Check if the game is being paused, and there is no pause screen on the stack.
             if (!this.IsTitle && !this.IsPaused && Controls.PauseGame())
             {
+                this.IsPaused = true;
                 this.Pause();
             }
-
-            //if (!this.IsTitle && !this.IsPaused && !Beginning)
-            //{
-            //    this.Title();
-            //}
-
-
         }
 
         /// <summary>

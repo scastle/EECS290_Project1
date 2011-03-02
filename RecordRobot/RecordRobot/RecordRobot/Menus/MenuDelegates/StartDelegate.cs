@@ -5,6 +5,9 @@ using System.Text;
 
 namespace RecordRobot.Menus.MenuDelegates
 {
+    /// <summary>
+    /// This runs the main game
+    /// </summary>
     public class StartDelegate : IMenuDelegate
     {
         public StartDelegate()

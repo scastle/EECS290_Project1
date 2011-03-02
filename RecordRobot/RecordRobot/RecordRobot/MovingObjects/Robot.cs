@@ -119,9 +119,12 @@ namespace RecordRobot.MovingObjects
                 else
                     this.Texture = Textures.RobotRight;
             }
-            
+
             if (MovingObjectManager.GameOver)
+            {
                 this.Texture = Textures.RobotDead;
+                Game1.GameOver();
+            }
             if (MovingObjectManager.GameWin)
                 this.Texture = Textures.RobotWin;
 
