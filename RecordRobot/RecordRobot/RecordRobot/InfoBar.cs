@@ -13,7 +13,7 @@ namespace RecordRobot
     {
         public static int Height = 30;
         public static int Width = 600;
- 
+
         public static Vector2 LivesPosition = new Vector2(0, 450);
         public static Vector2 ScorePosition = new Vector2(150, 450);
         public static Vector2 TimePosition = new Vector2(300, 450);
@@ -27,7 +27,7 @@ namespace RecordRobot
             Game1.spriteBatch.DrawString(Game1.Font, "Lives: " + MovingObjects.MovingObjectManager.RobotPlayer.Lives, LivesPosition, Color.White);
             Game1.spriteBatch.DrawString(Game1.Font, "Score: " + ScoreManager.CurrentScore, ScorePosition, Color.White);
             Game1.spriteBatch.DrawString(Game1.Font, "Time: " + elapsedTime.Minutes + ":" + (elapsedTime.Seconds % 60).ToString("d2"), TimePosition, Color.White);
-            
+
             MovingObjects.Mover[] m = MovingObjects.MovingObjectManager.Objects.ToArray();
             for (int i = 1; i < m.Length; i++)
             {

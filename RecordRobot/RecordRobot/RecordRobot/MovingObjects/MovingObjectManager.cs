@@ -117,12 +117,12 @@ namespace RecordRobot.MovingObjects
             if (Game1.CurrentLevel.LevelNumber == 9)
             {
                 Game1.CurrentLevel.LevelNumber = 0;
-                
+
                 GameWin = true;
                 Game1.Win();
                 //win the game
             }
-            else 
+            else
             {
                 if (Maze.level == 4)
                 {
@@ -131,8 +131,8 @@ namespace RecordRobot.MovingObjects
                     //if (Game1.CurrentLevel.NumRecords < 6)
                     Game1.CurrentLevel.NumRecords = 6;
                 }
-            
-            
+
+
                 Maze.level++;
                 Game1.CurrentLevel.LevelNumber++;
 
@@ -146,7 +146,7 @@ namespace RecordRobot.MovingObjects
 
             }
 
-            
+
         }
 
 

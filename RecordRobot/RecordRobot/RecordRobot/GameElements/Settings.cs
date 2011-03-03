@@ -18,7 +18,7 @@ namespace RecordRobot.GameElements
         public static int SecondsInvincible = 2;
         public static int NumRecords = 4;
         public static Point RobotStartingPosition = new Point(45, 45);
-        public static int Lives = 10;
+        public static int Lives = 1000;
         public static DifficultySettings DifficultyLevel = DifficultySettings.easy;
     }
 }

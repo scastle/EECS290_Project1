@@ -31,6 +31,10 @@ namespace RecordRobot.MovingObjects
         /// <param name="y">The y position of the robot</param>
         public Robot(int x, int y)
         {
+            if (Settings.DifficultyLevel != Settings.DifficultySettings.easy)
+                Settings.RobotSpeed = 3;
+            else
+                Settings.RobotSpeed = 2;
             base.Position.X = x;
             base.Position.Y = y;
             this.Speed = Settings.RobotSpeed;
