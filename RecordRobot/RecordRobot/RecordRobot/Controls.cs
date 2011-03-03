@@ -70,9 +70,10 @@ namespace RecordRobot
 
         public static void SkipLevel()
         {
-            TimeSpan elapsedTime = DateTime.Now - Game1.Time;
-            if (State.IsKeyDown(Keys.P) && elapsedTime.Milliseconds % 100 == 0)
-                MovingObjectManager.GameWin = true;
+            State = Keyboard.GetState();
+            if (State.IsKeyDown(Keys.P))
+                MovingObjectManager.NextLevel();
         }
+
     }
 }

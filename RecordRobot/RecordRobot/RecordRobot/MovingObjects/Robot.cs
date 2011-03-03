@@ -22,7 +22,6 @@ namespace RecordRobot.MovingObjects
 
         private bool RobotFlashing = false;
 
-        //public int Score;
         public int Lives;
 
         /// <summary>

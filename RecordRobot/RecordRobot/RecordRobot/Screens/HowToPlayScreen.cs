@@ -43,7 +43,7 @@ namespace RecordRobot.Screens
             // Note: Do not use GameClock, it will be paused!
             this.initialTime = DateTime.Now.Ticks;
             drawPosition = new Vector2(0, 0);
-            this.duration = 5000000;
+            this.duration = 3000000;
             this.texture = Textures.HowToPlay;
 
         }

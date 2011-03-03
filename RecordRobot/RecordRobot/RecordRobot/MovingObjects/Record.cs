@@ -50,6 +50,7 @@ namespace RecordRobot.MovingObjects
             this.Position.X = x;
             this.Position.Y = y;
             this.Color = c;
+            this.Value = ScoreManager.GetScore(c);
             this.Speed = Settings.RecordSpeed;
             this.CurrentDirection = Direction.None;
             this.OldPosition = this.Position;  
@@ -228,6 +229,7 @@ namespace RecordRobot.MovingObjects
                 this.Texture = Textures.GreyRecord;
                 this.Color = RecordColor.grey;
                 this.CanDamage = true;
+                this.Value = ScoreManager.GetScore(Color);
                 Gathered = false;
             }
 
@@ -238,6 +240,7 @@ namespace RecordRobot.MovingObjects
         public void ChangeToGrey()
         {
             CountDown = true;
+            this.Value = 0;
             CanDamage = false;
         }
     }
