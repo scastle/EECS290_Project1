@@ -44,6 +44,8 @@ namespace RecordRobot.MovingObjects
             {
                 RobotPlayer.Position = Settings.RobotStartingPosition;
                 RobotPlayer.RobotFlashing = false;
+                RobotPlayer.Direction = Direction.None;
+                RobotPlayer.NextDirection = Direction.None;
             }
             Objects.Add(RobotPlayer);
 
@@ -115,22 +117,25 @@ namespace RecordRobot.MovingObjects
 
             if (Game1.CurrentLevel.LevelNumber == 9)
             {
+                Game1.CurrentLevel.LevelNumber = 0;
+
                 GameWin = true;
+                Game1.Win();
                 //win the game
-            }
-            else if (Maze.level == 4)
-            {
-                Maze.level = 0;
-                //more records
-                //if (Game1.CurrentLevel.NumRecords < 6)
-                Game1.CurrentLevel.NumRecords = 6;
             }
             else
             {
-                Maze.level++;
-            }
+                if (Maze.level == 4)
+                {
+                    Maze.level = 0;
+                    //more records
+                    //if (Game1.CurrentLevel.NumRecords < 6)
+                    Game1.CurrentLevel.NumRecords = 6;
+                }
 
-            Game1.CurrentLevel.LevelNumber++;
+
+                Maze.level++;
+                Game1.CurrentLevel.LevelNumber++;
 
             switch (Game1.CurrentLevel.LevelNumber)
             {
@@ -147,13 +152,15 @@ namespace RecordRobot.MovingObjects
                 default: Textures.mazewall = Textures.MazeWall10; break;
             }
 
-            //display a screen between levels
-            Game1.screens.Play(new PreLevelScreen());
+                //display a screen between levels
+                Game1.screens.Play(new PreLevelScreen());
 
 
-            Maze.Draw();
-            InitializeObjects();
-            nextColor = RecordColor.red;
+                Maze.Draw();
+                InitializeObjects();
+                nextColor = RecordColor.red;
+
+            }
         }
 
 

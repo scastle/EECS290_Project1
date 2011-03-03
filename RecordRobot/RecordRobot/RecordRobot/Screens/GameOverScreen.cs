@@ -16,11 +16,15 @@ namespace RecordRobot.Screens
         /// </summary>
         private long initialTime;
 
+        private string message;
 
+        private int spacing;
         /// <summary>
         /// This is the duration of the screen
         /// </summary>
         private long duration;
+
+        private static string credits = "Credits:\nSteffen Castle\nMichael Robertson\nMichael Oswalt\nPaul An";
 
         /// <summary>
         /// Where to write text
@@ -31,14 +35,16 @@ namespace RecordRobot.Screens
         /// <summary>
         /// Initializes a new instance of the <see cref="GameOverScreen"/> class.
         /// </summary>
-        public GameOverScreen()
+        public GameOverScreen(string m)
             : base()
         {
             Game1.screens.IsTitle = false;
             Game1.screens.IsPaused = false;
             // Note: Do not use GameClock, it will be paused!
             this.initialTime = DateTime.Now.Ticks;
-            duration = 50000000;
+            duration = 100000000;
+            spacing = 50;
+            message = m;
             textDrawPosition = new Vector2(260, 230);
 
         }
@@ -66,6 +72,7 @@ namespace RecordRobot.Screens
             {
 
                 this.Disposed = true;
+                RRClasses.ScoreManager.CurrentScore = 0;
                 Game1.ToTitle();
 
             }
@@ -78,7 +85,9 @@ namespace RecordRobot.Screens
         {
             // Write "Game Over" at the center of the screen.
             Game1.spriteBatch.Begin();
-            Game1.spriteBatch.DrawString(Game1.Font, "Game Over", this.textDrawPosition, Color.White);
+            //Game1.spriteBatch.DrawString(Game1.Font, "Game Over", this.textDrawPosition, Color.White);
+            Game1.spriteBatch.DrawString(Game1.Font, message, new Vector2(textDrawPosition.X, textDrawPosition.Y), Color.White);
+            Game1.spriteBatch.DrawString(Game1.Font, credits, new Vector2(textDrawPosition.X, textDrawPosition.Y + spacing), Color.White);
             Game1.spriteBatch.End();
 
         }

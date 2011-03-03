@@ -40,7 +40,7 @@ namespace RecordRobot
         public static Level CurrentLevel;
 
         public static SettingsScreen SettingsScreenMenu { get; private set; }
-        
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -52,7 +52,7 @@ namespace RecordRobot
             ExitStatus = false;
             GamePaused = false;
             screens = new ScreenContainer();
-            
+
 
         }
 
@@ -123,7 +123,7 @@ namespace RecordRobot
             string input = null;
             int r = 0;
             int l = 0;
-            int [,,] map = new int [8,17,21];
+            int[, ,] map = new int[8, 17, 21];
             while ((input = read.ReadLine()) != null)
             {
                 if (input.Substring(0, 1).Equals("=")) //start a new level
@@ -146,12 +146,12 @@ namespace RecordRobot
                     }
                     r++;
                 }
-                
-                
+
+
             }
             Maze.LoadMaze(map);
             screens.Play(new TitleScreen());
-            
+
             // TODO: use this.Content to load your game content here
         }
 
@@ -164,9 +164,19 @@ namespace RecordRobot
             // TODO: Unload any non ContentManager content here
         }
 
+        public static void Win()
+        {
+            if (Game1.screens.Count > 0)
+            {
+                Game1.screens[Game1.screens.Count - 1].Disposed = true;
+            }
+
+            screens.Play(new GameOverScreen("Congratulations! You WIN!\nScore: " + ScoreManager.CurrentScore));
+        }
+
         public static void GameOver()
         {
-            screens.Play(new GameOverScreen());
+            screens.Play(new GameOverScreen("Game Over"));
         }
 
         public static void StartGame()
@@ -217,11 +227,11 @@ namespace RecordRobot
 
             GameClock.Update();
             screens.Update();
-            
+
 
             // TODO: Add your update logic here
 
-            
+
         }
 
         /// <summary>
@@ -231,7 +241,7 @@ namespace RecordRobot
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
-            
+
             // TODO: Add your drawing code here
             screens.Draw();
             base.Draw(gameTime);

@@ -164,15 +164,6 @@
       <Time>2011-03-02T18:53:28-05:00</Time>
     </Item>
     <Item>
-      <Source>Font1.spritefont</Source>
-      <Name>Font1</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Font1.xnb</Output>
-      <Time>2011-03-02T18:53:28-05:00</Time>
-    </Item>
-    <Item>
       <Source>Images\maze-wall-blue.png</Source>
       <Name>Images\maze-wall-blue</Name>
       <Importer>TextureImporter</Importer>
@@ -261,6 +252,15 @@
       <Options>None</Options>
       <Output>C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Images\maze-wall-yellow.xnb</Output>
       <Time>2011-03-02T22:51:23.1707906-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Font1.spritefont</Source>
+      <Name>Font1</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobot\bin\x86\Debug\Content\Font1.xnb</Output>
+      <Time>2011-03-02T18:53:28-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

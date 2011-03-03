@@ -51,6 +51,10 @@ namespace RecordRobot.MovingObjects
             this.Position.Y = y;
             this.Color = c;
             this.Value = ScoreManager.GetScore(c);
+            if (Settings.DifficultyLevel != Settings.DifficultySettings.easy)
+                Settings.RecordSpeed = 2;
+            else
+                Settings.RecordSpeed = 1;
             this.Speed = Settings.RecordSpeed;
             this.CurrentDirection = Direction.None;
             this.OldPosition = this.Position;
@@ -134,11 +138,12 @@ namespace RecordRobot.MovingObjects
             if (Maze.IsIntersection(this.Position))
             {
                 this.CurrentDirection = this.Direction;
-                if (this.Color != RecordColor.grey && this.Color != MovingObjectManager.nextColor)
+                if ((Settings.DifficultyLevel == Settings.DifficultySettings.easy || (this.Color != RecordColor.grey && this.Color != MovingObjectManager.nextColor)) || 
+                    (Settings.DifficultyLevel != Settings.DifficultySettings.hard && (this.Color == RecordColor.grey)) &&
+                    ((int)Settings.DifficultyLevel > (int)Settings.DifficultySettings.easy && (this.Color == MovingObjectManager.nextColor)))
                 {
                     do   //This do while loop will choose a random direction to go at an intersection (until we want to implement an ai that will chase or flee from the robot which is not a priority for the demo)
                     {
-
                         r = Game1.rand.Next(4);
                         switch (r)
                         {
@@ -166,15 +171,15 @@ namespace RecordRobot.MovingObjects
                     } while (!CanGo);
                     CanGo = false;
                 }
-                else if (this.Color == RecordColor.grey || this.Color == MovingObjectManager.nextColor)
+                else 
                 {
+                    
                     MovingObjectManager.SetRelativeDirection(this.Color);
                     if (this.Color == MovingObjectManager.nextColor)
                     {
                         this.AIChoice1 = (Direction)((int)this.AIChoice1 * -1);
                         this.AIChoice2 = (Direction)((int)this.AIChoice2 * -1);
                     }
-
                     if (Maze.CanGo(this.Position, this.AIChoice1))
                         this.Direction = this.AIChoice1;
                     else if (Maze.CanGo(this.Position, this.AIChoice2))
@@ -195,12 +200,12 @@ namespace RecordRobot.MovingObjects
                                 this.Direction = (Direction)((int)this.AIChoice1 * -1);
                         }
                     }
-
                 }
             }
-            else if ((this.Color == RecordColor.grey || this.Color == MovingObjectManager.nextColor) && (RelativePosition.X < 59 && RelativePosition.Y < 59))
+            else if ((this.Color == RecordColor.grey || this.Color == MovingObjectManager.nextColor) && (RelativePosition.X < 59 && RelativePosition.Y < 59) && Settings.DifficultyLevel != Settings.DifficultySettings.easy)
             {
-                MovingObjectManager.AIChangeDirection(this.Color);
+                if(Settings.DifficultyLevel == Settings.DifficultySettings.hard || this.Color == MovingObjectManager.nextColor)
+                    MovingObjectManager.AIChangeDirection(this.Color);
             }
 
             //if (elapsedTime.Milliseconds % 100 == 0)

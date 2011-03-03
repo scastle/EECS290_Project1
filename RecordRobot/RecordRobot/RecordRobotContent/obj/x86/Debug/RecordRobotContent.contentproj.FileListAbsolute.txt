@@ -1,9 +1,1 @@
 C:\Users\Steffen\EECS290_Project1\RecordRobot\RecordRobot\RecordRobotContent\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\Michael\Desktop\git projects\RecordRobot\RecordRobot\RecordRobotContent\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\Mike\Documents\Visual Studio 2010\Projects\EECS290_Project1\RecordRobot\RecordRobot\RecordRobotContent\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\Mike\scastle-EECS290_Project1-bdd1338\RecordRobot\RecordRobot\RecordRobotContent\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\Mike\Documents\GitRepository\RecordRobot\RecordRobot\RecordRobotContent\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\Mike\Documents\CurrentRecordRobotIteration\scastle-EECS290_Project1-dd7fa6f\RecordRobot\RecordRobot\RecordRobotContent\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\Mike\Documents\EECS290_Project1\RecordRobot\RecordRobot\RecordRobotContent\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\Michael\Desktop\new menus stuff\RecordRobot\RecordRobot\RecordRobotContent\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\Mike\Documents\CurrentRecordRobotIteration\scastle-EECS290_Project1-3db86bc\RecordRobot\RecordRobot\RecordRobotContent\obj\x86\Debug\ResolveAssemblyReference.cache

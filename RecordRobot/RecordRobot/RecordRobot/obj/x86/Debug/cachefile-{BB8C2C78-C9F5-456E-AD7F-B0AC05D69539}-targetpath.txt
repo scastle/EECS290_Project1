@@ -16,7 +16,6 @@ Content\Images\robot-invincible.xnb
 Content\Images\robot-right-dead.xnb
 Content\Images\robot-left-dead.xnb
 Content\Images\how-to-play.xnb
-Content\Font1.xnb
 Content\Images\maze-wall-blue.xnb
 Content\Images\maze-wall-brown.xnb
 Content\Images\maze-wall-green.xnb
@@ -27,4 +26,5 @@ Content\Images\maze-wall-red.xnb
 Content\Images\maze-wall-violet.xnb
 Content\Images\maze-wall-white.xnb
 Content\Images\maze-wall-yellow.xnb
+Content\Font1.xnb
 Content\TextFiles\testmaze.txt
