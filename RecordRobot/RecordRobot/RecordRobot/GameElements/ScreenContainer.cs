@@ -157,10 +157,13 @@ namespace RecordRobot.GameElements
         /// </summary>
         public void Draw()
         {
+            this[this.Count - 1].Draw();
+            /*
             foreach (GameScreen screen in this)
             {
                 screen.Draw();
             }
+             * */
         }
     }
 }

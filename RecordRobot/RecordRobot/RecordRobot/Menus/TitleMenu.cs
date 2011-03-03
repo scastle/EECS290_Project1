@@ -26,7 +26,7 @@ namespace RecordRobot.Menus
 
             MenuEntry quit = new MenuEntry("Quit", position + new Vector2(0, spacing * 3), new QuitGameDelegate());            
 
-            resume.UpperMenu = toSettings;
+            resume.UpperMenu = quit;
             resume.LowerMenu = howto;
 
             howto.UpperMenu = resume;
