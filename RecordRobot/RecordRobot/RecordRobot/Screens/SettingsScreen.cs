@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace RecordRobot.Screens
 {
-    class SettingsScreen : GameScreen
+    public class SettingsScreen : GameScreen
     {
 
         /// <summary>
@@ -22,7 +22,7 @@ namespace RecordRobot.Screens
         /// <summary>
         /// This is the menu used for the pause screen.
         /// </summary>
-        private SettingsMenu menu;
+        public SettingsMenu menu;
 
         /// <summary>
         /// Where to write "Record Robot"

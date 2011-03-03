@@ -9,9 +9,11 @@ using RecordRobot.GameElements;
 
 namespace RecordRobot.Menus
 {
-    class SettingsMenu : Menu
+    public class SettingsMenu : Menu
     {
         private String DifSet;
+
+        public MenuEntry numRecords { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TitleMenu"/> class.
@@ -35,7 +37,7 @@ namespace RecordRobot.Menus
             }
             MenuEntry difficulty = new MenuEntry("Difficulty: " + DifSet, position, new DifficultyDelegate());
 
-            MenuEntry numRecords = new MenuEntry("Number of Records: " + Settings.NumRecords, position + new Vector2(0, spacing), new NumRecordsDelegate());
+            numRecords = new MenuEntry("Number of Records: " + Settings.NumRecords, position + new Vector2(0, spacing), new NumRecordsDelegate());
 
             MenuEntry mainMenu = new MenuEntry("Main Menu", position + new Vector2(0, spacing * 2), new MainMenuDelegate());
 

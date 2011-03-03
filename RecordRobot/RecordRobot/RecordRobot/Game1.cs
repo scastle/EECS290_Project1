@@ -38,6 +38,8 @@ namespace RecordRobot
         public static bool ExitStatus;
         public static WorldScreen MainGame;
         public static Level CurrentLevel;
+
+        public static SettingsScreen SettingsScreenMenu { get; private set; }
         
         public Game1()
         {
@@ -183,7 +185,8 @@ namespace RecordRobot
 
         public static void toSettings()
         {
-            screens.Play(new SettingsScreen());
+            SettingsScreenMenu = new SettingsScreen();
+            screens.Play(SettingsScreenMenu);
         }
 
         /// <summary>

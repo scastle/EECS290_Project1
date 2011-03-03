@@ -26,11 +26,11 @@ namespace RecordRobot.Menus.MenuDelegates
             else
                 Settings.DifficultyLevel = Settings.DifficultySettings.easy;
 
-            for (int i = Game1.screens.Count - 1; i >= 0; i--)
-            {
-                Game1.screens[i].Disposed = true;
-            }
-            Game1.toSettings();
+            //for (int i = Game1.screens.Count - 1; i >= 0; i--)
+            //{
+            //    Game1.screens[i].Disposed = true;
+            //}
+            //Game1.toSettings();
         }
     }
 }

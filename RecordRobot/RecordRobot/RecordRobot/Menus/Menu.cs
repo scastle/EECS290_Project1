@@ -53,7 +53,7 @@ namespace RecordRobot.Menus
             this.CurrentSelected = 0;
             // Note: Do not use GameClock, it will be paused!
             this.initialTime = DateTime.Now.Ticks;
-            duration = 3000000;
+            duration = 2500000;
             this.lastMove = initialTime + duration;
             
         }

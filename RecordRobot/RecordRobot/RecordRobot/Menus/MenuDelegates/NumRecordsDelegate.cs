@@ -28,11 +28,13 @@ namespace RecordRobot.Menus.MenuDelegates
             else
                 Settings.NumRecords = 1;
 
-            for (int i = Game1.screens.Count - 1; i >= 0; i--)
-            {
-                Game1.screens[i].Disposed = true;
-            }
-            Game1.toSettings();
+            //for (int i = Game1.screens.Count - 1; i >= 0; i--)
+            //{
+            //    Game1.screens[i].Disposed = true;
+            //}
+            //Game1.toSettings();
+
+            Game1.SettingsScreenMenu.menu.numRecords.text = "Number of Records: " + Settings.NumRecords;
         }
     }
 }
