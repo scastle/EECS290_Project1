@@ -15,6 +15,8 @@ namespace RecordRobot.Menus
 
         public MenuEntry numRecords { get; private set; }
 
+        public MenuEntry difficulty { get; private set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="TitleMenu"/> class.
         /// </summary>
@@ -35,7 +37,7 @@ namespace RecordRobot.Menus
                     DifSet = "Hard";
                     break;
             }
-            MenuEntry difficulty = new MenuEntry("Difficulty: " + DifSet, position, new DifficultyDelegate());
+            difficulty = new MenuEntry("Difficulty: " + DifSet, position, new DifficultyDelegate());
 
             numRecords = new MenuEntry("Number of Records: " + Settings.NumRecords, position + new Vector2(0, spacing), new NumRecordsDelegate());
 
