@@ -111,7 +111,7 @@ namespace RecordRobot.Menus
                 if (this.CurrentSelected == i)
                 {
                     this[this.CurrentSelected].Update(true);
-                    if(CanMoveAgain )//DateTime.Now.Ticks > duration + initialTime)
+                    if(DateTime.Now.Ticks > duration + Game1.screens.screenChanged)
                         this[this.CurrentSelected].TryRunDelegate();
                 }
                 else

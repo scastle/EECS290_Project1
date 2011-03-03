@@ -21,6 +21,10 @@ namespace RecordRobot.GameElements
         /// <value><c>true</c> if this instance is paused; otherwise, <c>false</c>.</value>
         public bool IsPaused { get; set; }
 
+        //The last time a screen was popped
+        public long screenChanged { get; set; }
+
+
         public bool Beginning { get; private set; }
 
         /// <summary>
@@ -87,8 +91,8 @@ namespace RecordRobot.GameElements
                     {
                         this.IsTitle = false;
                     }
+                    screenChanged = DateTime.Now.Ticks;
                     Remove(this[i]);
-                    //return;
                 }
             }
         }
