@@ -20,7 +20,7 @@ namespace RecordRobot.MovingObjects
         public bool IsInvincible = false;
 
 
-        private bool RobotFlashing = false;
+        public bool RobotFlashing = false;
 
         public int Lives;
 

@@ -40,7 +40,10 @@ namespace RecordRobot.MovingObjects
             if (RobotPlayer == null)
                 RobotPlayer = new Robot(45, 45);
             else
+            {
                 RobotPlayer.Position = Settings.RobotStartingPosition;
+                RobotPlayer.RobotFlashing = false;
+            }
             Objects.Add(RobotPlayer);
 
 
