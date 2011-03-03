@@ -29,7 +29,7 @@ namespace RecordRobot
             Game1.spriteBatch.DrawString(Game1.Font, "Time: " + elapsedTime.Minutes + ":" + (elapsedTime.Seconds % 60).ToString("d2"), TimePosition, Color.White);
             
             MovingObjects.Mover[] m = MovingObjects.MovingObjectManager.Objects.ToArray();
-            for (int i = 0; i <= Game1.CurrentLevel.NumRecords; i++)
+            for (int i = 1; i < m.Length; i++)
             {
                 if (m[i] is MovingObjects.Record)
                 {

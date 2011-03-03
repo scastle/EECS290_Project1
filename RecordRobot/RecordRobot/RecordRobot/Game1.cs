@@ -154,9 +154,19 @@ namespace RecordRobot
             // TODO: Unload any non ContentManager content here
         }
 
+        public static void Win()
+        {
+            if (Game1.screens.Count > 0)
+            {
+                Game1.screens[Game1.screens.Count - 1].Disposed = true;
+            }
+            
+            screens.Play(new GameOverScreen("Congratulations! You WIN!\nScore: " + ScoreManager.CurrentScore));
+        }
+
         public static void GameOver()
         {
-            screens.Play(new GameOverScreen());
+            screens.Play(new GameOverScreen("Game Over"));
         }
 
         public static void StartGame()
