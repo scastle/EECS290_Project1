@@ -23,7 +23,7 @@ namespace RecordRobot.Screens
             Beginning = true;
             Game1.screens.IsPaused = false;
             Game1.screens.IsTitle = false;
-
+            AudioPlayer.Play(0, 1);
         }
 
         public override void Draw()

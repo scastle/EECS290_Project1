@@ -21,7 +21,7 @@ namespace RecordRobot
 
         public static void Draw()
         {
-            TimeSpan elapsedTime = DateTime.Now - Game1.Time;
+            TimeSpan elapsedTime = (DateTime.Now - Game1.StartTime) +Game1.SumTime;
             Game1.spriteBatch.Begin();
             Game1.spriteBatch.Draw(Textures.InfobarBackground, new Vector2(0, 450), Color.Black);
             Game1.spriteBatch.DrawString(Game1.Font, "Lives: " + MovingObjects.MovingObjectManager.RobotPlayer.Lives, LivesPosition, Color.White);

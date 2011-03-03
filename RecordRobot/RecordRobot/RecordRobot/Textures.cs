@@ -37,5 +37,6 @@ namespace RecordRobot
         public static Texture2D MazeWall8;
         public static Texture2D MazeWall9;
         public static Texture2D MazeWall10;
+        public static Texture2D TitleRobot;
     }
 }

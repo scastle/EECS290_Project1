@@ -121,6 +121,7 @@ namespace RecordRobot.GameElements
         /// </summary>
         public void Pause()
         {
+            Game1.SumTime = DateTime.Now - Game1.StartTime + Game1.SumTime;
             this.Add(new PauseScreen());
         }
 

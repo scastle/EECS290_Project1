@@ -38,11 +38,19 @@ namespace RecordRobot
         public static bool ExitStatus;
         public static WorldScreen MainGame;
         public static Level CurrentLevel;
+        public static ContentManager content;
+        public static AudioManager audio { get; private set; }
+
+        public static DateTime StartTime;
+        public static TimeSpan SumTime;
 
         public static SettingsScreen SettingsScreenMenu { get; private set; }
 
         public Game1()
         {
+            audio = new AudioManager(this);
+            SumTime = new TimeSpan();
+            content = Content;
             graphics = new GraphicsDeviceManager(this);
             graphics.PreferredBackBufferWidth = 600;
             graphics.PreferredBackBufferHeight = 480;
@@ -108,6 +116,7 @@ namespace RecordRobot
             Textures.MazeWall8 = this.Content.Load<Texture2D>("Images\\maze-wall-violet");
             Textures.MazeWall9 = this.Content.Load<Texture2D>("Images\\maze-wall-pink");
             Textures.MazeWall10 = this.Content.Load<Texture2D>("Images\\maze-wall-white");
+            Textures.TitleRobot = this.Content.Load<Texture2D>("Images\\robot-normal-normal");
 
             Font = Content.Load<SpriteFont>("Font1");
 
@@ -150,7 +159,35 @@ namespace RecordRobot
 
             }
             Maze.LoadMaze(map);
-            screens.Play(new TitleScreen());
+
+
+            //Load the sounds and music
+            audio.LoadSound("MenuScreen", @"Sound\ChordalSynthPattern6");
+            audio.LoadSound("song10", @"Sound\IslandReggae1");
+            audio.LoadSound("song11", @"Sound\IslandReggae2");
+            audio.LoadSound("song12", @"Sound\IslandReggae3");
+            audio.LoadSound("song13", @"Sound\IslandReggae4");
+            audio.LoadSound("song14", @"Sound\IslandReggae5");
+            audio.LoadSound("song20", @"Sound\BassItUp1");
+            audio.LoadSound("song21", @"Sound\BassItUp2");
+            audio.LoadSound("song22", @"Sound\BassItUp3");
+            audio.LoadSound("song23", @"Sound\BassItUp4");
+            audio.LoadSound("song24", @"Sound\BassItUp5");
+            audio.LoadSound("song25", @"Sound\BassItUp6");
+            audio.LoadSound("song30", @"Sound\clubdance1");
+            audio.LoadSound("song31", @"Sound\clubdance2");
+            audio.LoadSound("song32", @"Sound\clubdance3");
+            audio.LoadSound("song33", @"Sound\clubdance4");
+            audio.LoadSound("song34", @"Sound\clubdance5");
+            audio.LoadSound("song35", @"Sound\clubdance6");
+            audio.LoadSound("song40", @"Sound\SouthernRock1");
+            audio.LoadSound("song41", @"Sound\SouthernRock2");
+            audio.LoadSound("song42", @"Sound\SouthernRock3");
+            audio.LoadSound("song43", @"Sound\SouthernRock4");
+            audio.LoadSound("song44", @"Sound\SouthernRock5");
+            audio.LoadSound("song45", @"Sound\SouthernRock6");
+            ToTitle();
+
 
             // TODO: use this.Content to load your game content here
         }
@@ -191,6 +228,9 @@ namespace RecordRobot
 
         public static void ToTitle()
         {
+            audio.Enabled = true;
+            Game1.audio.StopAllSounds();
+            audio.PlaySound("MenuScreen");
             screens.Play(new TitleScreen());
             //need to reset the level, robot, records, lives, time, score
             Maze.level = 0;

@@ -139,8 +139,8 @@ namespace RecordRobot.MovingObjects
             {
                 this.CurrentDirection = this.Direction;
                 if ((Settings.DifficultyLevel == Settings.DifficultySettings.easy || (this.Color != RecordColor.grey && this.Color != MovingObjectManager.nextColor)) || 
-                    (Settings.DifficultyLevel != Settings.DifficultySettings.hard && (this.Color == RecordColor.grey)) &&
-                    ((int)Settings.DifficultyLevel > (int)Settings.DifficultySettings.easy && (this.Color == MovingObjectManager.nextColor)))
+                    (Settings.DifficultyLevel != Settings.DifficultySettings.hard && (this.Color == RecordColor.grey))
+                    )
                 {
                     do   //This do while loop will choose a random direction to go at an intersection (until we want to implement an ai that will chase or flee from the robot which is not a priority for the demo)
                     {
@@ -171,7 +171,7 @@ namespace RecordRobot.MovingObjects
                     } while (!CanGo);
                     CanGo = false;
                 }
-                else 
+                else
                 {
                     
                     MovingObjectManager.SetRelativeDirection(this.Color);

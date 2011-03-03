@@ -39,9 +39,9 @@ namespace RecordRobot.Screens
             Game1.screens.IsPaused = false;
             // Note: Do not use GameClock, it will be paused!
             this.initialTime = DateTime.Now.Ticks;
-            this.menu = new TitleMenu(new Vector2(150, 175), 50);
+            this.menu = new TitleMenu(new Vector2(50, 175), 50);
 
-            this.textDrawPosition = new Vector2(150, 100);
+            this.textDrawPosition = new Vector2(50, 100);
            
         }
 
@@ -66,6 +66,8 @@ namespace RecordRobot.Screens
             this.menu.Update();
         }
 
+        private Vector2 robotLocation = new Vector2(200, 65);
+
         /// <summary>
         /// Draws this instance.
         /// </summary>
@@ -73,6 +75,7 @@ namespace RecordRobot.Screens
         {
             // Write "RecordRobot" at the center of the screen.
             Game1.spriteBatch.Begin();
+            Game1.spriteBatch.Draw(Textures.TitleRobot, robotLocation, Color.White);
             Game1.spriteBatch.DrawString(Game1.Font, "Record Robot", this.textDrawPosition, Color.White);
             Game1.spriteBatch.End();
             // Draw menu

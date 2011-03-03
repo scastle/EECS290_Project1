@@ -39,6 +39,7 @@ namespace RecordRobot.GameElements
         /// </summary>
         public GameScreen()
         {
+            Game1.StartTime = DateTime.Now;
             this.random = new Random();
             this.Disposed = false;
             this.FadingOut = false;

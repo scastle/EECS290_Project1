@@ -28,6 +28,8 @@ namespace RecordRobot.Menus.MenuDelegates
             if (Game1.screens.Count > 0)
             {
                 Game1.screens[Game1.screens.Count - 1].Disposed = true;
+
+                Game1.StartTime = DateTime.Now;
             }
         }
     }                

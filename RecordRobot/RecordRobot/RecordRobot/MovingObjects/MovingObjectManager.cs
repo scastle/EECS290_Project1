@@ -91,6 +91,7 @@ namespace RecordRobot.MovingObjects
                     Record r = m as Record;
                     if (r.Color == nextColor)
                     {
+                        AudioPlayer.Play((int)nextColor, Game1.CurrentLevel.LevelNumber % 4 + 1);
                         ScoreManager.CurrentScore += r.Value;
                         r.ChangeToGrey();
                         nextColor++;
@@ -112,6 +113,8 @@ namespace RecordRobot.MovingObjects
 
         public static void NextLevel()
         {
+            ScoreManager.CurrentScore += (Game1.CurrentLevel.LevelNumber+11)*(100 - ((DateTime.Now - Game1.StartTime) + Game1.SumTime).Seconds) / 40;
+            AudioPlayer.Play(0, (Game1.CurrentLevel.LevelNumber + 1) % 4 + 1);
             Objects.RemoveAll(item => item is Record);
             //GameWin = true;
 
@@ -129,8 +132,10 @@ namespace RecordRobot.MovingObjects
                 {
                     Maze.level = 0;
                     //more records
-                    //if (Game1.CurrentLevel.NumRecords < 6)
-                    Game1.CurrentLevel.NumRecords = 6;
+                    if (Game1.CurrentLevel.NumRecords < 5)
+                        Game1.CurrentLevel.NumRecords += 2;
+                    else
+                        Game1.CurrentLevel.NumRecords = 6;
                 }
 
 
