@@ -35,7 +35,7 @@ namespace RecordRobot.Screens
             : base()
         {
             Game1.screens.IsTitle = false;
-            Game1.screens.IsPaused = true;
+            Game1.screens.IsPaused = false;
             // Note: Do not use GameClock, it will be paused!
             this.initialTime = DateTime.Now.Ticks;
             duration = 50000000;
@@ -64,7 +64,7 @@ namespace RecordRobot.Screens
             //exit screen and go to main menu after certain time has passed
             if (DateTime.Now.Ticks > duration + initialTime)
             {
-                
+
                 this.Disposed = true;
                 Game1.ToTitle();
 

@@ -27,5 +27,15 @@ namespace RecordRobot
         public static Texture2D RobotWin;
         public static Texture2D InfobarBackground;
         public static Texture2D HowToPlay;
+        public static Texture2D MazeWall1;
+        public static Texture2D MazeWall2;
+        public static Texture2D MazeWall3;
+        public static Texture2D MazeWall4;
+        public static Texture2D MazeWall5;
+        public static Texture2D MazeWall6;
+        public static Texture2D MazeWall7;
+        public static Texture2D MazeWall8;
+        public static Texture2D MazeWall9;
+        public static Texture2D MazeWall10;
     }
 }

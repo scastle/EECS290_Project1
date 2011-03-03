@@ -21,6 +21,12 @@ namespace RecordRobot.GameElements
         /// <value><c>true</c> if this instance is paused; otherwise, <c>false</c>.</value>
         public bool IsPaused { get; set; }
 
+        public bool IsSettings { get; set; }
+
+        //The last time a screen was popped
+        public long screenChanged { get; set; }
+
+
         public bool Beginning { get; private set; }
 
         /// <summary>
@@ -42,6 +48,7 @@ namespace RecordRobot.GameElements
         {
             this.IsTitle = false;
             this.IsPaused = false;
+            this.IsSettings = false;
             this.toAdd = null;
 
         }
@@ -83,10 +90,16 @@ namespace RecordRobot.GameElements
                     {
                         this.IsPaused = false;
                     }
-                    this.IsTitle = false;
-
+                    if ((this[i] as TitleScreen) != null)
+                    {
+                        this.IsTitle = false;
+                    }
+                    if ((this[i] as SettingsScreen) != null)
+                    {
+                        this.IsSettings = false;
+                    }
+                    screenChanged = DateTime.Now.Ticks;
                     Remove(this[i]);
-                    //return;
                 }
             }
         }
@@ -132,7 +145,7 @@ namespace RecordRobot.GameElements
             }
 
             // Check if the game is being paused, and there is no pause screen on the stack.
-            if (!this.IsTitle && !this.IsPaused && Controls.PauseGame())
+            if (!this.IsTitle && !this.IsPaused && !this.IsSettings && Controls.PauseGame())
             {
                 this.IsPaused = true;
                 this.Pause();
@@ -144,10 +157,13 @@ namespace RecordRobot.GameElements
         /// </summary>
         public void Draw()
         {
+            this[this.Count - 1].Draw();
+            /*
             foreach (GameScreen screen in this)
             {
                 screen.Draw();
             }
+             * */
         }
     }
 }

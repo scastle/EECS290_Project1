@@ -38,6 +38,8 @@ namespace RecordRobot
         public static bool ExitStatus;
         public static WorldScreen MainGame;
         public static Level CurrentLevel;
+
+        public static SettingsScreen SettingsScreenMenu { get; private set; }
         
         public Game1()
         {
@@ -85,7 +87,7 @@ namespace RecordRobot
             Textures.RobotFlashingRight = this.Content.Load<Texture2D>("Images\\robot-right-dead");
             Textures.RobotDead = this.Content.Load<Texture2D>("Images\\robot-dead");
             Textures.mazepath = this.Content.Load<Texture2D>("Images\\maze-path");
-            Textures.mazewall = this.Content.Load<Texture2D>("Images\\maze-wall");
+            Textures.mazewall = this.Content.Load<Texture2D>("Images\\maze-wall-brown");
             Textures.RedRecord = this.Content.Load<Texture2D>("Images\\record-red");
             Textures.OrangeRecord = this.Content.Load<Texture2D>("Images\\record-orange");
             Textures.GreyRecord = this.Content.Load<Texture2D>("Images\\record-grey");
@@ -96,6 +98,16 @@ namespace RecordRobot
             Textures.RobotWin = this.Content.Load<Texture2D>("Images\\robot-win");
             Textures.HowToPlay = this.Content.Load<Texture2D>("Images\\how-to-play");
             Textures.InfobarBackground = new Texture2D(GraphicsDevice, InfoBar.Width, InfoBar.Height);
+            Textures.MazeWall1 = this.Content.Load<Texture2D>("Images\\maze-wall-brown");
+            Textures.MazeWall2 = this.Content.Load<Texture2D>("Images\\maze-wall-red");
+            Textures.MazeWall3 = this.Content.Load<Texture2D>("Images\\maze-wall-orange");
+            Textures.MazeWall4 = this.Content.Load<Texture2D>("Images\\maze-wall-yellow");
+            Textures.MazeWall5 = this.Content.Load<Texture2D>("Images\\maze-wall-green");
+            Textures.MazeWall6 = this.Content.Load<Texture2D>("Images\\maze-wall-lightblue");
+            Textures.MazeWall7 = this.Content.Load<Texture2D>("Images\\maze-wall-blue");
+            Textures.MazeWall8 = this.Content.Load<Texture2D>("Images\\maze-wall-violet");
+            Textures.MazeWall9 = this.Content.Load<Texture2D>("Images\\maze-wall-pink");
+            Textures.MazeWall10 = this.Content.Load<Texture2D>("Images\\maze-wall-white");
 
             Font = Content.Load<SpriteFont>("Font1");
 
@@ -179,6 +191,12 @@ namespace RecordRobot
             MovingObjects.MovingObjectManager.RobotPlayer = new MovingObjects.Robot(45, 45);
             MovingObjects.MovingObjectManager.Update();
 
+        }
+
+        public static void toSettings()
+        {
+            SettingsScreenMenu = new SettingsScreen();
+            screens.Play(SettingsScreenMenu);
         }
 
         /// <summary>

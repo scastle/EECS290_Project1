@@ -42,7 +42,7 @@ namespace RecordRobot.Screens
             this.menu = new TitleMenu(new Vector2(150, 175), 50);
 
             this.textDrawPosition = new Vector2(150, 100);
-            //this.textDrawOrigin = Drawer.font.MeasureString("Paused") / 2f;
+           
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace RecordRobot.Screens
         public override void Update()
         {
             base.Update();
-
+            this.initialTime = Game1.screens.screenChanged;
             // Only pause the gameclock if the screen is not fading out.
             if (!this.FadingOut)
             {

@@ -47,14 +47,14 @@ namespace RecordRobot.Screens
             : base()
         {
             Game1.screens.IsTitle = false;
-            Game1.screens.IsPaused = true;
+            Game1.screens.IsPaused = false;
             this.menu = new PauseMenu(new Vector2(260, 200), 50, "Start Level " + (Game1.CurrentLevel.LevelNumber + 1));
             // Note: Do not use GameClock, it will be paused!
             //this.initialTime = DateTime.Now.Ticks;
             //duration = 50000000;
             textDrawPosition = new Vector2(210, 100);
             textDrawPositionScore = new Vector2(260, 140);
-            
+
         }
 
         /// <summary>

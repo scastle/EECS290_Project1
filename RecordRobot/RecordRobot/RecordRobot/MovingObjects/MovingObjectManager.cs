@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework;
 using RecordRobot.RRClasses;
 using RecordRobot.GameElements;
 using RecordRobot.Screens;
+using System.Reflection;
 
 namespace RecordRobot.MovingObjects
 {
@@ -40,7 +41,10 @@ namespace RecordRobot.MovingObjects
             if (RobotPlayer == null)
                 RobotPlayer = new Robot(45, 45);
             else
+            {
                 RobotPlayer.Position = Settings.RobotStartingPosition;
+                RobotPlayer.RobotFlashing = false;
+            }
             Objects.Add(RobotPlayer);
 
 
@@ -85,42 +89,74 @@ namespace RecordRobot.MovingObjects
                     Record r = m as Record;
                     if (r.Color == nextColor)
                     {
+                        ScoreManager.CurrentScore += r.Value;
                         r.ChangeToGrey();
                         nextColor++;
-                        ScoreManager.CurrentScore += r.Value;
+
                         if ((int)nextColor > Game1.CurrentLevel.NumRecords - 1)
                         {
-                            Objects.RemoveAll(item => item is Record);
-                            //GameWin = true;
-                            if (Maze.level == 4)
-                            {
-                                Maze.level = 0;
-                                Game1.CurrentLevel.NumRecords = 6;
-                            }
-                            else
-                            {
-                                Maze.level++;
-                            }
-                            Game1.CurrentLevel.LevelNumber++;
-                            //display a screen between levels
-                            Game1.screens.Play(new PreLevelScreen());
-
-                            //put in settings for harder level groups here.
-                            Maze.Draw();
-                            InitializeObjects();
-                            nextColor = RecordColor.red;
-
-                            
+                            NextLevel();
                         }
                     }
                     else if (!RobotPlayer.IsInvincible && r.CanDamage)
                     {
+                        ScoreManager.CurrentScore -= 5;
                         RobotPlayer.LoseLife();
                         RobotPlayer.SetInvincible(new TimeSpan(0, 0, Settings.SecondsInvincible));
                     }
                 }
             }
         }
+
+        public static void NextLevel()
+        {
+            Objects.RemoveAll(item => item is Record);
+            //GameWin = true;
+
+            if (Game1.CurrentLevel.LevelNumber == 9)
+            {
+                GameWin = true;
+                //win the game
+            }
+            else if (Maze.level == 4)
+            {
+                Maze.level = 0;
+                //more records
+                //if (Game1.CurrentLevel.NumRecords < 6)
+                Game1.CurrentLevel.NumRecords = 6;
+            }
+            else
+            {
+                Maze.level++;
+            }
+
+            Game1.CurrentLevel.LevelNumber++;
+
+            switch (Game1.CurrentLevel.LevelNumber)
+            {
+                case 0: Textures.mazewall = Textures.MazeWall1; break;
+                case 1: Textures.mazewall = Textures.MazeWall2; break;
+                case 2: Textures.mazewall = Textures.MazeWall3; break;
+                case 3: Textures.mazewall = Textures.MazeWall4; break;
+                case 4: Textures.mazewall = Textures.MazeWall5; break;
+                case 5: Textures.mazewall = Textures.MazeWall6; break;
+                case 6: Textures.mazewall = Textures.MazeWall7; break;
+                case 7: Textures.mazewall = Textures.MazeWall8; break;
+                case 8: Textures.mazewall = Textures.MazeWall9; break;
+                case 9: Textures.mazewall = Textures.MazeWall10; break;
+                default: Textures.mazewall = Textures.MazeWall10; break;
+            }
+
+            //display a screen between levels
+            Game1.screens.Play(new PreLevelScreen());
+
+
+            Maze.Draw();
+            InitializeObjects();
+            nextColor = RecordColor.red;
+        }
+
+
 
         public static IEnumerable<Mover> CheckCollisions()
         {
@@ -295,13 +331,13 @@ namespace RecordRobot.MovingObjects
                 if (!(m is Robot))
                 {
                     Record rec = m as Record;
-                    if(rec.Color == c)
+                    if (rec.Color == c)
                         return new Point(Math.Abs(RobotPlayer.Position.X - m.Position.X),
                             Math.Abs(RobotPlayer.Position.Y - m.Position.Y));
                 }
             }
             return new Point(-9999, -9999);
-            
+
         }
     }
 }

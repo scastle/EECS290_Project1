@@ -22,6 +22,11 @@ namespace RecordRobot.Menus
         /// </summary>
         private long initialTime;
 
+        /// <summary>
+        /// This is the time of the last movement
+        /// </summary>
+        private long lastMove;
+
 
         /// <summary>
         /// This is the duration of the screen
@@ -43,12 +48,14 @@ namespace RecordRobot.Menus
         /// <param name="position">The this.position of the menu system.</param>
         public Menu(Vector2 position)
         {
-            this.CanMoveAgain = true;
+            this.CanMoveAgain = false;
             this.position = new Vector2(position.X, position.Y);
             this.CurrentSelected = 0;
             // Note: Do not use GameClock, it will be paused!
             this.initialTime = DateTime.Now.Ticks;
-            duration = 1000000;
+            duration = 2500000;
+            this.lastMove = initialTime + duration;
+            
         }
 
         /// <summary>
@@ -80,10 +87,10 @@ namespace RecordRobot.Menus
         /// </summary>
         public virtual void Update()
         {
-            if (DateTime.Now.Ticks > duration + initialTime)
+            if (DateTime.Now.Ticks > duration + lastMove)
             {
                 this.CanMoveAgain = true;
-                this.initialTime = DateTime.Now.Ticks;
+                this.lastMove = DateTime.Now.Ticks;
             }
             if (Controls.GetDirection() == Direction.Up && this.CanMoveAgain)
             {
@@ -91,7 +98,7 @@ namespace RecordRobot.Menus
                 this.CanMoveAgain = false;
             }
 
-            if (Controls.GetDirection() == Direction.Down && this.CanMoveAgain)
+            else if (Controls.GetDirection() == Direction.Down && this.CanMoveAgain)
             {
                 this.TrySet(this[this.CurrentSelected].LowerMenu);
                 this.CanMoveAgain = false;
@@ -104,7 +111,8 @@ namespace RecordRobot.Menus
                 if (this.CurrentSelected == i)
                 {
                     this[this.CurrentSelected].Update(true);
-                    this[this.CurrentSelected].TryRunDelegate();
+                    if(DateTime.Now.Ticks > duration + Game1.screens.screenChanged)
+                        this[this.CurrentSelected].TryRunDelegate();
                 }
                 else
                     this[i].Update(false);

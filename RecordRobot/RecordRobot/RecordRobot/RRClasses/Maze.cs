@@ -139,6 +139,7 @@ namespace RecordRobot.RRClasses
 
         }
 
+        static Vector2 drawPos = new Vector2();
 
         public static void Draw()
         {
@@ -147,10 +148,12 @@ namespace RecordRobot.RRClasses
             {
                 for (int c = 0; c <= grid.GetUpperBound(2); c++)
                 {
+                    drawPos.X = c * 30;
+                    drawPos.Y = r * 30;
                     if (grid[level, r, c])
-                        Game1.spriteBatch.Draw(Textures.mazepath, new Vector2(c * 30, r * 30), Color.Black);
+                        Game1.spriteBatch.Draw(Textures.mazepath, drawPos, Color.White);
                     else
-                        Game1.spriteBatch.Draw(Textures.mazewall, new Vector2(c * 30, r * 30), Color.Blue);
+                        Game1.spriteBatch.Draw(Textures.mazewall, drawPos, Color.White);
                 }
             }
             Game1.spriteBatch.End();

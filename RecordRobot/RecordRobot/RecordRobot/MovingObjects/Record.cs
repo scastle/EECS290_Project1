@@ -50,9 +50,10 @@ namespace RecordRobot.MovingObjects
             this.Position.X = x;
             this.Position.Y = y;
             this.Color = c;
+            this.Value = ScoreManager.GetScore(c);
             this.Speed = Settings.RecordSpeed;
             this.CurrentDirection = Direction.None;
-            this.OldPosition = this.Position;  
+            this.OldPosition = this.Position;
             //CanGo = false;
             switch (c)
             {
@@ -84,7 +85,7 @@ namespace RecordRobot.MovingObjects
 
             }
             this.OriginalTexture = Texture;
-            Random rand = new Random(); 
+            Random rand = new Random();
             int r = rand.Next(4);
             switch (r)      //This is used to determine a random initial direction for the records
             {
@@ -106,16 +107,16 @@ namespace RecordRobot.MovingObjects
 
 
             while (!Maze.CanGo(this.Position, this.Direction))   //This will choose a random direction if the initial random direction pointed the record towards a wall
+            {
+                if ((int)this.Direction == 2)
                 {
-                    if ((int)this.Direction == 2)
-                    {
-                        this.Direction = Direction.Right;
-                    }
-                    //if (!Maze.CanGo(this.Position, this.Direction))
-                    this.Direction++;
-                    //else
-                    //CanGo = true;
+                    this.Direction = Direction.Right;
                 }
+                //if (!Maze.CanGo(this.Position, this.Direction))
+                this.Direction++;
+                //else
+                //CanGo = true;
+            }
             //this.Direction = Direction.None;
 
         }
@@ -127,8 +128,8 @@ namespace RecordRobot.MovingObjects
             int r;
             if (Maze.grid == null)
                 Console.WriteLine("THE GRID IS NOT INSTANTIATED");
-            if(Maze.IsDeadEnd(this.Position))
-                this.Direction = (Direction) ((int) this.Direction * -1);
+            if (Maze.IsDeadEnd(this.Position))
+                this.Direction = (Direction)((int)this.Direction * -1);
             this.RelativePosition = MovingObjectManager.GetRelativePosition(this.Color);
             if (Maze.IsIntersection(this.Position))
             {
@@ -168,7 +169,7 @@ namespace RecordRobot.MovingObjects
                 else if (this.Color == RecordColor.grey || this.Color == MovingObjectManager.nextColor)
                 {
                     MovingObjectManager.SetRelativeDirection(this.Color);
-                    if(this.Color == MovingObjectManager.nextColor)
+                    if (this.Color == MovingObjectManager.nextColor)
                     {
                         this.AIChoice1 = (Direction)((int)this.AIChoice1 * -1);
                         this.AIChoice2 = (Direction)((int)this.AIChoice2 * -1);
@@ -194,7 +195,7 @@ namespace RecordRobot.MovingObjects
                                 this.Direction = (Direction)((int)this.AIChoice1 * -1);
                         }
                     }
-                    
+
                 }
             }
             else if ((this.Color == RecordColor.grey || this.Color == MovingObjectManager.nextColor) && (RelativePosition.X < 59 && RelativePosition.Y < 59))
@@ -220,24 +221,26 @@ namespace RecordRobot.MovingObjects
                     this.Texture = OriginalTexture;
                 else
                     this.Texture = Textures.GreyRecord;
-                
+
             }
 
-            if(DeathCount == 100)
+            if (DeathCount == 100)
             {
                 this.Texture = Textures.GreyRecord;
                 this.Color = RecordColor.grey;
                 this.CanDamage = true;
+                this.Value = ScoreManager.GetScore(Color);
                 Gathered = false;
             }
 
             base.UpdatePosition();
-                        
+
         }
 
         public void ChangeToGrey()
         {
             CountDown = true;
+            this.Value = 0;
             CanDamage = false;
         }
     }

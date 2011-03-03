@@ -16,34 +16,20 @@ namespace RecordRobot.Screens
         /// </summary>
         public static bool Beginning { get; private set; }
 
-        
+
         public WorldScreen()
             : base()
         {
             Beginning = true;
-          
+            Game1.screens.IsPaused = false;
+            Game1.screens.IsTitle = false;
+
         }
 
         public override void Draw()
         {
-            Controls.SkipLevel();
-            //this checking is being handled in movingobjectmanager's update method, I have to look into it to see where it should be.
-            if (MovingObjectManager.GameWin)
-            {
-                if (Maze.level == 4)
-                {
-                    Maze.level = 0;
-                    Settings.NumRecords = 6;
-                }
-                else
-                {
-                    Maze.level++;
-                }
-                Maze.Draw();
-                MovingObjectManager.GameWin = false;
-                MovingObjectManager.NewLevel = true;
 
-            }
+
             Maze.Draw();
             MovingObjectManager.Draw();
             InfoBar.Draw();
@@ -52,7 +38,7 @@ namespace RecordRobot.Screens
         public override void Update()
         {
             MovingObjectManager.Update();
-            
+            Controls.SkipLevel();   // pressing "p" allows skipping a level
         }
     }
 }

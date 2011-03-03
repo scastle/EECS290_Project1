@@ -38,6 +38,7 @@ namespace RecordRobot.Screens
         {
             Game1.screens.IsPaused = true;
             Game1.screens.IsTitle = false;
+            Game1.screens.IsSettings = false;
             // Note: Do not use GameClock, it will be paused!
             this.initialTime = DateTime.Now.Ticks;
             this.menu = new PauseMenu(new Vector2(300, 100), 50, "Resume");

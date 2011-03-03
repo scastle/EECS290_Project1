@@ -19,7 +19,7 @@ namespace RecordRobot.Menus
         /// Gets the text to display for this entry.
         /// </summary>
         /// <value>The text to display.</value>
-        public string text { get; private set; }
+        public string text { get; set; }
 
         /// <summary>
         /// Gets or sets the upper menu, which is the menu entry that will
@@ -72,6 +72,7 @@ namespace RecordRobot.Menus
             }
             else
                 this.textColor = Color.White;
+
         }
 
         public virtual void Draw()

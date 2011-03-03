@@ -14,7 +14,7 @@ namespace RecordRobot
 
         public static Direction GetDirection()
         {
-            
+
             State = Keyboard.GetState();
             if (State.IsKeyDown(Keys.Up) || State.IsKeyDown(Keys.W))
             {
@@ -43,7 +43,7 @@ namespace RecordRobot
         public static bool Enter()
         {
             State = Keyboard.GetState();
-            if(State.IsKeyDown(Keys.Enter))
+            if (State.IsKeyDown(Keys.Enter))
                 return true;
             else
                 return false;
@@ -53,7 +53,7 @@ namespace RecordRobot
         public static bool Back()
         {
             State = Keyboard.GetState();
-            if( State.IsKeyDown(Keys.Escape) || State.IsKeyDown(Keys.Back) )
+            if (State.IsKeyDown(Keys.Escape) || State.IsKeyDown(Keys.Back))
                 return true;
             else
                 return false;
@@ -70,9 +70,10 @@ namespace RecordRobot
 
         public static void SkipLevel()
         {
-            TimeSpan elapsedTime = DateTime.Now - Game1.Time;
-            if (State.IsKeyDown(Keys.P) && elapsedTime.Milliseconds % 100 == 0)
-                MovingObjectManager.GameWin = true;
+            State = Keyboard.GetState();
+            if (State.IsKeyDown(Keys.P))
+                MovingObjectManager.NextLevel();
         }
+
     }
 }
