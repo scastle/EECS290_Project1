@@ -22,20 +22,27 @@ namespace RecordRobot.Menus
 
             MenuEntry howto = new MenuEntry("How to Play", position + new Vector2(0, spacing), new HowToPlayDelegate());
 
-            MenuEntry quit = new MenuEntry("Quit", position + new Vector2(0, spacing * 2), new QuitGameDelegate());
+            MenuEntry toSettings = new MenuEntry("Settings", position + new Vector2(0, spacing * 2), new SettingsDelegate());
 
-            resume.UpperMenu = quit;
+            MenuEntry quit = new MenuEntry("Quit", position + new Vector2(0, spacing * 3), new QuitGameDelegate());            
+
+            resume.UpperMenu = toSettings;
             resume.LowerMenu = howto;
 
             howto.UpperMenu = resume;
-            howto.LowerMenu = quit;
+            howto.LowerMenu = toSettings;
 
-            quit.UpperMenu = howto;
-            quit.LowerMenu = resume;
+            toSettings.UpperMenu = howto;
+            toSettings.LowerMenu = quit;
+
+            quit.UpperMenu = toSettings;
+            quit.LowerMenu = resume;            
 
             this.Add(resume);
             this.Add(howto);
+            this.Add(toSettings);
             this.Add(quit);
+            
         }
     }
 }

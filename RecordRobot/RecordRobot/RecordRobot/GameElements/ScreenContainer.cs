@@ -21,6 +21,8 @@ namespace RecordRobot.GameElements
         /// <value><c>true</c> if this instance is paused; otherwise, <c>false</c>.</value>
         public bool IsPaused { get; set; }
 
+        public bool IsSettings { get; set; }
+
         //The last time a screen was popped
         public long screenChanged { get; set; }
 
@@ -46,6 +48,7 @@ namespace RecordRobot.GameElements
         {
             this.IsTitle = false;
             this.IsPaused = false;
+            this.IsSettings = false;
             this.toAdd = null;
 
         }
@@ -90,6 +93,10 @@ namespace RecordRobot.GameElements
                     if ((this[i] as TitleScreen) != null)
                     {
                         this.IsTitle = false;
+                    }
+                    if ((this[i] as SettingsScreen) != null)
+                    {
+                        this.IsSettings = false;
                     }
                     screenChanged = DateTime.Now.Ticks;
                     Remove(this[i]);
@@ -138,7 +145,7 @@ namespace RecordRobot.GameElements
             }
 
             // Check if the game is being paused, and there is no pause screen on the stack.
-            if (!this.IsTitle && !this.IsPaused && Controls.PauseGame())
+            if (!this.IsTitle && !this.IsPaused && !this.IsSettings && Controls.PauseGame())
             {
                 this.IsPaused = true;
                 this.Pause();

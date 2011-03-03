@@ -16,20 +16,20 @@ namespace RecordRobot.Screens
         /// </summary>
         public static bool Beginning { get; private set; }
 
-        
+
         public WorldScreen()
             : base()
         {
             Beginning = true;
             Game1.screens.IsPaused = false;
             Game1.screens.IsTitle = false;
-          
+
         }
 
         public override void Draw()
         {
-            
-            
+
+
             Maze.Draw();
             MovingObjectManager.Draw();
             InfoBar.Draw();

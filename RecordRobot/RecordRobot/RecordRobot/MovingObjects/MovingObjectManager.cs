@@ -88,10 +88,10 @@ namespace RecordRobot.MovingObjects
                         ScoreManager.CurrentScore += r.Value;
                         r.ChangeToGrey();
                         nextColor++;
-                        
+
                         if ((int)nextColor > Game1.CurrentLevel.NumRecords - 1)
                         {
-                            NextLevel();    
+                            NextLevel();
                         }
                     }
                     else if (!RobotPlayer.IsInvincible && r.CanDamage)
@@ -108,7 +108,7 @@ namespace RecordRobot.MovingObjects
         {
             Objects.RemoveAll(item => item is Record);
             //GameWin = true;
-            
+
             if (Game1.CurrentLevel.LevelNumber == 9)
             {
                 GameWin = true;
@@ -127,11 +127,11 @@ namespace RecordRobot.MovingObjects
             }
 
             Game1.CurrentLevel.LevelNumber++;
-            
+
             //display a screen between levels
             Game1.screens.Play(new PreLevelScreen());
 
-            
+
             Maze.Draw();
             InitializeObjects();
             nextColor = RecordColor.red;
@@ -312,13 +312,13 @@ namespace RecordRobot.MovingObjects
                 if (!(m is Robot))
                 {
                     Record rec = m as Record;
-                    if(rec.Color == c)
+                    if (rec.Color == c)
                         return new Point(Math.Abs(RobotPlayer.Position.X - m.Position.X),
                             Math.Abs(RobotPlayer.Position.Y - m.Position.Y));
                 }
             }
             return new Point(-9999, -9999);
-            
+
         }
     }
 }

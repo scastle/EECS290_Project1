@@ -54,7 +54,7 @@ namespace RecordRobot.Screens
             //duration = 50000000;
             textDrawPosition = new Vector2(210, 100);
             textDrawPositionScore = new Vector2(260, 140);
-            
+
         }
 
         /// <summary>

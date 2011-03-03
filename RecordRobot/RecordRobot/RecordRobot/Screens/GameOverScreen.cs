@@ -64,7 +64,7 @@ namespace RecordRobot.Screens
             //exit screen and go to main menu after certain time has passed
             if (DateTime.Now.Ticks > duration + initialTime)
             {
-                
+
                 this.Disposed = true;
                 Game1.ToTitle();
 
