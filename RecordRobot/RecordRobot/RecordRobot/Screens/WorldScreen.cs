@@ -21,29 +21,15 @@ namespace RecordRobot.Screens
             : base()
         {
             Beginning = true;
+            Game1.screens.IsPaused = false;
+            Game1.screens.IsTitle = false;
           
         }
 
         public override void Draw()
         {
             
-            //this checking is being handled in movingobjectmanager's update method, I have to look into it to see where it should be.
-            if (MovingObjectManager.GameWin)
-            {
-                if (Maze.level == 4)
-                {
-                    Maze.level = 0;
-                    Settings.NumRecords = 6;
-                }
-                else
-                {
-                    Maze.level++;
-                }
-                Maze.Draw();
-                MovingObjectManager.GameWin = false;
-                MovingObjectManager.NewLevel = true;
-
-            }
+            
             Maze.Draw();
             MovingObjectManager.Draw();
             InfoBar.Draw();
